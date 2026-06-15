@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PromovaDS News — 10 Demo Templates Showcase</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 16px; scroll-behavior: smooth; }
+  body { font-family: 'Inter', sans-serif; background: #0a0a0f; color: #e4e4f0; line-height: 1.65; }
+  a { text-decoration: none; color: inherit; }
+
+  /* Hero */
+  .showcase-hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 60px 20px;
+    background: radial-gradient(ellipse at 50% 0%, rgba(230,51,41,.18) 0%, transparent 65%),
+                radial-gradient(ellipse at 80% 80%, rgba(99,102,241,.12) 0%, transparent 60%),
+                #0a0a0f;
+    position: relative;
+    overflow: hidden;
+  }
+  .showcase-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.018'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  .showcase-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(230,51,41,.15);
+    border: 1px solid rgba(230,51,41,.3);
+    color: #e63329;
+    padding: 6px 16px;
+    border-radius: 9999px;
+    font-size: .78rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .12em;
+    margin-bottom: 24px;
+  }
+
+  .showcase-hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    font-weight: 900;
+    line-height: 1.1;
+    color: #fff;
+    margin-bottom: 20px;
+    max-width: 900px;
+  }
+  .showcase-hero h1 span { color: #e63329; }
+
+  .showcase-hero p {
+    font-size: 1.1rem;
+    color: rgba(255,255,255,.6);
+    max-width: 600px;
+    margin: 0 auto 44px;
+    line-height: 1.75;
+  }
+
+  .tech-stack {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 60px;
+  }
+  .tech-tag {
+    background: rgba(255,255,255,.06);
+    border: 1px solid rgba(255,255,255,.1);
+    color: rgba(255,255,255,.7);
+    padding: 5px 14px;
+    border-radius: 9999px;
+    font-size: .78rem;
+    font-weight: 500;
+  }
+
+  /* Demo Grid */
+  .demo-section { padding: 80px 20px; max-width: 1300px; margin: 0 auto; }
+  .demo-section-title {
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: #fff;
+    margin-bottom: 10px;
+  }
+  .demo-section-sub {
+    text-align: center;
+    color: rgba(255,255,255,.45);
+    font-size: .9rem;
+    margin-bottom: 52px;
+  }
+
+  .demos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 24px;
+  }
+
+  .demo-card {
+    background: rgba(255,255,255,.04);
+    border: 1px solid rgba(255,255,255,.08);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: transform .3s, border-color .3s, box-shadow .3s;
+    position: relative;
+  }
+  .demo-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(255,255,255,.18);
+    box-shadow: 0 20px 60px rgba(0,0,0,.4);
+  }
+
+  .demo-card__preview {
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .demo-card__preview-inner {
+    width: 100%;
+    height: 100%;
+    transform: scale(1.0);
+    transition: transform .4s;
+  }
+  .demo-card:hover .demo-card__preview-inner { transform: scale(1.03); }
+
+  /* Mini browser chrome */
+  .mini-browser { width: 100%; height: 100%; }
+  .mini-browser__bar {
+    background: #1e1e2e;
+    height: 26px;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    gap: 5px;
+  }
+  .mini-browser__dot { width: 8px; height: 8px; border-radius: 50%; }
+  .mini-browser__url {
+    flex: 1;
+    background: rgba(255,255,255,.06);
+    border-radius: 4px;
+    height: 14px;
+    margin: 0 8px;
+  }
+  .mini-browser__content { flex: 1; overflow: hidden; }
+
+  .demo-card__info { padding: 20px; }
+  .demo-card__num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    font-weight: 900;
+    opacity: .1;
+    position: absolute;
+    top: 10px;
+    right: 16px;
+    color: #fff;
+    line-height: 1;
+  }
+  .demo-card__icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: #fff;
+    margin-bottom: 12px;
+  }
+  .demo-card__name {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 6px;
+  }
+  .demo-card__desc {
+    font-size: .82rem;
+    color: rgba(255,255,255,.5);
+    margin-bottom: 18px;
+    line-height: 1.55;
+  }
+  .demo-card__links {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .demo-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-size: .78rem;
+    font-weight: 600;
+    transition: all .2s;
+  }
+  .demo-link--primary {
+    background: var(--demo-color, #e63329);
+    color: #fff;
+  }
+  .demo-link--ghost {
+    border: 1px solid rgba(255,255,255,.15);
+    color: rgba(255,255,255,.65);
+  }
+  .demo-link:hover { opacity: .85; transform: translateY(-1px); }
+
+  /* Feature List */
+  .feature-section { padding: 80px 20px; max-width: 1300px; margin: 0 auto; border-top: 1px solid rgba(255,255,255,.06); }
+  .feature-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 20px; margin-top: 40px; }
+  .feature-item {
+    background: rgba(255,255,255,.04);
+    border: 1px solid rgba(255,255,255,.07);
+    border-radius: 12px;
+    padding: 22px;
+    transition: border-color .2s;
+  }
+  .feature-item:hover { border-color: rgba(255,255,255,.15); }
+  .feature-item i { font-size: 1.5rem; margin-bottom: 12px; }
+  .feature-item h4 { color: #fff; font-size: .95rem; margin-bottom: 6px; }
+  .feature-item p { font-size: .8rem; color: rgba(255,255,255,.45); line-height: 1.55; }
+
+  /* Footer */
+  .showcase-footer {
+    text-align: center;
+    padding: 40px 20px;
+    border-top: 1px solid rgba(255,255,255,.06);
+    font-size: .82rem;
+    color: rgba(255,255,255,.3);
+  }
+
+  /* Preview mini layouts per demo */
+  .preview-tech { background: linear-gradient(180deg, #0f0a1e 0%, #1a0a2e 100%); }
+  .preview-jobs { background: linear-gradient(180deg, #0c4a6e 0%, #075985 100%); }
+  .preview-finance { background: linear-gradient(180deg, #052e16 0%, #14532d 100%); }
+  .preview-sports { background: linear-gradient(180deg, #1c0a00 0%, #431407 100%); }
+  .preview-auto { background: linear-gradient(180deg, #1c1917 0%, #292524 100%); }
+  .preview-realestate { background: linear-gradient(180deg, #2e1065 0%, #4c1d95 100%); }
+  .preview-health { background: linear-gradient(180deg, #042f2e 0%, #134e4a 100%); }
+  .preview-education { background: linear-gradient(180deg, #451a03 0%, #78350f 100%); }
+  .preview-crypto { background: linear-gradient(180deg, #0d1117 0%, #161b22 100%); }
+  .preview-gaming { background: linear-gradient(180deg, #0f0717 0%, #1e0a35 100%); }
+
+  .mini-ui { padding: 8px; display: flex; flex-direction: column; gap: 5px; height: calc(100% - 26px); }
+  .mini-row { display: flex; gap: 4px; }
+  .mini-block { border-radius: 3px; opacity: .4; flex: 1; }
+  .mini-block.h1 { height: 60px; }
+  .mini-block.h2 { height: 40px; }
+  .mini-block.h3 { height: 25px; }
+  .mini-block.h4 { height: 14px; }
+  .mini-block.w2 { flex: 2; }
+  .mini-block.w3 { flex: 3; }
+
+  @media (max-width: 640px) {
+    .demos-grid { grid-template-columns: 1fr; }
+    .showcase-hero h1 { font-size: 2.2rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Hero -->
+<section class="showcase-hero">
+  <div class="showcase-badge">
+    <i class="fas fa-newspaper"></i>
+    PromovaDS News Theme
+  </div>
+  <h1>10 Premium <span>News & Magazine</span><br>Demo Templates</h1>
+  <p>Production-ready HTML/CSS/JS templates for every niche. RTL + LTR, Dark Mode, Elementor-ready, SEO-optimized with full frontend components.</p>
+  <div class="tech-stack">
+    <span class="tech-tag"><i class="fab fa-wordpress"></i> WordPress</span>
+    <span class="tech-tag"><i class="fab fa-css3-alt"></i> CSS Custom Properties</span>
+    <span class="tech-tag"><i class="fab fa-js"></i> Vanilla JS</span>
+    <span class="tech-tag">🌙 Dark Mode</span>
+    <span class="tech-tag">↔️ RTL / LTR</span>
+    <span class="tech-tag">📱 Mobile-First</span>
+    <span class="tech-tag">⚡ Lighthouse 90+</span>
+    <span class="tech-tag">🔍 Schema SEO</span>
+  </div>
+</section>
+
+<!-- Demos Grid -->
+<div class="demo-section">
+  <h2 class="demo-section-title">Choose Your Demo</h2>
+  <p class="demo-section-sub">Each demo includes: Homepage · Single Article · Archive Page · Full Components</p>
+
+  <div class="demos-grid">
+
+    <!-- 01 Tech & AI -->
+    <div class="demo-card" style="--demo-color:#6366f1">
+      <div class="demo-card__preview preview-tech">
+        <div class="mini-browser" style="width:100%;height:100%">
+          <div class="mini-browser__bar"><div class="mini-browser__dot" style="background:#ff5f57"></div><div class="mini-browser__dot" style="background:#febc2e"></div><div class="mini-browser__dot" style="background:#28c840"></div><div class="mini-browser__url"></div></div>
+          <div class="mini-ui">
+            <div class="mini-row"><div class="mini-block h1 w3" style="background:#6366f1"></div><div class="mini-block h1" style="background:#4338ca"></div></div>
+            <div class="mini-row"><div class="mini-block h3 w2" style="background:#818cf8;opacity:.3"></div><div class="mini-block h3" style="background:#6366f1;opacity:.2"></div><div class="mini-block h3" style="background:#6366f1;opacity:.2"></div></div>
+            <div class="mini-row"><div class="mini-block h4" style="background:#c7d2fe;opacity:.2"></div><div class="mini-block h4" style="background:#c7d2fe;opacity:.2"></div><div class="mini-block h4" style="background:#c7d2fe;opacity:.2"></div></div>
+            <div class="mini-row"><div class="mini-block h2 w2" style="background:#312e81;opacity:.5"></div><div class="mini-block h2" style="background:#312e81;opacity:.4"></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="demo-card__info">
+        <div class="demo-card__num">01</div>
+        <div class="demo-card__icon" style="background:#6366f1"><i class="fas fa-microchip"></i></div>
+        <div class="demo-card__name">Tech & AI News</div>
+        <div class="demo-card__desc">Dark mode default · AI news blocks · Trending tech slider · Product reviews with scores</div>
+        <div class="demo-card__links">
+          <a href="01-tech-ai/index.html" class="demo-link demo-link--primary"><i class="fas fa-home"></i> Home</a>
+          <a href="01-tech-ai/single.html" class="demo-link demo-link--ghost"><i class="fas fa-newspaper"></i> Article</a>
+          <a href="01-tech-ai/archive.html" class="demo-link demo-link--ghost"><i class="fas fa-list"></i> Archive</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 02 Jobs -->
+    <div class="demo-card" style="--demo-color:#0ea5e9">
+      <div class="demo-card__preview preview-jobs">
+        <div class="mini-browser" style="width:100%;height:100%">
+          <div class="mini-browser__bar"><div class="mini-browser__dot" style="background:#ff5f57"></div><div class="mini-browser__dot" style="background:#febc2e"></div><div class="mini-browser__dot" style="background:#28c840"></div><div class="mini-browser__url"></div></div>
+          <div class="mini-ui">
+            <div class="mini-row"><div class="mini-block h2 w3" style="background:#0ea5e9;opacity:.6"></div></div>
+            <div class="mini-row"><div class="mini-block h4 w2" style="background:#38bdf8;opacity:.3"></div><div class="mini-block h4" style="background:#0284c7;opacity:.3"></div></div>
+            <div class="mini-row"><div class="mini-block h2" style="background:#075985;opacity:.5"></div><div class="mini-block h2" style="background:#075985;opacity:.5"></div></div>
+            <div class="mini-row"><div class="mini-block h2" style="background:#075985;opacity:.5"></div><div class="mini-block h2" style="background:#075985;opacity:.5"></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="demo-card__info">
+        <div class="demo-card__num">02</div>
+        <div class="demo-card__icon" style="background:#0ea5e9"><i class="fas fa-briefcase"></i></div>
+        <div class="demo-card__name">Jobs Portal</div>
+        <div class="demo-card__desc">Search-first hero · Job cards grid · Filters by location/type/salary · Company logos</div>
+        <div class="demo-card__links">
+          <a href="02-jobs/index.html" class="demo-link demo-link--primary"><i class="fas fa-home"></i> Home</a>
+          <a href="02-jobs/single.html" class="demo-link demo-link--ghost"><i class="fas fa-newspaper"></i> Article</a>
+          <a href="02-jobs/archive.html" class="demo-link demo-link--ghost"><i class="fas fa-list"></i> Archive</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 03 Finance -->
+    <div class="demo-card" style="--demo-color:#22c55e">
+      <div class="demo-card__preview preview-finance">
+        <div class="mini-browser" style="width:100%;height:100%">
+          <div class="mini-browser__bar"><div class="mini-browser__dot" style="background:#ff5f57"></div><div class="mini-browser__dot" style="background:#febc2e"></div><div class="mini-browser__dot" style="background:#28c840"></div><div class="mini-browser__url"></div></div>
+          <div class="mini-ui">
+            <div class="mini-row"><div class="mini-block h4 w3" style="background:#22c55e;opacity:.5"></div></div>
+            <div class="mini-row"><div class="mini-block h1 w2" style="background:#15803d;opacity:.5"></div><div class="mini-block h1" style="background:#166534;opacity:.4"></div></div>
+            <div class="mini-row"><div class="mini-block h3" style="background:#4ade80;opacity:.2"></div><div class="mini-block h3" style="background:#4ade80;opacity:.2"></div><div class="mini-block h3" style="background:#4ade80;opacity:.2"></div></div>
+            <div class="mini-row"><div class="mini-block h4 w3" style="background:#86efac;opacity:.15"></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="demo-card__info">
+        <div class="demo-card__num">03</div>
+        <div class="demo-card__icon" style="background:#22c55e"><i class="fas fa-chart-line"></i></div>
+        <div class="demo-card__name">Finance & Markets</div>
+        <div class="demo-card__desc">Live stock ticker bar · Stocks/Crypto/Forex sections · Market analysis layout</div>
+        <div class="demo-card__links">
+          <a href="03-finance/index.html" class="demo-link demo-link--primary"><i class="fas fa-home"></i> Home</a>
+          <a href="03-finance/single.html" class="demo-link demo-link--ghost"><i class="fas fa-newspaper"></i> Article</a>
+          <a href="03-finance/archive.html" class="demo-link demo-link--ghost"><i class="fas fa-list"></i> Archive</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 04 Sports -->
+    <div class="demo-card" style="--demo-color:#f97316">
+      <div class="demo-card__preview preview-sports">
+        <div class="mini-browser" style="width:100%;height:100%">
+          <div class="mini-browser__bar"><div class="mini-browser__dot" style="background:#ff5f57"></div><div class="mini-browser__dot" style="background:#febc2e"></div><div class="mini-browser__dot" style="background:#28c840"></div><div class="mini-browser__url"></div></div>
+          <div class="mini-ui">
+            <div class="mini-row"><div class="mini-block h4 w3" style="background:#e63329;opacity:.7"></div></div>
+            <div class="mini-row"><div class="mini-block h1 w2" style="background:#9a3412;opacity:.6"></div><div class="mini-block h1" style="background:#7c2d12;opacity:.5"></div></div>
+            <div class="mini-row"><div class="mini-block h3 w3" style="background:#f97316;opacity:.2"></div></div>
+            <div class="mini-row"><div class="mini-block h2" style="background:#431407;opacity:.7"></div><div class="mini-block h2" style="background:#431407;opacity:.7"></div><div class="mini-block h2" style="background:#431407;opacity:.7"></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="demo-card__info">
+        <div class="demo-card__num">04</div>
+        <div class="demo-card__icon" style="background:#f97316"><i class="fas fa-trophy"></i></div>
+        <div class="demo-card__name">Sports News</div>
+        <div class="demo-card__desc">Live score banner · Match schedule table · League standings · Sports categories tabs</div>
+        <div class="demo-card__links">
+          <a href="04-sports/index.html" class="demo-link demo-link--primary"><i class="fas fa-home"></i> Home</a>
+          <a href="04-sports/single.html" class="demo-link demo-link--ghost"><i class="fas fa-newspaper"></i> Article</a>
+          <a href="04-sports/archive.html" class="demo-link demo-link--ghost"><i class="fas fa-list"></i> Archive</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 05 Automotive -->
+    <div class="demo-card" style="--demo-color:#ef4444">
+      <div class="demo-card__preview preview-auto">
+        <div class="mini-browser" style="width:100%;height:100%">
+          <div class="mini-browser__bar"><div class="mini-browser__dot" style="background:#ff5f57"></div><div class="mini-browser__dot" style="background:#febc2e"></div><div class="mini-browser__dot" style="background:#28c840"></div><div class="mini-browser__url"></div></div>
+          <div class="mini-ui">
+            <div class="mini-row"><div class="mini-block h1 w3" style="background:#44403c;opacity:.8"></div></div>
+            <div class="mini-row"><div class="mini-block h3 w3" style="background:#ef4444;opacity:.35"></div></div>
+            <div class="mini-row"><div class="mini-block h2" style="background:#57534e;opacity:.5"></div><div class="mini-block h2" style="background:#57534e;opacity:.5"></div><div class="mini-block h2" style="background:#57534e;opacity:.5"></div></div>
+            <div class="mini-row"><div class="mini-block h4 w3" style="background:#ef4444;opacity:.15"></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="demo-card__info">
+        <div class="demo-card__num">05</div>
+        <div class="demo-card__icon" style="background:#ef4444"><i class="fas fa-car"></i></div>
+        <div class="demo-card__name">Automotive</div>
+        <div class="demo-card__desc">Car review cards with scores · Comparison tables · Electric vehicles section · Specs display</div>
+        <div class="demo-card__links">
+          <a href="05-automotive/index.html" class="demo-link demo-link--primary"><i class="fas fa-home"></i> Home</a>
+          <a href="05-automotive/single.html" class="demo-link demo-link--ghost"><i class="fas fa-newspaper"></i> Article</a>
+          <a href="05-automotive/archive.html" class="demo-link demo-link--ghost"><i class="fas fa-list"></i> Archive</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 06 Real Estate -->
+    <div class="demo-card" style="--demo-color:#8b5cf6">
+      <div class="demo-card__preview preview-realestate">
+        <div class="mini-browser" style="width:100%;height:100%">
+          <div class="mini-browser__bar"><div class="mini-browser__dot" style="background:#ff5f57"></div><div class="mini-browser__dot" style="background:#febc2e"></div><div class="mini-browser__dot" style="background:#28c840"></div><div class="mini-browser__url"></div></div>
+          <div class="mini-ui">
+            <div class="mini-row"><div class="mini-block h2 w3" style="background:#7c3aed;opacity:.5"></div></div>
+            <div class="mini-row"><div class="mini-block h3 w3" style="background:rgba(255,255,255,.1)"></div></div>
+            <div class="mini-row"><div class="mini-block h2" style="background:#6d28d9;opacity:.5"></div><div class="mini-block h2" style="background:#6d28d9;opacity:.5"></div><div class="mini-block h2" style="background:#6d28d9;opacity:.5"></div></div>
+            <div class="mini-row"><div class="mini-block h2" style="background:#6d28d9;opacity:.4"></div><div class="mini-block h2" style="background:#6d28d9;opacity:.4"></div><div class="mini-block h2" style="background:#6d28d9;opacity:.4"></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="demo-card__info">
+        <div class="demo-card__num">06</div>
+        <div class="demo-card__icon" style="background:#8b5cf6"><i class="fas fa-building"></i></div>
+        <div class="demo-card__name">Real Estate</div>
+        <div class="demo-card__desc">Property search hero · Listings grid with specs · Map integration · Price/type filters</div>
+        <div class="demo-card__links">
+          <a href="06-real-estate/index.html" class="demo-link demo-link--primary"><i class="fas fa-home"></i> Home</a>
+          <a href="06-real-estate/single.html" class="demo-link demo-link--ghost"><i class="fas fa-newspaper"></i> Article</a>
+          <a href="06-real-estate/archive.html" class="demo-link demo-link--ghost"><i class="fas fa-list"></i> Archive</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 07 Health -->
+    <div class="demo-card" style="--demo-color:#14b8a6">
+      <div class="demo-card__preview preview-health">
+        <div class="mini-browser" style="width:100%;height:100%">
+          <div class="mini-browser__bar"><div class="mini-browser__dot" style="background:#ff5f57"></div><div class="mini-browser__dot" style="background:#febc2e"></div><div class="mini-browser__dot" style="background:#28c840"></div><div class="mini-browser__url"></div></div>
+          <div class="mini-ui">
+            <div class="mini-row"><div class="mini-block h1 w2" style="background:#134e4a;opacity:.8"></div><div class="mini-block h1" style="background:#0d3d39;opacity:.8"></div></div>
+            <div class="mini-row"><div class="mini-block h3 w3" style="background:#14b8a6;opacity:.25"></div></div>
+            <div class="mini-row"><div class="mini-block h2" style="background:#0f766e;opacity:.4"></div><div class="mini-block h2" style="background:#0f766e;opacity:.4"></div><div class="mini-block h2" style="background:#0f766e;opacity:.4"></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="demo-card__info">
+        <div class="demo-card__num">07</div>
+        <div class="demo-card__icon" style="background:#14b8a6"><i class="fas fa-heartbeat"></i></div>
+        <div class="demo-card__name">Health & Medical</div>
+        <div class="demo-card__desc">Medical categories · Doctor interviews layout · Health tips cards · Wellness sections</div>
+        <div class="demo-card__links">
+          <a href="07-health/index.html" class="demo-link demo-link--primary"><i class="fas fa-home"></i> Home</a>
+          <a href="07-health/single.html" class="demo-link demo-link--ghost"><i class="fas fa-newspaper"></i> Article</a>
+          <a href="07-health/archive.html" class="demo-link demo-link--ghost"><i class="fas fa-list"></i> Archive</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 08 Education -->
+    <div class="demo-card" style="--demo-color:#f59e0b">
+      <div class="demo-card__preview preview-education">
+        <div class="mini-browser" style="width:100%;height:100%">
+          <div class="mini-browser__bar"><div class="mini-browser__dot" style="background:#ff5f57"></div><div class="mini-browser__dot" style="background:#febc2e"></div><div class="mini-browser__dot" style="background:#28c840"></div><div class="mini-browser__url"></div></div>
+          <div class="mini-ui">
+            <div class="mini-row"><div class="mini-block h1 w2" style="background:#78350f;opacity:.8"></div><div class="mini-block h1" style="background:#92400e;opacity:.7"></div></div>
+            <div class="mini-row"><div class="mini-block h3 w3" style="background:#f59e0b;opacity:.2"></div></div>
+            <div class="mini-row"><div class="mini-block h2" style="background:#451a03;opacity:.8"></div><div class="mini-block h2" style="background:#451a03;opacity:.8"></div><div class="mini-block h2" style="background:#451a03;opacity:.8"></div><div class="mini-block h2" style="background:#451a03;opacity:.8"></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="demo-card__info">
+        <div class="demo-card__num">08</div>
+        <div class="demo-card__icon" style="background:#f59e0b"><i class="fas fa-graduation-cap"></i></div>
+        <div class="demo-card__name">Education</div>
+        <div class="demo-card__desc">Courses listing cards · Scholarships section · Exams news · University rankings</div>
+        <div class="demo-card__links">
+          <a href="08-education/index.html" class="demo-link demo-link--primary"><i class="fas fa-home"></i> Home</a>
+          <a href="08-education/single.html" class="demo-link demo-link--ghost"><i class="fas fa-newspaper"></i> Article</a>
+          <a href="08-education/archive.html" class="demo-link demo-link--ghost"><i class="fas fa-list"></i> Archive</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 09 Crypto -->
+    <div class="demo-card" style="--demo-color:#f7931a">
+      <div class="demo-card__preview preview-crypto">
+        <div class="mini-browser" style="width:100%;height:100%">
+          <div class="mini-browser__bar"><div class="mini-browser__dot" style="background:#ff5f57"></div><div class="mini-browser__dot" style="background:#febc2e"></div><div class="mini-browser__dot" style="background:#28c840"></div><div class="mini-browser__url"></div></div>
+          <div class="mini-ui">
+            <div class="mini-row"><div class="mini-block h4 w3" style="background:#f7931a;opacity:.4"></div></div>
+            <div class="mini-row"><div class="mini-block h2 w3" style="background:rgba(255,255,255,.04)"></div></div>
+            <div class="mini-row" style="gap:2px"><div class="mini-block" style="height:30px;background:rgba(255,255,255,.05);flex:1"></div><div class="mini-block" style="height:30px;background:rgba(255,255,255,.05);flex:1"></div><div class="mini-block" style="height:30px;background:rgba(255,255,255,.05);flex:1"></div><div class="mini-block" style="height:30px;background:rgba(255,255,255,.05);flex:1"></div><div class="mini-block" style="height:30px;background:rgba(255,255,255,.05);flex:1"></div></div>
+            <div class="mini-row"><div class="mini-block h2 w2" style="background:#161b22;opacity:.8"></div><div class="mini-block h2" style="background:#161b22;opacity:.8"></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="demo-card__info">
+        <div class="demo-card__num">09</div>
+        <div class="demo-card__icon" style="background:#f7931a"><i class="fab fa-bitcoin"></i></div>
+        <div class="demo-card__name">Crypto & Web3</div>
+        <div class="demo-card__desc">Live coin tracker table · Market trends chart · News + analysis split layout · Portfolio widget</div>
+        <div class="demo-card__links">
+          <a href="09-crypto/index.html" class="demo-link demo-link--primary"><i class="fas fa-home"></i> Home</a>
+          <a href="09-crypto/single.html" class="demo-link demo-link--ghost"><i class="fas fa-newspaper"></i> Article</a>
+          <a href="09-crypto/archive.html" class="demo-link demo-link--ghost"><i class="fas fa-list"></i> Archive</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 10 Gaming -->
+    <div class="demo-card" style="--demo-color:#a855f7">
+      <div class="demo-card__preview preview-gaming">
+        <div class="mini-browser" style="width:100%;height:100%">
+          <div class="mini-browser__bar"><div class="mini-browser__dot" style="background:#ff5f57"></div><div class="mini-browser__dot" style="background:#febc2e"></div><div class="mini-browser__dot" style="background:#28c840"></div><div class="mini-browser__url"></div></div>
+          <div class="mini-ui">
+            <div class="mini-row"><div class="mini-block h1 w2" style="background:#1e0a35;opacity:.9"></div><div class="mini-block h1" style="background:#2d1054;opacity:.9"></div></div>
+            <div class="mini-row"><div class="mini-block h3 w3" style="background:#a855f7;opacity:.2"></div></div>
+            <div class="mini-row"><div class="mini-block h2" style="background:#3b0764;opacity:.7"></div><div class="mini-block h2" style="background:#3b0764;opacity:.7"></div><div class="mini-block h2" style="background:#3b0764;opacity:.7"></div><div class="mini-block h2" style="background:#3b0764;opacity:.7"></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="demo-card__info">
+        <div class="demo-card__num">10</div>
+        <div class="demo-card__icon" style="background:#a855f7"><i class="fas fa-gamepad"></i></div>
+        <div class="demo-card__name">Gaming</div>
+        <div class="demo-card__desc">Game reviews with score circles · Esports section · Release calendar · Dark neon aesthetic</div>
+        <div class="demo-card__links">
+          <a href="10-gaming/index.html" class="demo-link demo-link--primary"><i class="fas fa-home"></i> Home</a>
+          <a href="10-gaming/single.html" class="demo-link demo-link--ghost"><i class="fas fa-newspaper"></i> Article</a>
+          <a href="10-gaming/archive.html" class="demo-link demo-link--ghost"><i class="fas fa-list"></i> Archive</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Features -->
+<div class="feature-section">
+  <div style="text-align:center">
+    <h2 style="font-family:'Playfair Display',serif;font-size:1.8rem;color:#fff;margin-bottom:8px">Core Features Across All Demos</h2>
+    <p style="color:rgba(255,255,255,.45);font-size:.88rem">Every template includes these built-in components</p>
+  </div>
+  <div class="feature-grid">
+    <div class="feature-item"><i class="fas fa-bolt" style="color:#f5a623"></i><h4>Breaking News Ticker</h4><p>Animated scrolling ticker with pause/play controls and custom label</p></div>
+    <div class="feature-item"><i class="fas fa-search" style="color:#6366f1"></i><h4>Ajax Live Search</h4><p>Instant search overlay with image results and keyboard navigation</p></div>
+    <div class="feature-item"><i class="fas fa-moon" style="color:#818cf8"></i><h4>Dark Mode</h4><p>Full dark mode with localStorage persistence and CSS custom properties</p></div>
+    <div class="feature-item"><i class="fas fa-align-right" style="color:#14b8a6"></i><h4>RTL Support</h4><p>Full right-to-left layout for Arabic and Hebrew content</p></div>
+    <div class="feature-item"><i class="fas fa-layer-group" style="color:#f97316"></i><h4>Mega Menu</h4><p>Multi-column dropdown with featured posts and category links</p></div>
+    <div class="feature-item"><i class="fas fa-share-alt" style="color:#22c55e"></i><h4>Social Share</h4><p>Facebook, Twitter, WhatsApp, LinkedIn share buttons + copy URL</p></div>
+    <div class="feature-item"><i class="fas fa-user-circle" style="color:#0ea5e9"></i><h4>Author Box</h4><p>Detailed author profile with bio, post count, and social links</p></div>
+    <div class="feature-item"><i class="fas fa-code" style="color:#a855f7"></i><h4>Schema SEO</h4><p>NewsArticle JSON-LD, OpenGraph, Twitter Cards ready</p></div>
+    <div class="feature-item"><i class="fas fa-ad" style="color:#ef4444"></i><h4>Ad Slots</h4><p>Header, inline content, sidebar, and footer ad placement zones</p></div>
+    <div class="feature-item"><i class="fas fa-envelope" style="color:#8b5cf6"></i><h4>Newsletter</h4><p>Ajax-powered subscribe forms with success/error feedback</p></div>
+    <div class="feature-item"><i class="fas fa-spinner" style="color:#f59e0b"></i><h4>Load More</h4><p>Ajax infinite scroll with smooth animation and loading states</p></div>
+    <div class="feature-item"><i class="fas fa-mobile-alt" style="color:#14b8a6"></i><h4>Mobile-First</h4><p>Fully responsive from 320px to 4K with fluid typography</p></div>
+  </div>
+</div>
+
+<footer class="showcase-footer">
+  <p>PromovaDS News Theme &mdash; 10 Premium Templates &mdash; Built with ❤️ for WordPress</p>
+  <p style="margin-top:6px;font-size:.72rem">HTML · CSS · JavaScript · PHP · WordPress 6.x</p>
+</footer>
+
+</body>
+</html>

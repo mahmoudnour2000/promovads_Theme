@@ -1,0 +1,4 @@
+/* Tech & AI Demo Styles */
+.pds-demo-tech { --color-primary: #6366f1; --color-primary-dark: #4f46e5; --color-accent: #06b6d4; }
+.pds-demo-tech .pds-nav { background: #1e1b4b; }
+.pds-demo-tech .pds-header { border-bottom: 2px solid #6366f1; }

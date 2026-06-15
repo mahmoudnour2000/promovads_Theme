@@ -1,0 +1,4 @@
+/* Crypto Demo Styles */
+.pds-demo-crypto { --color-primary: #f7931a; --color-primary-dark: #d97706; --color-secondary: #0d1117; }
+.pds-demo-crypto .pds-nav { background: #0d1117; }
+.pds-demo-crypto.dark-mode { --color-bg: #0d1117; --color-bg-alt: #1a1a2e; }

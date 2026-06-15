@@ -1,0 +1,3 @@
+/* Finance Demo Styles */
+.pds-demo-finance { --color-primary: #22c55e; --color-primary-dark: #16a34a; --color-accent: #f59e0b; }
+.pds-demo-finance .pds-nav { background: #052e16; }

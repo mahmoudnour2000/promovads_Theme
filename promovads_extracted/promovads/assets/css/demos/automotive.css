@@ -1,0 +1,3 @@
+/* Automotive Demo Styles */
+.pds-demo-automotive { --color-primary: #ef4444; --color-primary-dark: #dc2626; --color-secondary: #1c1917; }
+.pds-demo-automotive .pds-nav { background: #450a0a; }

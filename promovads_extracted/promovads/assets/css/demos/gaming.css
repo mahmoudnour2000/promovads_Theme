@@ -1,0 +1,4 @@
+/* Gaming Demo Styles */
+.pds-demo-gaming { --color-primary: #a855f7; --color-primary-dark: #9333ea; --color-secondary: #0f0717; }
+.pds-demo-gaming .pds-nav { background: #0f0717; }
+.pds-demo-gaming .pds-header { background: #1a0a2e; }

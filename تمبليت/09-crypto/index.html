@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CryptoSignal — Crypto, Web3 & DeFi News</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="../assets/css/pds-core.css">
+<style>
+  :root { --c-primary:#f7931a;--c-primary-dk:#e07d0e;--c-secondary:#0d1117;--c-accent:#f0b429; }
+  body { background:#0d1117;color:#e4e4f0; }
+  .site-header { background:#0d1117;border-bottom:1px solid rgba(247,147,26,.2); }
+  .site-nav { background:#060a0f; }
+  .ticker { background:#060a0f;border-color:rgba(247,147,26,.15); }
+  .ticker__label { background:#f7931a; }
+  .ticker__item { color:rgba(255,255,255,.8); }
+  .card { background:#161b22;border-color:rgba(247,147,26,.12); }
+  .card__title { color:#f0f0f8; }
+  .card__meta, .card__excerpt { color:#8888aa; }
+  h1,h2,h3,h4 { color:#f0f0f8; }
+  .logo { color:#f0f0f8; } .logo span { color:#f7931a; }
+  .section-hd { border-color:rgba(247,147,26,.2); }
+  .widget { background:#161b22;border-color:rgba(247,147,26,.12); }
+  .widget__title { background:#0d1117; }
+
+  /* Crypto price ticker */
+  .crypto-bar { background:#060a0f;border-bottom:1px solid rgba(247,147,26,.12);overflow:hidden;height:40px;display:flex;align-items:center; }
+  .crypto-bar-inner { display:flex;gap:0;white-space:nowrap;animation:scroll-left 45s linear infinite; }
+  .coin-item { display:flex;align-items:center;gap:8px;padding:0 20px;border-right:1px solid rgba(255,255,255,.05);font-size:.78rem; }
+  .coin-name { font-weight:700;color:#fff;display:flex;align-items:center;gap:5px; }
+  .coin-price { color:rgba(255,255,255,.75); }
+  .up { color:#22c55e; }
+  .down { color:#ef4444; }
+
+  /* Coin table */
+  .coin-table { width:100%;border-collapse:collapse;font-size:.83rem; }
+  .coin-table th { padding:10px 12px;text-align:left;font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:#8888aa;border-bottom:1px solid rgba(247,147,26,.12); }
+  .coin-table th:nth-child(n+3) { text-align:right; }
+  .coin-table td { padding:12px 12px;border-bottom:1px solid rgba(255,255,255,.04);vertical-align:middle; }
+  .coin-table td:nth-child(n+3) { text-align:right; }
+  .coin-table tr:hover td { background:rgba(247,147,26,.04); }
+  .coin-rank { color:#8888aa;font-size:.78rem;width:32px; }
+  .coin-info { display:flex;align-items:center;gap:10px; }
+  .coin-icon { width:34px;height:34px;border-radius:50%;object-fit:cover;flex-shrink:0; }
+  .coin-sym { display:block;font-size:.72rem;color:#8888aa;margin-top:1px; }
+  .coin-price-td { font-weight:700;color:#f0f0f8; }
+  .change-cell { font-weight:600; }
+  .mini-sparkline { display:flex;gap:1px;align-items:flex-end;height:32px;min-width:64px;justify-content:flex-end; }
+  .spark-bar { width:5px;border-radius:1px 1px 0 0; }
+</style>
+</head>
+<body>
+
+<!-- Crypto Price Bar -->
+<div class="crypto-bar">
+  <div class="crypto-bar-inner">
+    <div class="coin-item"><span class="coin-name"><img src="https://assets.coingecko.com/coins/images/1/small/bitcoin.png" onerror="this.style.display='none'" style="width:16px;height:16px;border-radius:50%">BTC</span><span class="coin-price">$107,440</span><span class="up">+2.8%</span></div>
+    <div class="coin-item"><span class="coin-name">ETH</span><span class="coin-price">$4,820</span><span class="up">+1.9%</span></div>
+    <div class="coin-item"><span class="coin-name">BNB</span><span class="coin-price">$680</span><span class="up">+0.8%</span></div>
+    <div class="coin-item"><span class="coin-name">SOL</span><span class="coin-price">$240</span><span class="up">+3.4%</span></div>
+    <div class="coin-item"><span class="coin-name">ADA</span><span class="coin-price">$0.88</span><span class="down">-0.4%</span></div>
+    <div class="coin-item"><span class="coin-name">AVAX</span><span class="coin-price">$48.20</span><span class="up">+1.2%</span></div>
+    <div class="coin-item"><span class="coin-name">DOT</span><span class="coin-price">$12.40</span><span class="down">-0.9%</span></div>
+    <div class="coin-item"><span class="coin-name">MATIC</span><span class="coin-price">$1.24</span><span class="up">+2.1%</span></div>
+    <div class="coin-item"><span class="coin-name">LINK</span><span class="coin-price">$22.80</span><span class="up">+1.5%</span></div>
+    <div class="coin-item"><span class="coin-name">XRP</span><span class="coin-price">$0.74</span><span class="up">+0.7%</span></div>
+    <!-- duplicate -->
+    <div class="coin-item"><span class="coin-name">BTC</span><span class="coin-price">$107,440</span><span class="up">+2.8%</span></div>
+    <div class="coin-item"><span class="coin-name">ETH</span><span class="coin-price">$4,820</span><span class="up">+1.9%</span></div>
+    <div class="coin-item"><span class="coin-name">SOL</span><span class="coin-price">$240</span><span class="up">+3.4%</span></div>
+    <div class="coin-item"><span class="coin-name">BNB</span><span class="coin-price">$680</span><span class="up">+0.8%</span></div>
+    <div class="coin-item"><span class="coin-name">AVAX</span><span class="coin-price">$48.20</span><span class="up">+1.2%</span></div>
+  </div>
+</div>
+
+<div class="topbar" style="background:#060a0f"><div class="wrap"><span class="topbar__date"><i class="fab fa-bitcoin" style="color:#f7931a;margin-right:5px"></i>BTC Dominance: 54.2% · Global Cap: $4.28T · Mon Jun 15, 2026</span><div class="topbar__social"><a href="#"><i class="fab fa-x-twitter"></i></a><a href="#"><i class="fab fa-discord"></i></a><a href="#"><i class="fab fa-telegram"></i></a></div></div></div>
+
+<header class="site-header"><div class="wrap"><a href="index.html" class="logo"><i class="fab fa-bitcoin" style="color:#f7931a"></i> Crypto<span>Signal</span></a><div class="header-actions"><button class="btn-icon search-trigger" style="background:rgba(255,255,255,.06)"><i class="fas fa-search"></i></button><button class="btn-icon dark-toggle" style="background:rgba(255,255,255,.06)"><i class="fas fa-moon"></i></button><a href="#" class="btn btn-primary" style="background:#f7931a;color:#000;font-weight:700"><i class="fas fa-bell"></i> Price Alerts</a></div></div></header>
+
+<nav class="site-nav"><div class="wrap"><ul class="nav-menu"><li class="nav-item active"><a href="index.html" class="nav-link">Home</a></li><li class="nav-item"><a href="#" class="nav-link">Bitcoin <i class="fas fa-chevron-down"></i></a><div class="dropdown" style="background:#161b22;border-color:rgba(247,147,26,.2)"><a href="#" style="border-color:rgba(247,147,26,.08)">BTC Price</a><a href="#" style="border-color:rgba(247,147,26,.08)">BTC Analysis</a><a href="#" style="border-color:rgba(247,147,26,.08)">Mining</a></div></li><li class="nav-item"><a href="#" class="nav-link">Ethereum</a></li><li class="nav-item"><a href="#" class="nav-link">DeFi</a></li><li class="nav-item"><a href="#" class="nav-link">NFT</a></li><li class="nav-item"><a href="#" class="nav-link">Web3</a></li><li class="nav-item"><a href="#" class="nav-link">Markets</a></li><li class="nav-item"><a href="#" class="nav-link" style="color:#f0b429">🔥 Analysis</a></li></ul></div></nav>
+
+<!-- Header News Strip -->
+<div class="header-news" style="background:#060a0f;border-color:rgba(247,147,26,.15)">
+  <div class="wrap">
+    <div class="header-news__label" style="background:#f7931a">Latest</div>
+    <div class="hn-grid">
+      <a href="single.html" class="hn-card"><div class="hn-card__img"><img src="https://picsum.photos/seed/hn-c1/120/120" alt="" loading="lazy"></div><div class="hn-card__body"><span class="hn-card__cat" style="color:#f7931a">Bitcoin</span><h3 class="hn-card__title" style="color:rgba(255,255,255,.88)">Bitcoin Breaks $107K — Analysts Eye $120K Before Year End</h3><div class="hn-card__meta" style="color:rgba(255,255,255,.4)"><i class="fas fa-clock"></i> 30min ago</div></div></a>
+      <a href="single.html" class="hn-card"><div class="hn-card__img"><img src="https://picsum.photos/seed/hn-c2/120/120" alt="" loading="lazy"></div><div class="hn-card__body"><span class="hn-card__cat" style="color:#f7931a">Ethereum</span><h3 class="hn-card__title" style="color:rgba(255,255,255,.88)">ETH 4.0 "Verge" Upgrade Live — Staking Yields Rise to 8.2%</h3><div class="hn-card__meta" style="color:rgba(255,255,255,.4)"><i class="fas fa-clock"></i> 2h ago</div></div></a>
+      <a href="single.html" class="hn-card"><div class="hn-card__img"><img src="https://picsum.photos/seed/hn-c3/120/120" alt="" loading="lazy"></div><div class="hn-card__body"><span class="hn-card__cat" style="color:#f7931a">ETF</span><h3 class="hn-card__title" style="color:rgba(255,255,255,.88)">BlackRock Bitcoin ETF Crosses $100 Billion AUM Milestone</h3><div class="hn-card__meta" style="color:rgba(255,255,255,.4)"><i class="fas fa-clock"></i> 4h ago</div></div></a>
+      <a href="single.html" class="hn-card"><div class="hn-card__img"><img src="https://picsum.photos/seed/hn-c4/120/120" alt="" loading="lazy"></div><div class="hn-card__body"><span class="hn-card__cat" style="color:#f7931a">DeFi</span><h3 class="hn-card__title" style="color:rgba(255,255,255,.88)">Solana DeFi Volume Hits Record $2.8B Daily — Surpasses Ethereum</h3><div class="hn-card__meta" style="color:rgba(255,255,255,.4)"><i class="fas fa-clock"></i> 6h ago</div></div></a>
+    </div>
+  </div>
+</div>
+
+<div class="ticker"><div class="ticker__label"><span class="ticker__dot"></span>BREAKING</div><div class="ticker__track"><div class="ticker__inner"><span class="ticker__item"><a href="#">Bitcoin breaks $107K for the first time — analysts eye $120K by end of 2026</a></span><span class="ticker__item"><a href="#">BlackRock Bitcoin ETF crosses $100B AUM milestone</a></span><span class="ticker__item"><a href="#">Ethereum ETF approvals expand globally — Japan gives green light</a></span><span class="ticker__item"><a href="#">Solana ecosystem sees record $2.8B daily DEX volume</a></span><span class="ticker__item"><a href="#">US SEC approves spot Ethereum ETF for 12 new providers</a></span><span class="ticker__item"><a href="#">Bitcoin breaks $107K for the first time</a></span></div></div></div>
+
+<main style="padding:36px 0 60px">
+<div class="wrap">
+
+  <!-- Market Cap Bar -->
+  <div style="background:#161b22;border:1px solid rgba(247,147,26,.12);border-radius:10px;padding:16px 20px;margin-bottom:40px;display:flex;gap:28px;flex-wrap:wrap">
+    <div style="text-align:center"><div style="font-size:.68rem;color:#8888aa;text-transform:uppercase;letter-spacing:.08em;margin-bottom:3px">Global Market Cap</div><div style="font-size:1.3rem;font-weight:900;color:#f0f0f8;font-family:'Playfair Display',serif">$4.28 <span style="color:#22c55e;font-size:.9rem">T ▲ +2.1%</span></div></div>
+    <div style="text-align:center"><div style="font-size:.68rem;color:#8888aa;text-transform:uppercase;letter-spacing:.08em;margin-bottom:3px">24h Volume</div><div style="font-size:1.3rem;font-weight:900;color:#f0f0f8;font-family:'Playfair Display',serif">$148 <span style="font-size:.8rem;color:#f0f0f8">B</span></div></div>
+    <div style="text-align:center"><div style="font-size:.68rem;color:#8888aa;text-transform:uppercase;letter-spacing:.08em;margin-bottom:3px">BTC Dominance</div><div style="font-size:1.3rem;font-weight:900;color:#f7931a;font-family:'Playfair Display',serif">54.2%</div></div>
+    <div style="text-align:center"><div style="font-size:.68rem;color:#8888aa;text-transform:uppercase;letter-spacing:.08em;margin-bottom:3px">Fear &amp; Greed</div><div style="font-size:1.3rem;font-weight:900;font-family:'Playfair Display',serif"><span style="color:#22c55e">82</span> <span style="font-size:.75rem;color:#22c55e">Extreme Greed</span></div></div>
+    <div style="text-align:center"><div style="font-size:.68rem;color:#8888aa;text-transform:uppercase;letter-spacing:.08em;margin-bottom:3px">DeFi TVL</div><div style="font-size:1.3rem;font-weight:900;color:#f0f0f8;font-family:'Playfair Display',serif">$88.4 <span style="font-size:.8rem;color:#f0f0f8">B</span></div></div>
+    <div style="text-align:center"><div style="font-size:.68rem;color:#8888aa;text-transform:uppercase;letter-spacing:.08em;margin-bottom:3px">Active Wallets</div><div style="font-size:1.3rem;font-weight:900;color:#f0f0f8;font-family:'Playfair Display',serif">1.24 <span style="font-size:.8rem;color:#f0f0f8">M/day</span></div></div>
+  </div>
+
+  <!-- Coin Price Table -->
+  <div class="section-hd" style="margin-bottom:16px"><h2 class="section-title">Live <span>Prices</span></h2><a href="#" class="see-all">Full Market <i class="fas fa-arrow-right"></i></a></div>
+  <div style="background:#161b22;border:1px solid rgba(247,147,26,.12);border-radius:12px;overflow:hidden;margin-bottom:44px;overflow-x:auto">
+    <table class="coin-table">
+      <thead><tr><th>#</th><th>Coin</th><th>Price</th><th>24h %</th><th>Market Cap</th><th>7d Chart</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="coin-rank">1</td>
+          <td><div class="coin-info"><div style="width:34px;height:34px;border-radius:50%;background:#f7931a;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:.82rem;flex-shrink:0">₿</div><div><strong style="color:#f0f0f8">Bitcoin</strong><span class="coin-sym">BTC</span></div></div></td>
+          <td class="coin-price-td">$107,440</td>
+          <td class="change-cell up">+2.8%</td>
+          <td style="color:#8888aa">$2.12T</td>
+          <td><div class="mini-sparkline"><div class="spark-bar" style="height:40%;background:#22c55e"></div><div class="spark-bar" style="height:55%;background:#22c55e"></div><div class="spark-bar" style="height:35%;background:#ef4444"></div><div class="spark-bar" style="height:65%;background:#22c55e"></div><div class="spark-bar" style="height:50%;background:#22c55e"></div><div class="spark-bar" style="height:75%;background:#22c55e"></div><div class="spark-bar" style="height:90%;background:#22c55e"></div><div class="spark-bar" style="height:100%;background:#22c55e"></div></div></td>
+        </tr>
+        <tr>
+          <td class="coin-rank">2</td>
+          <td><div class="coin-info"><div style="width:34px;height:34px;border-radius:50%;background:#627eea;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:.8rem;flex-shrink:0">Ξ</div><div><strong style="color:#f0f0f8">Ethereum</strong><span class="coin-sym">ETH</span></div></div></td>
+          <td class="coin-price-td">$4,820</td>
+          <td class="change-cell up">+1.9%</td>
+          <td style="color:#8888aa">$580B</td>
+          <td><div class="mini-sparkline"><div class="spark-bar" style="height:60%;background:#22c55e"></div><div class="spark-bar" style="height:50%;background:#ef4444"></div><div class="spark-bar" style="height:70%;background:#22c55e"></div><div class="spark-bar" style="height:65%;background:#22c55e"></div><div class="spark-bar" style="height:80%;background:#22c55e"></div><div class="spark-bar" style="height:85%;background:#22c55e"></div><div class="spark-bar" style="height:90%;background:#22c55e"></div><div class="spark-bar" style="height:100%;background:#22c55e"></div></div></td>
+        </tr>
+        <tr>
+          <td class="coin-rank">3</td>
+          <td><div class="coin-info"><div style="width:34px;height:34px;border-radius:50%;background:#9945ff;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:.82rem;flex-shrink:0">◎</div><div><strong style="color:#f0f0f8">Solana</strong><span class="coin-sym">SOL</span></div></div></td>
+          <td class="coin-price-td">$240</td>
+          <td class="change-cell up">+3.4%</td>
+          <td style="color:#8888aa">$110B</td>
+          <td><div class="mini-sparkline"><div class="spark-bar" style="height:30%;background:#ef4444"></div><div class="spark-bar" style="height:45%;background:#22c55e"></div><div class="spark-bar" style="height:40%;background:#ef4444"></div><div class="spark-bar" style="height:60%;background:#22c55e"></div><div class="spark-bar" style="height:75%;background:#22c55e"></div><div class="spark-bar" style="height:85%;background:#22c55e"></div><div class="spark-bar" style="height:90%;background:#22c55e"></div><div class="spark-bar" style="height:100%;background:#22c55e"></div></div></td>
+        </tr>
+        <tr>
+          <td class="coin-rank">4</td>
+          <td><div class="coin-info"><div style="width:34px;height:34px;border-radius:50%;background:#f3ba2f;display:flex;align-items:center;justify-content:center;color:#000;font-weight:700;font-size:.82rem;flex-shrink:0">B</div><div><strong style="color:#f0f0f8">BNB</strong><span class="coin-sym">BNB</span></div></div></td>
+          <td class="coin-price-td">$680</td>
+          <td class="change-cell up">+0.8%</td>
+          <td style="color:#8888aa">$100B</td>
+          <td><div class="mini-sparkline"><div class="spark-bar" style="height:70%;background:#22c55e"></div><div class="spark-bar" style="height:65%;background:#ef4444"></div><div class="spark-bar" style="height:72%;background:#22c55e"></div><div class="spark-bar" style="height:68%;background:#ef4444"></div><div class="spark-bar" style="height:75%;background:#22c55e"></div><div class="spark-bar" style="height:80%;background:#22c55e"></div><div class="spark-bar" style="height:78%;background:#22c55e"></div><div class="spark-bar" style="height:82%;background:#22c55e"></div></div></td>
+        </tr>
+        <tr>
+          <td class="coin-rank">5</td>
+          <td><div class="coin-info"><div style="width:34px;height:34px;border-radius:50%;background:#2775ca;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:.75rem;flex-shrink:0">USDC</div><div><strong style="color:#f0f0f8">USD Coin</strong><span class="coin-sym">USDC</span></div></div></td>
+          <td class="coin-price-td">$1.00</td>
+          <td class="change-cell" style="color:#8888aa">0.0%</td>
+          <td style="color:#8888aa">$48B</td>
+          <td><div class="mini-sparkline"><div class="spark-bar" style="height:50%;background:#888"></div><div class="spark-bar" style="height:50%;background:#888"></div><div class="spark-bar" style="height:50%;background:#888"></div><div class="spark-bar" style="height:50%;background:#888"></div><div class="spark-bar" style="height:50%;background:#888"></div><div class="spark-bar" style="height:50%;background:#888"></div><div class="spark-bar" style="height:50%;background:#888"></div><div class="spark-bar" style="height:50%;background:#888"></div></div></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Main + Sidebar -->
+  <div class="grid g-main" style="gap:32px">
+    <div>
+      <!-- Hero -->
+      <div class="g-hero" style="gap:4px;border-radius:14px;overflow:hidden;margin-bottom:40px">
+        <div class="card card--hero" style="min-height:460px">
+          <div class="card__thumb" style="height:100%"><img src="https://picsum.photos/seed/crypto1/900/520" alt="Crypto hero"></div>
+          <div class="card__body"><span class="card__cat" style="background:#f7931a;color:#000">Bitcoin</span><h1 class="card__title" style="font-size:1.6rem">Bitcoin Breaks $107,000: Is the Bull Run Just Getting Started?</h1><p class="card__excerpt" style="color:rgba(255,255,255,.75)">Analysts cite ETF inflows, halving effects, and institutional buying as BTC targets $120K...</p><div class="card__meta" style="color:rgba(255,255,255,.6)"><span>Michael Torres</span><span class="dot">1h ago</span><span class="dot">8 min</span></div></div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:4px">
+          <div class="card card--hero" style="flex:1;min-height:224px"><div class="card__thumb" style="height:100%"><img src="https://picsum.photos/seed/crypto2/500/260" alt=""></div><div class="card__body" style="padding:14px"><span class="card__cat" style="background:#627eea;font-size:.68rem">Ethereum</span><h3 class="card__title" style="font-size:.95rem;color:#fff;margin-top:6px">Ethereum ETF AUM Hits $20B — Institutional Adoption Surges</h3></div></div>
+          <div class="card card--hero" style="flex:1;min-height:224px"><div class="card__thumb" style="height:100%"><img src="https://picsum.photos/seed/crypto3/500/260" alt=""></div><div class="card__body" style="padding:14px"><span class="card__cat" style="background:#9945ff;font-size:.68rem">Solana</span><h3 class="card__title" style="font-size:.95rem;color:#fff;margin-top:6px">Solana DEX Volume Breaks $2.8B Record in Single Day</h3></div></div>
+        </div>
+      </div>
+
+      <!-- News Grid -->
+      <div class="section-hd"><h2 class="section-title">Latest <span>Crypto News</span></h2><a href="archive.html" class="see-all">All <i class="fas fa-arrow-right"></i></a></div>
+      <div class="grid g3">
+        <article class="card"><a href="single.html" class="card__thumb"><img src="https://picsum.photos/seed/cn1/500/280" alt="" loading="lazy"><span class="card__cat" style="background:#f7931a;color:#000">BTC</span></a><div class="card__body"><div class="card__meta"><span>2h ago</span><span class="dot">6 min</span></div><h3 class="card__title"><a href="single.html">BlackRock Bitcoin ETF Breaks $100B AUM in Record Time</a></h3></div></article>
+        <article class="card"><a href="single.html" class="card__thumb"><img src="https://picsum.photos/seed/cn2/500/280" alt="" loading="lazy"><span class="card__cat" style="background:#627eea">DeFi</span></a><div class="card__body"><div class="card__meta"><span>4h ago</span><span class="dot">5 min</span></div><h3 class="card__title"><a href="single.html">Uniswap v5 Launches With Cross-Chain Liquidity Pools</a></h3></div></article>
+        <article class="card"><a href="single.html" class="card__thumb"><img src="https://picsum.photos/seed/cn3/500/280" alt="" loading="lazy"><span class="card__cat" style="background:#22c55e">Regulation</span></a><div class="card__body"><div class="card__meta"><span>6h ago</span><span class="dot">7 min</span></div><h3 class="card__title"><a href="single.html">US Crypto Framework Bill Passes Senate Committee 15-8</a></h3></div></article>
+        <article class="card"><a href="single.html" class="card__thumb"><img src="https://picsum.photos/seed/cn4/500/280" alt="" loading="lazy"><span class="card__cat" style="background:#a855f7">NFT</span></a><div class="card__body"><div class="card__meta"><span>Yesterday</span><span class="dot">4 min</span></div><h3 class="card__title"><a href="single.html">NFT Market Rebounds: $240M in Sales Last Week</a></h3></div></article>
+        <article class="card"><a href="single.html" class="card__thumb"><img src="https://picsum.photos/seed/cn5/500/280" alt="" loading="lazy"><span class="card__cat" style="background:#06b6d4">Web3</span></a><div class="card__body"><div class="card__meta"><span>Yesterday</span><span class="dot">5 min</span></div><h3 class="card__title"><a href="single.html">Apple Adds Native Crypto Wallet Support in iOS 20</a></h3></div></article>
+        <article class="card"><a href="single.html" class="card__thumb"><img src="https://picsum.photos/seed/cn6/500/280" alt="" loading="lazy"><span class="card__cat" style="background:#f59e0b;color:#000">Analysis</span></a><div class="card__body"><div class="card__meta"><span>2d ago</span><span class="dot">10 min</span></div><h3 class="card__title"><a href="single.html">On-Chain Data Shows BTC Accumulation at Highest Since 2020</a></h3></div></article>
+      </div>
+    </div>
+    <aside class="sidebar">
+      <div class="widget"><div class="widget__title">📊 Portfolio Tracker</div><div class="widget__body"><p style="font-size:.82rem;color:#8888aa;margin-bottom:12px">Create a free account to track your portfolio</p><a href="#" class="btn btn-primary" style="background:#f7931a;color:#000;display:block;text-align:center;padding:10px;font-weight:700">Connect Wallet</a></div></div>
+      <div class="newsletter-widget" style="background:linear-gradient(135deg,#0d1117,#1a1f2e)"><div class="nl-icon" style="background:#f7931a"><i class="fab fa-bitcoin"></i></div><h4>Crypto Signals</h4><p>Daily market analysis & alpha signals</p><form class="nl-form"><input type="email" placeholder="your@email.com"><button style="background:#f7931a;color:#000">Subscribe</button></form></div>
+      <div class="widget"><div class="widget__title">🔥 Trending</div><div class="widget__body" style="padding:6px 16px">
+        <div class="trending-item"><span class="n">01</span><div><h4><a href="single.html" style="color:#f0f0f8">BTC Bull Run: What the Charts Say</a></h4><span style="color:#8888aa">128K views</span></div></div>
+        <div class="trending-item"><span class="n">02</span><div><h4><a href="single.html" style="color:#f0f0f8">Top 5 DeFi Protocols to Watch Q3</a></h4><span style="color:#8888aa">87K views</span></div></div>
+        <div class="trending-item"><span class="n">03</span><div><h4><a href="single.html" style="color:#f0f0f8">Is Solana the Ethereum Killer?</a></h4><span style="color:#8888aa">64K views</span></div></div>
+      </div></div>
+      <div class="ad-wrap"><p class="ad-label">Advertisement</p><div class="ad-box" style="height:250px;border-radius:8px;background:linear-gradient(135deg,#0d1117,#1a2a3a);color:rgba(255,255,255,.2)">300 × 250</div></div>
+    </aside>
+  </div>
+</div>
+</main>
+
+<div class="footer-nl" style="background:#e07d0e"><div class="wrap"><div><h3 style="color:#000">Crypto Signals Newsletter</h3><p style="color:rgba(0,0,0,.7)">Daily alpha, market analysis & DeFi insights</p></div><form class="footer-nl-form"><input type="email" placeholder="your@email.com" style="border-color:rgba(0,0,0,.2);background:rgba(0,0,0,.15);color:#000"><button type="submit" style="background:#0d1117;color:#f7931a"><i class="fab fa-bitcoin"></i> Subscribe</button></form></div></div>
+<footer class="footer-main" style="background:#060a0f"><div class="wrap"><div class="footer-grid"><div class="footer-brand"><a href="index.html" class="logo"><i class="fab fa-bitcoin" style="color:#f7931a"></i> Crypto<span>Signal</span></a><p>Your #1 source for crypto markets, DeFi, NFT, and Web3 news worldwide.</p><div class="footer-social"><a href="#"><i class="fab fa-x-twitter"></i></a><a href="#"><i class="fab fa-discord"></i></a><a href="#"><i class="fab fa-telegram"></i></a><a href="#"><i class="fab fa-youtube"></i></a></div></div><div class="footer-col"><h4>Coins</h4><ul><li><a href="#">Bitcoin</a></li><li><a href="#">Ethereum</a></li><li><a href="#">Solana</a></li><li><a href="#">BNB</a></li></ul></div><div class="footer-col"><h4>Topics</h4><ul><li><a href="#">DeFi</a></li><li><a href="#">NFT</a></li><li><a href="#">Web3</a></li><li><a href="#">Regulation</a></li></ul></div><div class="footer-col"><h4>Latest</h4><div class="footer-recent"><div class="footer-recent-item"><img src="https://picsum.photos/seed/cf1/80/60" alt=""><div><h5><a href="single.html" style="color:rgba(255,255,255,.8)">BTC Breaks $107K</a></h5><span>1h ago</span></div></div><div class="footer-recent-item"><img src="https://picsum.photos/seed/cf2/80/60" alt=""><div><h5><a href="single.html" style="color:rgba(255,255,255,.8)">BlackRock ETF $100B</a></h5><span>2h ago</span></div></div></div></div></div></div></footer>
+<div class="footer-bottom" style="background:#040608"><div class="wrap"><span>© 2026 CryptoSignal. Not financial advice.</span><div class="footer-bottom-links"><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Disclaimer</a></div></div></div>
+
+<button class="back-top" id="backTop" style="background:#f7931a;color:#000"><i class="fas fa-chevron-up"></i></button>
+<script src="../assets/js/pds-main.js"></script>
+</body>
+</html>

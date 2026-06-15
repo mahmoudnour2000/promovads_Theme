@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Senior AI Engineer at OpenAI — JobsHub</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="../assets/css/pds-core.css">
+<style>
+  :root { --c-primary:#0ea5e9;--c-primary-dk:#0284c7;--c-secondary:#0c4a6e;--c-accent:#38bdf8; }
+  .job-detail-header { background: linear-gradient(135deg,#0c4a6e,#075985); padding: 44px 0; color:#fff; }
+  .jdh-inner { display:flex;align-items:center;gap:24px;flex-wrap:wrap; }
+  .jdh-logo { width:80px;height:80px;border-radius:14px;background:#fff;display:flex;align-items:center;justify-content:center;padding:10px;flex-shrink:0; }
+  .jdh-logo img { width:100%;height:100%;object-fit:contain; }
+  .jdh-body { flex:1; }
+  .jdh-title { font-size:clamp(1.4rem,3vw,2.2rem);font-weight:900;color:#fff;margin-bottom:6px; }
+  .jdh-company { font-size:1.05rem;color:#38bdf8;font-weight:600;margin-bottom:10px; }
+  .jdh-meta { display:flex;gap:16px;flex-wrap:wrap;font-size:.83rem;color:rgba(255,255,255,.75); }
+  .jdh-meta span { display:flex;align-items:center;gap:5px; }
+  .jdh-actions { display:flex;flex-direction:column;gap:10px;align-items:center; }
+  .btn-apply-big { background:#0ea5e9;color:#fff;padding:14px 32px;border-radius:10px;font-weight:700;font-size:1rem;text-align:center;white-space:nowrap;transition:background .2s; }
+  .btn-apply-big:hover { background:#0284c7; }
+  .btn-save-job { border:2px solid rgba(255,255,255,.3);color:#fff;padding:12px 24px;border-radius:10px;font-weight:600;font-size:.88rem;text-align:center; }
+  .deadline { font-size:.72rem;color:rgba(255,255,255,.5);text-align:center; }
+
+  .job-detail-body { padding:44px 0 60px; }
+  .job-detail-grid { display:grid;grid-template-columns:1fr 340px;gap:32px; }
+  .job-info-box { background:#f0f9ff;border:1px solid #bae6fd;border-radius:12px;padding:24px;margin-bottom:28px; }
+  .job-info-grid { display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:16px; }
+  .job-info-item label { font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:#0369a1;display:block;margin-bottom:4px;font-weight:700; }
+  .job-info-item strong { font-size:.88rem;color:#0c4a6e;font-weight:600; }
+
+  .skills-list { display:flex;flex-wrap:wrap;gap:8px;margin-top:10px; }
+  .skill-tag { background:#dbeafe;color:#1d4ed8;padding:5px 12px;border-radius:6px;font-size:.78rem;font-weight:600; }
+
+  .sidebar-card { background:#fff;border:1px solid #e8e8e8;border-radius:12px;overflow:hidden;margin-bottom:20px; }
+  .sidebar-card__title { background:#0c4a6e;color:#fff;padding:12px 16px;font-size:.82rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em; }
+  .sidebar-card__body { padding:16px; }
+
+  .similar-job { display:flex;gap:12px;padding:12px 0;border-bottom:1px solid #f0f0f0;align-items:flex-start; }
+  .similar-job:last-child { border-bottom:none; }
+  .similar-job img { width:42px;height:42px;border-radius:8px;object-fit:contain;border:1px solid #e8e8e8;padding:4px;flex-shrink:0; }
+  .similar-job h4 { font-size:.82rem;font-weight:600;color:#0c4a6e;margin-bottom:3px;line-height:1.3; }
+  .similar-job h4 a:hover { color:#0ea5e9; }
+  .similar-job span { font-size:.72rem;color:#888; }
+</style>
+</head>
+<body>
+
+<div class="topbar" style="background:#0c4a6e"><div class="wrap"><span class="topbar__date"><i class="fas fa-briefcase" style="color:#38bdf8;margin-right:5px"></i>2,847 new jobs today</span><div class="topbar__social"><a href="#"><i class="fab fa-linkedin-in"></i></a></div><div class="topbar__links"><a href="#">Post a Job</a></div></div></div>
+<header class="site-header" style="border-bottom:2px solid #0ea5e9"><div class="wrap"><a href="index.html" class="logo"><i class="fas fa-briefcase" style="color:#0ea5e9"></i> Jobs<span>Hub</span></a><div class="header-actions"><a href="index.html" class="btn btn-outline" style="border-color:#0ea5e9;color:#0ea5e9"><i class="fas fa-arrow-left"></i> Back to Jobs</a><a href="#" class="btn btn-primary" style="background:#0ea5e9"><i class="fas fa-user"></i> Sign In</a></div></div></header>
+
+<!-- Header News Strip -->
+<div class="header-news" style="border-color:#bae6fd">
+  <div class="wrap">
+    <div class="header-news__label" style="background:#0ea5e9">Latest</div>
+    <div class="hn-grid">
+      <a href="single.html" class="hn-card"><div class="hn-card__img"><img src="https://picsum.photos/seed/hn-j1/120/120" alt="" loading="lazy"></div><div class="hn-card__body"><span class="hn-card__cat" style="color:#0ea5e9">Job Market</span><h3 class="hn-card__title">AI Engineer Roles Surge 340% — Average Salary Now $220K</h3><div class="hn-card__meta"><i class="fas fa-clock"></i> 2h ago</div></div></a>
+      <a href="single.html" class="hn-card"><div class="hn-card__img"><img src="https://picsum.photos/seed/hn-j2/120/120" alt="" loading="lazy"></div><div class="hn-card__body"><span class="hn-card__cat" style="color:#0ea5e9">Remote Work</span><h3 class="hn-card__title">68% of Companies Now Offer Permanent Remote Options</h3><div class="hn-card__meta"><i class="fas fa-clock"></i> 4h ago</div></div></a>
+      <a href="single.html" class="hn-card"><div class="hn-card__img"><img src="https://picsum.photos/seed/hn-j3/120/120" alt="" loading="lazy"></div><div class="hn-card__body"><span class="hn-card__cat" style="color:#0ea5e9">MENA</span><h3 class="hn-card__title">Saudi Arabia Creates 80,000 Tech Jobs Under Vision 2030</h3><div class="hn-card__meta"><i class="fas fa-clock"></i> 6h ago</div></div></a>
+      <a href="single.html" class="hn-card"><div class="hn-card__img"><img src="https://picsum.photos/seed/hn-j4/120/120" alt="" loading="lazy"></div><div class="hn-card__body"><span class="hn-card__cat" style="color:#0ea5e9">Salary</span><h3 class="hn-card__title">2026 Salary Report: Full-Stack Engineers Up 18% YoY</h3><div class="hn-card__meta"><i class="fas fa-clock"></i> Yesterday</div></div></a>
+    </div>
+  </div>
+</div>
+
+<div class="job-detail-header">
+  <div class="wrap">
+    <nav class="breadcrumb" style="margin-bottom:20px"><a href="index.html" style="color:rgba(255,255,255,.6)">Home</a><span class="sep" style="color:rgba(255,255,255,.4)">›</span><a href="index.html" style="color:rgba(255,255,255,.6)">Technology</a><span class="sep" style="color:rgba(255,255,255,.4)">›</span><span class="current" style="color:rgba(255,255,255,.8)">Senior AI Engineer</span></nav>
+    <div class="jdh-inner">
+      <div class="jdh-logo"><img src="https://logo.clearbit.com/openai.com" alt="OpenAI"></div>
+      <div class="jdh-body">
+        <h1 class="jdh-title">Senior AI Engineer — LLM Infrastructure</h1>
+        <div class="jdh-company"><i class="fas fa-check-circle"></i> OpenAI · Verified Employer</div>
+        <div class="jdh-meta">
+          <span><i class="fas fa-map-marker-alt"></i> San Francisco, CA / Remote</span>
+          <span><i class="fas fa-clock"></i> Full-time</span>
+          <span><i class="fas fa-dollar-sign" style="color:#38bdf8"></i> $200K – $350K/yr + Equity</span>
+          <span><i class="fas fa-users"></i> 287 applicants</span>
+          <span><i class="fas fa-calendar"></i> Posted 2 hours ago</span>
+        </div>
+      </div>
+      <div class="jdh-actions">
+        <a href="#" class="btn-apply-big"><i class="fas fa-paper-plane"></i> Apply Now</a>
+        <a href="#" class="btn-save-job"><i class="far fa-bookmark"></i> Save Job</a>
+        <span class="deadline">⏰ Deadline: July 15, 2026</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<main class="job-detail-body">
+<div class="wrap">
+  <div class="job-detail-grid">
+
+    <article>
+      <!-- Job Overview -->
+      <div class="job-info-box">
+        <div class="job-info-grid">
+          <div class="job-info-item"><label>Job Type</label><strong>Full-time</strong></div>
+          <div class="job-info-item"><label>Level</label><strong>Senior (5+ yrs)</strong></div>
+          <div class="job-info-item"><label>Salary</label><strong style="color:#0369a1">$200K–$350K</strong></div>
+          <div class="job-info-item"><label>Location</label><strong>Remote / SF</strong></div>
+          <div class="job-info-item"><label>Category</label><strong>Engineering</strong></div>
+          <div class="job-info-item"><label>Education</label><strong>BS/MS/PhD</strong></div>
+        </div>
+      </div>
+
+      <div class="entry-content">
+        <h2>About OpenAI</h2>
+        <p>OpenAI is an AI research and deployment company. Our mission is to ensure that artificial general intelligence benefits all of humanity. We build safe and beneficial AI systems and make them widely available.</p>
+
+        <h2>The Role</h2>
+        <p>We are looking for a Senior AI Engineer to join our LLM Infrastructure team. In this role, you will be responsible for building and scaling the systems that power some of the world's most widely used AI products, including ChatGPT, GPT-5, and the OpenAI API.</p>
+
+        <p>You will work closely with research teams to productionize new model capabilities, optimize inference pipelines for cost and latency, and design fault-tolerant distributed systems that handle millions of requests per second.</p>
+
+        <h2>Key Responsibilities</h2>
+        <ul>
+          <li>Design and implement high-performance inference pipelines for large-scale language models</li>
+          <li>Optimize model serving for latency, throughput, and cost efficiency</li>
+          <li>Build distributed systems that scale to millions of concurrent users</li>
+          <li>Collaborate with research teams to bring new model capabilities to production</li>
+          <li>Drive architectural decisions for next-generation infrastructure</li>
+          <li>Mentor junior engineers and contribute to team culture</li>
+        </ul>
+
+        <h2>Required Qualifications</h2>
+        <ul>
+          <li>5+ years of experience in software engineering with focus on ML systems</li>
+          <li>Strong proficiency in Python and at least one compiled language (C++, Rust, Go)</li>
+          <li>Experience with distributed systems design and implementation</li>
+          <li>Deep understanding of ML model architectures, especially Transformers</li>
+          <li>Experience with GPU programming (CUDA, Triton, or similar)</li>
+          <li>BS/MS/PhD in Computer Science, Electrical Engineering, or equivalent</li>
+        </ul>
+
+        <h2>Required Skills</h2>
+        <div class="skills-list">
+          <span class="skill-tag">Python</span><span class="skill-tag">PyTorch</span><span class="skill-tag">CUDA</span>
+          <span class="skill-tag">Distributed Systems</span><span class="skill-tag">Kubernetes</span><span class="skill-tag">C++</span>
+          <span class="skill-tag">Triton</span><span class="skill-tag">RLHF</span><span class="skill-tag">Transformers</span>
+          <span class="skill-tag">Ray</span><span class="skill-tag">MLOps</span>
+        </div>
+
+        <h2>Benefits</h2>
+        <ul>
+          <li>💰 Competitive salary ($200K – $350K) + equity + bonus</li>
+          <li>🏥 Full health, dental, and vision insurance for you and dependents</li>
+          <li>🌍 Remote-first culture with optional SF office access</li>
+          <li>📚 $10,000/year learning & development budget</li>
+          <li>🧠 Work on the most exciting AI problems in existence</li>
+          <li>🌴 Unlimited PTO + 20 company holidays</li>
+        </ul>
+
+        <div class="info-box" style="margin-top:28px">
+          <strong><i class="fas fa-lightbulb"></i> Application Tip</strong>
+          <p>OpenAI values concrete examples of systems you've built at scale. Include GitHub links, papers, or case studies that demonstrate your impact.</p>
+        </div>
+      </div>
+
+      <!-- Share -->
+      <div style="margin-top:28px;padding-top:20px;border-top:1px solid #e8e8e8">
+        <p style="font-size:.78rem;color:#888;margin-bottom:10px;text-transform:uppercase;letter-spacing:.08em">Share this Job</p>
+        <div style="display:flex;gap:8px">
+          <a href="#" class="share-btn share-li" style="width:auto;padding:8px 16px;border-radius:6px;font-size:.78rem;font-weight:600;gap:7px;display:flex;align-items:center"><i class="fab fa-linkedin-in"></i> Share on LinkedIn</a>
+          <a href="#" class="share-btn share-tw" style="width:auto;padding:8px 16px;border-radius:6px;font-size:.78rem;font-weight:600;gap:7px;display:flex;align-items:center"><i class="fab fa-x-twitter"></i> Share</a>
+          <a href="#" class="share-btn share-wa" style="width:auto;padding:8px 16px;border-radius:6px;font-size:.78rem;font-weight:600;gap:7px;display:flex;align-items:center"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+        </div>
+      </div>
+
+      <!-- Related Articles -->
+      <section class="related" style="margin-top:44px">
+        <h3 class="section-title">Career <span>Resources</span></h3>
+        <div class="grid g3" style="margin-top:20px">
+          <article class="card"><a href="single.html" class="card__thumb"><img src="https://picsum.photos/seed/cr1/500/280" alt="" loading="lazy"><span class="card__cat" style="background:#0ea5e9">Guide</span></a><div class="card__body"><h3 class="card__title"><a href="single.html">How to Land an AI Engineer Role at Big Tech in 2026</a></h3><div class="card__meta"><span>3d ago</span></div></div></article>
+          <article class="card"><a href="single.html" class="card__thumb"><img src="https://picsum.photos/seed/cr2/500/280" alt="" loading="lazy"><span class="card__cat" style="background:#0284c7">Salary</span></a><div class="card__body"><h3 class="card__title"><a href="single.html">ML Engineer Salaries at FAANG vs Startups: 2026 Data</a></h3><div class="card__meta"><span>5d ago</span></div></div></article>
+          <article class="card"><a href="single.html" class="card__thumb"><img src="https://picsum.photos/seed/cr3/500/280" alt="" loading="lazy"><span class="card__cat" style="background:#38bdf8;color:#000">Interview</span></a><div class="card__body"><h3 class="card__title"><a href="single.html">OpenAI Interview Process: What to Expect at Each Stage</a></h3><div class="card__meta"><span>1w ago</span></div></div></article>
+        </div>
+      </section>
+    </article>
+
+    <!-- Sidebar -->
+    <aside>
+      <div class="sidebar-card" style="background:linear-gradient(135deg,#0c4a6e,#0369a1);border:none">
+        <div style="padding:24px;text-align:center;color:#fff">
+          <div style="width:56px;height:56px;background:rgba(255,255,255,.15);border-radius:50%;margin:0 auto 14px;display:flex;align-items:center;justify-content:center;font-size:1.4rem"><i class="fas fa-paper-plane"></i></div>
+          <h3 style="color:#fff;font-size:1.1rem;margin-bottom:8px">Ready to Apply?</h3>
+          <p style="font-size:.83rem;opacity:.8;margin-bottom:18px">Join 287 other applicants. Application takes ~5 minutes.</p>
+          <a href="#" class="btn-apply-big" style="display:block;border-radius:8px">Apply Now <i class="fas fa-arrow-right"></i></a>
+          <p style="font-size:.72rem;opacity:.55;margin-top:10px">⏰ Deadline: July 15, 2026</p>
+        </div>
+      </div>
+
+      <div class="sidebar-card">
+        <div class="sidebar-card__title">About OpenAI</div>
+        <div class="sidebar-card__body">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px">
+            <img src="https://logo.clearbit.com/openai.com" alt="OpenAI" style="width:48px;height:48px;border-radius:10px;border:1px solid #e8e8e8;padding:6px;object-fit:contain">
+            <div><strong style="display:block;color:#0c4a6e">OpenAI</strong><span style="font-size:.75rem;color:#0ea5e9"><i class="fas fa-check-circle"></i> Verified</span></div>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;font-size:.78rem;color:#555;margin-bottom:14px">
+            <div><span style="color:#888;display:block;font-size:.68rem;text-transform:uppercase;margin-bottom:2px">Industry</span>Artificial Intelligence</div>
+            <div><span style="color:#888;display:block;font-size:.68rem;text-transform:uppercase;margin-bottom:2px">Size</span>1,000 – 5,000</div>
+            <div><span style="color:#888;display:block;font-size:.68rem;text-transform:uppercase;margin-bottom:2px">Founded</span>2015</div>
+            <div><span style="color:#888;display:block;font-size:.68rem;text-transform:uppercase;margin-bottom:2px">HQ</span>San Francisco</div>
+          </div>
+          <a href="#" style="font-size:.78rem;color:#0ea5e9;font-weight:600;display:flex;align-items:center;gap:5px">View 24 open roles <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <div class="sidebar-card">
+        <div class="sidebar-card__title">Similar Jobs</div>
+        <div class="sidebar-card__body" style="padding:8px 16px">
+          <div class="similar-job"><img src="https://logo.clearbit.com/google.com" alt="Google"><div><h4><a href="single.html">ML Research Engineer — Google DeepMind</a></h4><span>$180K–$300K · Remote</span></div></div>
+          <div class="similar-job"><img src="https://logo.clearbit.com/meta.com" alt="Meta"><div><h4><a href="single.html">AI Engineer — Meta AI Research</a></h4><span>$170K–$280K · Menlo Park</span></div></div>
+          <div class="similar-job"><img src="https://logo.clearbit.com/microsoft.com" alt="Microsoft"><div><h4><a href="single.html">Senior ML Engineer — Azure AI</a></h4><span>$160K–$250K · Hybrid</span></div></div>
+          <div class="similar-job"><img src="https://logo.clearbit.com/nvidia.com" alt="NVIDIA"><div><h4><a href="single.html">DL Systems Engineer — NVIDIA</a></h4><span>$180K–$320K · Santa Clara</span></div></div>
+        </div>
+      </div>
+
+    </aside>
+  </div>
+</div>
+</main>
+
+<footer class="footer-main" style="background:#0c4a6e"><div class="wrap"><div class="footer-grid"><div class="footer-brand"><a href="index.html" class="logo"><i class="fas fa-briefcase" style="color:#38bdf8"></i> Jobs<span style="color:#38bdf8">Hub</span></a><p>The world's most trusted job platform.</p><div class="footer-social"><a href="#"><i class="fab fa-linkedin-in"></i></a><a href="#"><i class="fab fa-x-twitter"></i></a></div></div><div class="footer-col"><h4>Job Types</h4><ul><li><a href="#">Full-time</a></li><li><a href="#">Remote</a></li><li><a href="#">Contract</a></li></ul></div><div class="footer-col"><h4>Company</h4><ul><li><a href="#">About</a></li><li><a href="#">Post a Job</a></li><li><a href="#">Contact</a></li></ul></div><div class="footer-col"><h4>Resources</h4><ul><li><a href="archive.html">Career Advice</a></li><li><a href="#">Salary Guide</a></li></ul></div></div></div></footer>
+<div class="footer-bottom" style="background:#09375a"><div class="wrap"><span>© 2026 JobsHub</span><div class="footer-bottom-links"><a href="#">Privacy</a><a href="#">Terms</a></div></div></div>
+
+<button class="back-top" id="backTop"><i class="fas fa-chevron-up"></i></button>
+<script src="../assets/js/pds-main.js"></script>
+</body>
+</html>

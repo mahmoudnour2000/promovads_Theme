@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GTA VI Review — LevelUp</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="../assets/css/pds-core.css">
+<style>
+  :root { --c-primary:#a855f7;--c-primary-dk:#9333ea;--c-secondary:#0f0717;--c-accent:#e879f9; }
+  body { background:#0f0717;color:#e4e0f0; }
+  .site-header { background:#130921;border-bottom:2px solid rgba(168,85,247,.3); }
+  .site-nav { background:#0a0412; }
+  h1,h2,h3,h4 { color:#f0e8f8; }
+  .logo { color:#f0e8f8; } .logo span { color:#a855f7; }
+  .entry-content { color:#c4b8d8; }
+  .entry-content h2 { color:#f0e8f8;border-color:rgba(168,85,247,.2); }
+  .entry-content blockquote { background:#1a0e2a;border-color:#a855f7;color:#e879f9; }
+  .article-meta { border-color:rgba(168,85,247,.2);color:#8878aa; }
+  .author-box { background:#1a0e2a;border-color:rgba(168,85,247,.2); }
+  .post-nav__item { border-color:rgba(168,85,247,.12);background:#1a0e2a; }
+  .post-nav__label { color:#8878aa; }
+  .card { background:#1a0e2a;border-color:rgba(168,85,247,.15); }
+  .card__title { color:#f0e8f8; }
+  .widget { background:#1a0e2a;border-color:rgba(168,85,247,.15); }
+  .widget__title { background:#130921; }
+
+  /* Review verdict box */
+  .review-verdict { background:linear-gradient(135deg,#1a0e2a,#2d0a50);border:1px solid rgba(168,85,247,.3);border-radius:14px;padding:28px;margin:28px 0;display:flex;gap:24px;align-items:center;flex-wrap:wrap; }
+  .verdict-score-big { width:100px;height:100px;border-radius:50%;background:linear-gradient(135deg,#a855f7,#e879f9);display:flex;flex-direction:column;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 0 30px rgba(168,85,247,.4); }
+  .verdict-score-big .num { font-size:2.4rem;font-weight:900;font-family:'Playfair Display',serif;color:#fff;line-height:1; }
+  .verdict-score-big .den { font-size:.75rem;color:rgba(255,255,255,.6); }
+  .verdict-text h3 { color:#f0e8f8;margin-bottom:8px;font-size:1.2rem; }
+  .verdict-text .badge { display:inline-block;background:#a855f7;color:#fff;padding:4px 12px;border-radius:6px;font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px; }
+  .verdict-text p { font-size:.85rem;color:#8878aa;line-height:1.65; }
+  .score-breakdown { display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:12px;margin-top:20px;width:100%; }
+  .score-row { display:flex;flex-direction:column;gap:4px; }
+  .score-row label { font-size:.72rem;color:#8878aa;text-transform:uppercase;letter-spacing:.06em; }
+  .score-row .bar-wrap { height:8px;background:rgba(255,255,255,.06);border-radius:4px;overflow:hidden; }
+  .score-row .bar-fill { height:100%;border-radius:4px; }
+  .score-row .val { font-size:.78rem;font-weight:700;color:#f0e8f8; }
+</style>
+</head>
+<body>
+<div class="topbar" style="background:#0a0412"><div class="wrap"><span class="topbar__date"><i class="fas fa-gamepad" style="color:#a855f7;margin-right:5px"></i>Mon Jun 15, 2026 · E3 Week</span><div class="topbar__social"><a href="#"><i class="fab fa-discord"></i></a><a href="#"><i class="fab fa-twitch"></i></a></div></div></div>
+<header class="site-header"><div class="wrap"><a href="index.html" class="logo"><i class="fas fa-gamepad" style="color:#a855f7"></i> Level<span>Up</span></a><div class="header-actions"><button class="btn-icon dark-toggle" style="background:rgba(255,255,255,.07)"><i class="fas fa-moon"></i></button><a href="#" class="btn btn-primary" style="background:#a855f7">Subscribe</a></div></div></header>
+<nav class="site-nav"><div class="wrap"><ul class="nav-menu"><li class="nav-item"><a href="index.html" class="nav-link">Home</a></li><li class="nav-item active"><a href="#" class="nav-link">Reviews</a></li><li class="nav-item"><a href="#" class="nav-link">Esports</a></li><li class="nav-item"><a href="#" class="nav-link">PC Gaming</a></li></ul></div></nav>
+
+<!-- Header News Strip -->
+<div class="header-news" style="background:#0a0412;border-color:rgba(168,85,247,.2)">
+  <div class="wrap">
+    <div class="header-news__label" style="background:#a855f7">Latest</div>
+    <div class="hn-grid">
+      <a href="single.html" class="hn-card"><div class="hn-card__img"><img src="https://picsum.photos/seed/hn-g1/120/120" alt="" loading="lazy"></div><div class="hn-card__body"><span class="hn-card__cat" style="color:#a855f7">Rockstar</span><h3 class="hn-card__title" style="color:rgba(255,255,255,.88)">GTA VI Sets Opening Day Record: 20M Concurrent Players</h3><div class="hn-card__meta" style="color:rgba(255,255,255,.4)"><i class="fas fa-clock"></i> 1h ago</div></div></a>
+      <a href="single.html" class="hn-card"><div class="hn-card__img"><img src="https://picsum.photos/seed/hn-g2/120/120" alt="" loading="lazy"></div><div class="hn-card__body"><span class="hn-card__cat" style="color:#a855f7">PlayStation</span><h3 class="hn-card__title" style="color:rgba(255,255,255,.88)">PS6 Pro Announced for Nov 2026 — 8K Gaming &amp; 2TB SSD</h3><div class="hn-card__meta" style="color:rgba(255,255,255,.4)"><i class="fas fa-clock"></i> 3h ago</div></div></a>
+      <a href="single.html" class="hn-card"><div class="hn-card__img"><img src="https://picsum.photos/seed/hn-g3/120/120" alt="" loading="lazy"></div><div class="hn-card__body"><span class="hn-card__cat" style="color:#a855f7">Esports</span><h3 class="hn-card__title" style="color:rgba(255,255,255,.88)">Faker Wins Record 5th World Championship — T1 Continues</h3><div class="hn-card__meta" style="color:rgba(255,255,255,.4)"><i class="fas fa-clock"></i> 5h ago</div></div></a>
+      <a href="single.html" class="hn-card"><div class="hn-card__img"><img src="https://picsum.photos/seed/hn-g4/120/120" alt="" loading="lazy"></div><div class="hn-card__body"><span class="hn-card__cat" style="color:#a855f7">Nintendo</span><h3 class="hn-card__title" style="color:rgba(255,255,255,.88)">Switch 2 Sells 10M Units in First Month — Fastest Console Ever</h3><div class="hn-card__meta" style="color:rgba(255,255,255,.4)"><i class="fas fa-clock"></i> Yesterday</div></div></a>
+    </div>
+  </div>
+</div>
+
+<main style="padding:36px 0 60px">
+<div class="wrap">
+  <div class="grid g-main" style="gap:36px">
+    <article>
+      <nav class="breadcrumb" style="color:#8878aa"><a href="index.html" style="color:#8878aa">Home</a><span class="sep">›</span><a href="archive.html" style="color:#8878aa">Reviews</a><span class="sep">›</span><span class="current" style="color:#f0e8f8">GTA VI</span></nav>
+      <div class="article-cats"><a href="#" style="background:#a855f7">Review</a><a href="#" style="background:#0f0717;border:1px solid rgba(168,85,247,.3);color:#a855f7">Open World</a></div>
+      <h1 class="article-title">GTA VI Review: Rockstar Redefines Open World Gaming in a Masterpiece Decade in the Making</h1>
+      <p class="article-subtitle">After 12 years of development and the most anticipated game launch in history, Grand Theft Auto VI doesn't just meet expectations — it obliterates them.</p>
+      <div class="article-meta">
+        <div class="author"><img src="https://i.pravatar.cc/80?img=70" alt="Kyle Mitchell"><div><strong style="color:#f0e8f8">Kyle Mitchell</strong><div style="font-size:.72rem;color:#a855f7">Senior Games Editor</div></div></div>
+        <span><i class="fas fa-calendar-alt"></i> June 15, 2026</span>
+        <span><i class="far fa-clock"></i> 12 min read</span>
+        <span><i class="far fa-eye"></i> 2.4M views</span>
+        <div class="share"><a href="#" class="share-btn share-tw"><i class="fab fa-x-twitter"></i></a><a href="#" class="share-btn share-wa"><i class="fab fa-whatsapp"></i></a><a href="#" class="share-btn" style="background:#5865f2"><i class="fab fa-discord"></i></a></div>
+      </div>
+
+      <!-- Platform info -->
+      <div style="background:#1a0e2a;border:1px solid rgba(168,85,247,.15);border-radius:10px;padding:16px;margin-bottom:24px;display:flex;gap:16px;flex-wrap:wrap;font-size:.82rem">
+        <div><span style="color:#8878aa;font-size:.7rem;text-transform:uppercase;display:block;margin-bottom:2px">Platform</span><span style="color:#f0e8f8">PS6 / Xbox Series X / PC</span></div>
+        <div><span style="color:#8878aa;font-size:.7rem;text-transform:uppercase;display:block;margin-bottom:2px">Developer</span><span style="color:#f0e8f8">Rockstar Games</span></div>
+        <div><span style="color:#8878aa;font-size:.7rem;text-transform:uppercase;display:block;margin-bottom:2px">Genre</span><span style="color:#f0e8f8">Open World / Action</span></div>
+        <div><span style="color:#8878aa;font-size:.7rem;text-transform:uppercase;display:block;margin-bottom:2px">Price</span><span style="color:#f0e8f8">$79.99</span></div>
+        <div><span style="color:#8878aa;font-size:.7rem;text-transform:uppercase;display:block;margin-bottom:2px">Play Time</span><span style="color:#f0e8f8">~80 hours story</span></div>
+      </div>
+
+      <figure class="article-feat"><img src="https://picsum.photos/seed/gtavi/1200/640" alt="GTA VI Screenshot"><figcaption>Vice City reimagined in GTA VI — the level of detail is extraordinary. © Rockstar Games</figcaption></figure>
+
+      <div class="entry-content">
+        <p>Let's cut straight to it: Grand Theft Auto VI is the greatest open world game ever made. It's not a matter of personal preference or nostalgia goggles. In virtually every measurable dimension — world design, story, characters, physics, NPC AI, mission variety, and sheer scale — Rockstar has produced something that will define the medium for the next decade.</p>
+
+        <h2>The World: Vice City Like You've Never Seen</h2>
+        <p>Returning to Vice City felt like revisiting a dream. But this is Vice City transformed — a living, breathing metropolitan area spanning 4x the size of Los Santos in GTAV, populated with NPCs that have daily routines, remember player actions, and respond dynamically to everything from weather to the player's reputation.</p>
+
+        <blockquote>"GTA VI is not a game. It's a destination. I genuinely lost track of time just driving around, watching the city exist." — Kyle Mitchell, LevelUp</blockquote>
+
+        <h2>Story: Two Protagonists, One Masterpiece</h2>
+        <p>Playing as both Lucia and Jason, GTA VI tells the most sophisticated story in the franchise's history — a love story wrapped in crime, trauma, and the American Dream's hollow promise. The performances are Oscar-worthy, and the tonal shifts between comedy, tragedy, and action are expertly handled.</p>
+
+        <h2>Gameplay: Everything Works</h2>
+        <p>The gunplay has been completely rebuilt. Cars handle with precision. The new wanted system creates genuinely tense police encounters. And for the first time in the franchise, stealth missions actually work.</p>
+      </div>
+
+      <!-- Review Verdict Box -->
+      <div class="review-verdict">
+        <div class="verdict-score-big"><div class="num">9.6</div><div class="den">/10</div></div>
+        <div class="verdict-text">
+          <div class="badge">⭐ Masterpiece — Editors' Choice 2026</div>
+          <h3>GTA VI Sets a New Standard for Open World Games</h3>
+          <p>A once-in-a-decade achievement that redefines what video games can be. The rare game that genuinely justifies years of anticipation.</p>
+        </div>
+        <div class="score-breakdown">
+          <div class="score-row"><label>Story</label><div class="bar-wrap"><div class="bar-fill" style="width:98%;background:#a855f7"></div></div><span class="val">9.8</span></div>
+          <div class="score-row"><label>Graphics</label><div class="bar-wrap"><div class="bar-fill" style="width:100%;background:#e879f9"></div></div><span class="val">10</span></div>
+          <div class="score-row"><label>Gameplay</label><div class="bar-wrap"><div class="bar-fill" style="width:95%;background:#a855f7"></div></div><span class="val">9.5</span></div>
+          <div class="score-row"><label>World Design</label><div class="bar-wrap"><div class="bar-fill" style="width:96%;background:#e879f9"></div></div><span class="val">9.6</span></div>
+          <div class="score-row"><label>Multiplayer</label><div class="bar-wrap"><div class="bar-fill" style="width:90%;background:#06b6d4"></div></div><span class="val">9.0</span></div>
+          <div class="score-row"><label>Performance</label><div class="bar-wrap"><div class="bar-fill" style="width:87%;background:#f59e0b"></div></div><span class="val">8.7</span></div>
+        </div>
+      </div>
+
+      <div class="article-tags"><h4 style="color:#8878aa">Tags</h4><div class="tags"><a href="#" class="tag">#GTAVI</a><a href="#" class="tag">#Rockstar</a><a href="#" class="tag">#OpenWorld</a><a href="#" class="tag">#PS6</a><a href="#" class="tag">#GameReview</a></div></div>
+      <div class="author-box">
+        <img src="https://i.pravatar.cc/120?img=70" alt="Kyle Mitchell" class="author-box__avatar">
+        <div><h3 class="author-box__name" style="color:#f0e8f8">Kyle Mitchell</h3><div class="author-box__role">Senior Games Editor · LevelUp</div><p class="author-box__bio" style="color:#8878aa">Kyle has been reviewing games for 15 years and has completed every main GTA game multiple times. He rated GTA V a 9.4 in 2013.</p><div class="author-social"><a href="#" style="background:#1a0e2a;border-color:rgba(168,85,247,.2)"><i class="fab fa-x-twitter"></i></a><a href="#" style="background:#1a0e2a;border-color:rgba(168,85,247,.2)"><i class="fab fa-discord"></i></a></div></div>
+      </div>
+      <nav class="post-nav">
+        <div class="post-nav__item"><img src="https://picsum.photos/seed/gpn1/140/104" alt=""><div><div class="post-nav__label"><i class="fas fa-arrow-left"></i> Previous</div><div class="post-nav__title" style="color:#f0e8f8">Zelda: Echoes of Infinity Review (9.2)</div></div></div>
+        <div class="post-nav__item post-nav__item--next"><img src="https://picsum.photos/seed/gpn2/140/104" alt=""><div><div class="post-nav__label">Next <i class="fas fa-arrow-right"></i></div><div class="post-nav__title" style="color:#f0e8f8">GTA Online 3 Mode Guide: First Impressions</div></div></div>
+      </nav>
+      <section class="related"><h3 class="section-title" style="color:#f0e8f8">Related <span>Articles</span></h3><div class="grid g3" style="margin-top:20px">
+        <article class="card"><a href="single.html" class="card__thumb"><img src="https://picsum.photos/seed/gr1/500/280" alt="" loading="lazy"><span class="card__cat">Review</span></a><div class="card__body"><h3 class="card__title"><a href="single.html">Best Games of 2026 So Far: Our Top 10 List</a></h3></div></article>
+        <article class="card"><a href="single.html" class="card__thumb"><img src="https://picsum.photos/seed/gr2/500/280" alt="" loading="lazy"><span class="card__cat" style="background:#06b6d4">Guide</span></a><div class="card__body"><h3 class="card__title"><a href="single.html">GTA VI: All Hidden Secrets We've Found So Far</a></h3></div></article>
+        <article class="card"><a href="single.html" class="card__thumb"><img src="https://picsum.photos/seed/gr3/500/280" alt="" loading="lazy"><span class="card__cat" style="background:#f59e0b;color:#000">Feature</span></a><div class="card__body"><h3 class="card__title"><a href="single.html">Inside Rockstar's 12-Year Journey to Make GTA VI</a></h3></div></article>
+      </div></section>
+    </article>
+    <aside class="sidebar">
+      <div style="background:linear-gradient(135deg,#1a0e2a,#2d0a50);border:1px solid rgba(168,85,247,.3);border-radius:12px;padding:20px;text-align:center;margin-bottom:20px">
+        <div style="font-size:.72rem;color:#8878aa;text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px">Our Score</div>
+        <div style="font-size:5rem;font-weight:900;font-family:'Playfair Display',serif;color:#a855f7;line-height:1;text-shadow:0 0 30px rgba(168,85,247,.5)">9.6</div>
+        <div style="font-size:.9rem;color:#e879f9;font-weight:700;margin-top:4px">⭐ Masterpiece</div>
+      </div>
+      <div class="newsletter-widget" style="background:linear-gradient(135deg,#0f0717,#1a0e2a)"><div class="nl-icon" style="background:#a855f7"><i class="fas fa-gamepad"></i></div><h4>LevelUp Weekly</h4><p>Reviews & gaming news weekly</p><form class="nl-form"><input type="email" placeholder="your@email.com"><button style="background:#a855f7">Subscribe</button></form></div>
+      <div class="ad-wrap"><p class="ad-label">Advertisement</p><div class="ad-box" style="height:600px;border-radius:8px;background:linear-gradient(180deg,#0f0717,#2d0a50);color:rgba(255,255,255,.2);font-size:.75rem">160 × 600</div></div>
+    </aside>
+  </div>
+</div>
+</main>
+
+<footer class="footer-main" style="background:#0a0412"><div class="wrap"><div class="footer-grid"><div class="footer-brand"><a href="index.html" class="logo"><i class="fas fa-gamepad" style="color:#a855f7"></i> Level<span>Up</span></a><p>Your ultimate gaming destination.</p><div class="footer-social"><a href="#"><i class="fab fa-x-twitter"></i></a><a href="#"><i class="fab fa-discord"></i></a><a href="#"><i class="fab fa-twitch"></i></a></div></div><div class="footer-col"><h4>Sections</h4><ul><li><a href="#">Reviews</a></li><li><a href="#">Esports</a></li><li><a href="#">PC Gaming</a></li></ul></div><div class="footer-col"><h4>Platforms</h4><ul><li><a href="#">PS6</a></li><li><a href="#">Xbox</a></li><li><a href="#">PC</a></li></ul></div><div class="footer-col"><h4>Legal</h4><ul><li><a href="#">Privacy</a></li><li><a href="#">Terms</a></li></ul></div></div></div></footer>
+<div class="footer-bottom" style="background:rgba(0,0,0,.5)"><div class="wrap"><span>© 2026 LevelUp Gaming.</span></div></div>
+<button class="back-top" id="backTop" style="background:#a855f7"><i class="fas fa-chevron-up"></i></button>
+<script src="../assets/js/pds-main.js"></script>
+</body>
+</html>

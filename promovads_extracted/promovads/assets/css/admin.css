@@ -1,0 +1,3 @@
+/* PromovaDS News - Admin Styles */
+.pds-demo-import-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+.wrap .notice { margin-top: 1rem; }

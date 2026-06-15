@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PropertyHub — Real Estate News & Listings</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="../assets/css/pds-core.css">
+<style>
+  :root { --c-primary:#8b5cf6;--c-primary-dk:#7c3aed;--c-secondary:#2e1065;--c-accent:#a78bfa; }
+  .site-header { border-bottom:3px solid #8b5cf6; }
+  .site-nav { background:#2e1065; }
+  .ticker { background:#ede9fe;border-color:#c4b5fd; }
+  .ticker__label { background:#8b5cf6; }
+  .ticker__item a { color:#4c1d95; }
+
+  /* Search Hero */
+  .re-hero { background:linear-gradient(135deg,#2e1065,#4c1d95);padding:80px 0;text-align:center;position:relative;overflow:hidden; }
+  .re-hero::before { content:'';position:absolute;inset:0;background:url('https://picsum.photos/seed/re-bg/1400/600') center/cover;opacity:.12; }
+  .re-hero .wrap { position:relative; }
+  .re-hero h1 { color:#fff;font-size:clamp(1.8rem,4vw,3rem);margin-bottom:10px; }
+  .re-hero h1 span { color:#a78bfa; }
+  .re-hero p { color:rgba(255,255,255,.7);margin-bottom:32px; }
+
+  .re-search { background:#fff;border-radius:14px;padding:6px;box-shadow:0 20px 60px rgba(0,0,0,.25);display:flex;gap:4px;max-width:800px;margin:0 auto;flex-wrap:wrap; }
+  .re-search input, .re-search select { flex:1;padding:11px 14px;border:none;outline:none;font-size:.85rem;min-width:120px; }
+  .re-search select { border-left:1px solid #f0f0f0;border-right:1px solid #f0f0f0; }
+  .re-search button { background:#8b5cf6;color:#fff;padding:11px 22px;border-radius:10px;font-weight:700;font-size:.85rem;white-space:nowrap; }
+
+  .re-stats { display:flex;gap:32px;justify-content:center;margin-top:28px;flex-wrap:wrap; }
+  .re-stat { text-align:center;color:#fff; }
+  .re-stat strong { display:block;font-size:1.6rem;font-weight:900;font-family:'Playfair Display',serif;color:#a78bfa; }
+  .re-stat span { font-size:.75rem;opacity:.7; }
+
+  /* Property Card */
+  .prop-card { background:#fff;border:1px solid #e8e8e8;border-radius:12px;overflow:hidden;transition:all .25s; }
+  .prop-card:hover { transform:translateY(-4px);box-shadow:0 12px 36px rgba(139,92,246,.15);border-color:#8b5cf6; }
+  .prop-card__img { position:relative;overflow:hidden;aspect-ratio:16/10; }
+  .prop-card__img img { width:100%;height:100%;object-fit:cover;transition:transform .4s; }
+  .prop-card:hover .prop-card__img img { transform:scale(1.04); }
+  .prop-tag { position:absolute;top:10px;left:10px;background:#8b5cf6;color:#fff;font-size:.7rem;font-weight:700;padding:3px 9px;border-radius:4px;text-transform:uppercase;z-index:2; }
+  .prop-save { position:absolute;top:10px;right:10px;width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,.9);display:flex;align-items:center;justify-content:center;font-size:13px;color:#888;z-index:2;cursor:pointer; }
+  .prop-card__body { padding:16px; }
+  .prop-price { font-size:1.3rem;font-weight:900;color:#8b5cf6;font-family:'Playfair Display',serif;margin-bottom:4px; }
+  .prop-address { font-size:.83rem;color:#555;margin-bottom:10px;display:flex;align-items:center;gap:5px; }
+  .prop-specs { display:flex;gap:14px;font-size:.78rem;color:#888;flex-wrap:wrap; }
+  .prop-spec { display:flex;align-items:center;gap:4px; }
+
+  .section-hd::before { background:#8b5cf6; }
+</style>
+</head>
+<body>
+<div class="topbar"><div class="wrap"><span class="topbar__date"><i class="fas fa-building" style="color:#8b5cf6;margin-right:5px"></i>2,847 new listings today · Mon Jun 15, 2026</span><div class="topbar__links"><a href="#">For Agents</a><a href="#">Advertise</a></div></div></div>
+
+<header class="site-header"><div class="wrap"><a href="index.html" class="logo"><i class="fas fa-home" style="color:#8b5cf6"></i> Property<span>Hub</span></a><div class="header-actions"><button class="btn-icon search-trigger"><i class="fas fa-search"></i></button><button class="btn-icon dark-toggle"><i class="fas fa-moon"></i></button><a href="#" class="btn btn-primary" style="background:#8b5cf6"><i class="fas fa-plus"></i> List Property</a></div></div></header>
+
+<nav class="site-nav"><div class="wrap"><ul class="nav-menu"><li class="nav-item active"><a href="index.html" class="nav-link">Home</a></li><li class="nav-item"><a href="#" class="nav-link">Buy</a></li><li class="nav-item"><a href="#" class="nav-link">Rent</a></li><li class="nav-item"><a href="#" class="nav-link">Commercial</a></li><li class="nav-item"><a href="#" class="nav-link">Off-Plan</a></li><li class="nav-item"><a href="#" class="nav-link">Market News</a></li><li class="nav-item"><a href="#" class="nav-link">Mortgage Calculator</a></li></ul></div></nav>
+
+<!-- Header News Strip -->
+<div class="header-news" style="border-color:#e9d5ff">
+  <div class="wrap">
+    <div class="header-news__label" style="background:#8b5cf6">Latest</div>
+    <div class="hn-grid">
+      <a href="single.html" class="hn-card"><div class="hn-card__img"><img src="https://picsum.photos/seed/hn-r1/120/120" alt="" loading="lazy"></div><div class="hn-card__body"><span class="hn-card__cat" style="color:#8b5cf6">Dubai</span><h3 class="hn-card__title">Dubai Q2 Breaks Record: $8.2 Billion in Property Transactions</h3><div class="hn-card__meta"><i class="fas fa-clock"></i> 1h ago</div></div></a>
+      <a href="single.html" class="hn-card"><div class="hn-card__img"><img src="https://picsum.photos/seed/hn-r2/120/120" alt="" loading="lazy"></div><div class="hn-card__body"><span class="hn-card__cat" style="color:#8b5cf6">Riyadh</span><h3 class="hn-card__title">Riyadh Luxury Prices Up 34% YoY as Vision 2030 Attracts Buyers</h3><div class="hn-card__meta"><i class="fas fa-clock"></i> 3h ago</div></div></a>
+      <a href="single.html" class="hn-card"><div class="hn-card__img"><img src="https://picsum.photos/seed/hn-r3/120/120" alt="" loading="lazy"></div><div class="hn-card__body"><span class="hn-card__cat" style="color:#8b5cf6">Mortgage</span><h3 class="hn-card__title">Fed Rate Cut in September — Mortgage Applications Already Surge 22%</h3><div class="hn-card__meta"><i class="fas fa-clock"></i> 5h ago</div></div></a>
+      <a href="single.html" class="hn-card"><div class="hn-card__img"><img src="https://picsum.photos/seed/hn-r4/120/120" alt="" loading="lazy"></div><div class="hn-card__body"><span class="hn-card__cat" style="color:#8b5cf6">NYC</span><h3 class="hn-card__title">Manhattan Apartment Prices Fall 8% — Buyer's Market Emerging</h3><div class="hn-card__meta"><i class="fas fa-clock"></i> Yesterday</div></div></a>
+    </div>
+  </div>
+</div>
+
+<div class="ticker"><div class="ticker__label"><span class="ticker__dot"></span>MARKET NEWS</div><div class="ticker__track"><div class="ticker__inner"><span class="ticker__item"><a href="#">Dubai real estate market hits record $8.2B in Q2 2026 transactions</a></span><span class="ticker__item"><a href="#">NYC Manhattan apartment prices fall 8% — buyer's market emerging</a></span><span class="ticker__item"><a href="#">Interest rates expected to drop Q3 — mortgage applications surge 22%</a></span><span class="ticker__item"><a href="#">Riyadh luxury residential market grows 34% YoY ahead of Vision 2030</a></span><span class="ticker__item"><a href="#">Dubai real estate market hits record $8.2B in Q2 2026</a></span></div></div></div>
+
+<!-- Hero Search -->
+<div class="re-hero">
+  <div class="wrap">
+    <h1>Find Your Perfect <span>Property</span></h1>
+    <p>Search 380,000+ verified listings in 50+ cities worldwide</p>
+    <div class="re-search">
+      <input type="text" placeholder="City, neighborhood, address...">
+      <select><option>All Types</option><option>Apartment</option><option>Villa</option><option>Commercial</option></select>
+      <select><option>Buy</option><option>Rent</option><option>Off-Plan</option></select>
+      <select><option>Any Price</option><option>Under $200K</option><option>$200K-$500K</option><option>$500K+</option></select>
+      <button><i class="fas fa-search"></i> Search</button>
+    </div>
+    <div class="re-stats">
+      <div class="re-stat"><strong>380K+</strong><span>Active Listings</span></div>
+      <div class="re-stat"><strong>50+</strong><span>Cities</span></div>
+      <div class="re-stat"><strong>12,000+</strong><span>Verified Agents</span></div>
+      <div class="re-stat"><strong>98%</strong><span>Satisfaction Rate</span></div>
+    </div>
+  </div>
+</div>
+
+<main style="padding:48px 0 60px">
+<div class="wrap">
+
+  <!-- Featured Properties -->
+  <div class="section-hd"><h2 class="section-title">Featured <span>Properties</span></h2><a href="archive.html" class="see-all">All Properties <i class="fas fa-arrow-right"></i></a></div>
+  <div class="grid g3" style="margin-bottom:52px">
+    <div class="prop-card">
+      <div class="prop-card__img"><img src="https://picsum.photos/seed/prop1/500/300" alt="" loading="lazy"><span class="prop-tag">Featured</span><button class="prop-save"><i class="far fa-heart"></i></button></div>
+      <div class="prop-card__body"><div class="prop-price">$2,450,000</div><div class="prop-address"><i class="fas fa-map-marker-alt" style="color:#8b5cf6"></i>Downtown Dubai Marina, UAE</div><div class="prop-specs"><span class="prop-spec"><i class="fas fa-bed" style="color:#8b5cf6"></i>4 Beds</span><span class="prop-spec"><i class="fas fa-bath" style="color:#8b5cf6"></i>3 Baths</span><span class="prop-spec"><i class="fas fa-ruler-combined" style="color:#8b5cf6"></i>3,200 sqft</span></div></div>
+    </div>
+    <div class="prop-card">
+      <div class="prop-card__img"><img src="https://picsum.photos/seed/prop2/500/300" alt="" loading="lazy"><span class="prop-tag" style="background:#22c55e">New</span><button class="prop-save"><i class="far fa-heart"></i></button></div>
+      <div class="prop-card__body"><div class="prop-price">$890,000</div><div class="prop-address"><i class="fas fa-map-marker-alt" style="color:#8b5cf6"></i>Palm Jumeirah, Dubai</div><div class="prop-specs"><span class="prop-spec"><i class="fas fa-bed" style="color:#8b5cf6"></i>2 Beds</span><span class="prop-spec"><i class="fas fa-bath" style="color:#8b5cf6"></i>2 Baths</span><span class="prop-spec"><i class="fas fa-ruler-combined" style="color:#8b5cf6"></i>1,650 sqft</span></div></div>
+    </div>
+    <div class="prop-card">
+      <div class="prop-card__img"><img src="https://picsum.photos/seed/prop3/500/300" alt="" loading="lazy"><span class="prop-tag" style="background:#f59e0b;color:#000">Off-Plan</span><button class="prop-save"><i class="far fa-heart"></i></button></div>
+      <div class="prop-card__body"><div class="prop-price">$4,800,000</div><div class="prop-address"><i class="fas fa-map-marker-alt" style="color:#8b5cf6"></i>Al Wasl, Riyadh</div><div class="prop-specs"><span class="prop-spec"><i class="fas fa-bed" style="color:#8b5cf6"></i>6 Beds</span><span class="prop-spec"><i class="fas fa-bath" style="color:#8b5cf6"></i>5 Baths</span><span class="prop-spec"><i class="fas fa-ruler-combined" style="color:#8b5cf6"></i>6,400 sqft</span></div></div>
+    </div>
+  </div>
+
+  <!-- Main + Sidebar -->
+  <div class="grid g-main" style="gap:32px">
+    <div>
+      <!-- Market News -->
+      <div class="section-hd"><h2 class="section-title">Market <span>News</span></h2><a href="archive.html" class="see-all">All <i class="fas fa-arrow-right"></i></a></div>
+      <div class="grid g3">
+        <article class="card"><a href="single.html" class="card__thumb"><img src="https://picsum.photos/seed/rn1/500/280" alt="" loading="lazy"><span class="card__cat" style="background:#8b5cf6">Dubai</span></a><div class="card__body"><div class="card__meta"><span>2h ago</span><span class="dot">5 min</span></div><h3 class="card__title"><a href="single.html">Dubai Real Estate Breaks Record: $8.2B in Q2 2026 Transactions</a></h3><p class="card__excerpt">The emirate's property market shows no signs of slowing despite global economic uncertainty...</p></div></article>
+        <article class="card"><a href="single.html" class="card__thumb"><img src="https://picsum.photos/seed/rn2/500/280" alt="" loading="lazy"><span class="card__cat" style="background:#0ea5e9">Mortgage</span></a><div class="card__body"><div class="card__meta"><span>4h ago</span><span class="dot">7 min</span></div><h3 class="card__title"><a href="single.html">Fed Rate Cut Expected in September — What It Means for Homebuyers</a></h3><p class="card__excerpt">Mortgage rates could fall below 5.5% by year-end, opening new opportunities...</p></div></article>
+        <article class="card"><a href="single.html" class="card__thumb"><img src="https://picsum.photos/seed/rn3/500/280" alt="" loading="lazy"><span class="card__cat" style="background:#f59e0b;color:#000">Riyadh</span></a><div class="card__body"><div class="card__meta"><span>Yesterday</span><span class="dot">6 min</span></div><h3 class="card__title"><a href="single.html">Riyadh Luxury Market Up 34% YoY as Vision 2030 Projects Attract Buyers</a></h3><p class="card__excerpt">NEOM and other mega-developments are reshaping the Saudi capital's property landscape...</p></div></article>
+      </div>
+    </div>
+    <aside class="sidebar">
+      <div class="newsletter-widget" style="background:linear-gradient(135deg,#2e1065,#4c1d95)"><div class="nl-icon" style="background:#8b5cf6"><i class="fas fa-home"></i></div><h4>Property Alerts</h4><p>New listings matching your criteria</p><form class="nl-form"><input type="email" placeholder="your@email.com"><button style="background:#8b5cf6">Get Alerts</button></form></div>
+      <div class="widget"><div class="widget__title" style="background:#2e1065">Market Summary</div><div class="widget__body">
+        <div style="font-size:.82rem"><div style="display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid #f0f0f0"><span>Dubai Avg Price</span><strong style="color:#8b5cf6">$485/sqft</strong></div><div style="display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid #f0f0f0"><span>YoY Change</span><strong style="color:#22c55e">+12.4%</strong></div><div style="display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid #f0f0f0"><span>Avg Days on Market</span><strong>28 days</strong></div><div style="display:flex;justify-content:space-between;padding:7px 0"><span>Mortgage Rate</span><strong style="color:#f59e0b">5.85%</strong></div></div>
+      </div></div>
+      <div class="ad-wrap"><p class="ad-label">Advertisement</p><div class="ad-box" style="height:250px;border-radius:8px;background:linear-gradient(135deg,#2e1065,#4c1d95);color:rgba(255,255,255,.2)">300 × 250</div></div>
+    </aside>
+  </div>
+</div>
+</main>
+
+<div class="footer-nl" style="background:#7c3aed"><div class="wrap"><div><h3>PropertyHub Newsletter</h3><p>Market reports, new listings & investment insights</p></div><form class="footer-nl-form"><input type="email" placeholder="your@email.com"><button type="submit"><i class="fas fa-paper-plane"></i> Subscribe</button></form></div></div>
+<footer class="footer-main" style="background:#1e0d3f"><div class="wrap"><div class="footer-grid"><div class="footer-brand"><a href="index.html" class="logo"><i class="fas fa-home" style="color:#a78bfa"></i> Property<span style="color:#a78bfa">Hub</span></a><p>The most trusted real estate platform in MENA and beyond.</p><div class="footer-social"><a href="#"><i class="fab fa-linkedin-in"></i></a><a href="#"><i class="fab fa-x-twitter"></i></a><a href="#"><i class="fab fa-instagram"></i></a></div></div><div class="footer-col"><h4>Browse</h4><ul><li><a href="#">Buy</a></li><li><a href="#">Rent</a></li><li><a href="#">Commercial</a></li><li><a href="#">Off-Plan</a></li></ul></div><div class="footer-col"><h4>Cities</h4><ul><li><a href="#">Dubai</a></li><li><a href="#">Riyadh</a></li><li><a href="#">Abu Dhabi</a></li><li><a href="#">Cairo</a></li></ul></div><div class="footer-col"><h4>Resources</h4><ul><li><a href="archive.html">Market News</a></li><li><a href="#">Mortgage Calc</a></li><li><a href="#">Investment Guide</a></li></ul></div></div></div></footer>
+<div class="footer-bottom" style="background:rgba(0,0,0,.4)"><div class="wrap"><span>© 2026 PropertyHub. All rights reserved.</span><div class="footer-bottom-links"><a href="#">Privacy</a><a href="#">Terms</a></div></div></div>
+
+<button class="back-top" id="backTop" style="background:#8b5cf6"><i class="fas fa-chevron-up"></i></button>
+<script src="../assets/js/pds-main.js"></script>
+</body>
+</html>
