@@ -19,13 +19,13 @@ if ( $category ) {
 	$query_args['cat'] = absint( $category );
 }
 
-$posts = new WP_Query( $query_args );
+$hero_query = new WP_Query( $query_args );
 
-if ( ! $posts->have_posts() ) {
+if ( ! $hero_query->have_posts() ) {
 	return;
 }
 
-$all_posts = $posts->posts;
+$all_posts = $hero_query->posts;
 wp_reset_postdata();
 
 $main  = $all_posts[0]  ?? null;

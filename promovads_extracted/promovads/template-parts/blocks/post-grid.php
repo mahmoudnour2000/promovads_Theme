@@ -38,9 +38,9 @@ if ( $tag ) {
 	$query_args['tag'] = sanitize_key( $tag );
 }
 
-$posts = new WP_Query( $query_args );
+$grid_query = new WP_Query( $query_args );
 
-if ( ! $posts->have_posts() ) {
+if ( ! $grid_query->have_posts() ) {
 	return;
 }
 ?>
@@ -64,8 +64,8 @@ if ( ! $posts->have_posts() ) {
 	<?php if ( 'list' === $layout ) : ?>
 		<div class="pds-post-list">
 			<?php
-			while ( $posts->have_posts() ) {
-				$posts->the_post();
+			while ( $grid_query->have_posts() ) {
+				$grid_query->the_post();
 				get_template_part( 'template-parts/blocks/card', 'list' );
 			}
 			?>
@@ -73,8 +73,8 @@ if ( ! $posts->have_posts() ) {
 	<?php else : ?>
 		<div class="pds-grid pds-grid--<?php echo absint( $columns ); ?>">
 			<?php
-			while ( $posts->have_posts() ) {
-				$posts->the_post();
+			while ( $grid_query->have_posts() ) {
+				$grid_query->the_post();
 				get_template_part( 'template-parts/blocks/card', $layout );
 			}
 			?>

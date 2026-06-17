@@ -1,74 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl" class="demo-health">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Medical News — Archive — HealthWave</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>أرشيف — صحة+</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <link rel="stylesheet" href="../assets/css/pds-core.css">
-<style>
-  :root { --c-primary:#14b8a6;--c-primary-dk:#0f766e;--c-secondary:#042f2e;--c-accent:#2dd4bf; }
-  .archive-hd { background:linear-gradient(135deg,#042f2e,#134e4a); }
-  .site-header { border-bottom:3px solid #14b8a6; }
-  .site-nav { background:#042f2e; }
-  .widget__title { background:#042f2e; }
-  .card__cat { background:#14b8a6; }
-  .pagination .current { background:#14b8a6;border-color:#14b8a6;color:#fff; }
-</style>
+<link rel="stylesheet" href="css/health-ar.css">
 </head>
-<body>
-<div class="topbar" style="background:#042f2e"><div class="wrap"><span class="topbar__date">Mon Jun 15, 2026 · WHO Health Day</span></div></div>
-<header class="site-header"><div class="wrap"><a href="index.html" class="logo"><i class="fas fa-heartbeat" style="color:#14b8a6"></i> Health<span>Wave</span></a><div class="header-actions"><a href="#" class="btn btn-primary" style="background:#14b8a6">Find Doctor</a></div></div></header>
-<nav class="site-nav"><div class="wrap"><ul class="nav-menu"><li class="nav-item"><a href="index.html" class="nav-link">Home</a></li><li class="nav-item active"><a href="#" class="nav-link">Medical News</a></li><li class="nav-item"><a href="#" class="nav-link">Wellness</a></li></ul></div></nav>
-
-<!-- Header News Strip -->
-<div class="header-news" style="border-color:#ccfbf1">
+<body class="page-inner">
+<div class="health-topbar"><div class="wrap"><div class="health-topbar__left"><span class="health-topbar__live"><i class="fas fa-newspaper"></i> أخبار صحية يومياً</span></div><div class="health-topbar__social"><a href="#"><i class="fab fa-x-twitter"></i></a></div></div></div>
+<header class="health-header health-header--compact">
   <div class="wrap">
-    <div class="header-news__label" style="background:#14b8a6">Latest</div>
-    <div class="hn-grid">
-      <a href="single.html" class="hn-card"><div class="hn-card__img"><img src="https://picsum.photos/seed/hn-h1/120/120" alt="" loading="lazy"></div><div class="hn-card__body"><span class="hn-card__cat" style="color:#0f766e">WHO</span><h3 class="hn-card__title">WHO Approves First mRNA Malaria Vaccine With 94% Efficacy</h3><div class="hn-card__meta"><i class="fas fa-clock"></i> 1h ago</div></div></a>
-      <a href="single.html" class="hn-card"><div class="hn-card__img"><img src="https://picsum.photos/seed/hn-h2/120/120" alt="" loading="lazy"></div><div class="hn-card__body"><span class="hn-card__cat" style="color:#0f766e">Genetics</span><h3 class="hn-card__title">CRISPR Therapy Restores Hearing in Hereditary Deafness Trial</h3><div class="hn-card__meta"><i class="fas fa-clock"></i> 3h ago</div></div></a>
-      <a href="single.html" class="hn-card"><div class="hn-card__img"><img src="https://picsum.photos/seed/hn-h3/120/120" alt="" loading="lazy"></div><div class="hn-card__body"><span class="hn-card__cat" style="color:#0f766e">Cardiology</span><h3 class="hn-card__title">GLP-1 Drugs Show Major Cardiovascular Benefits Beyond Weight Loss</h3><div class="hn-card__meta"><i class="fas fa-clock"></i> 5h ago</div></div></a>
-      <a href="single.html" class="hn-card"><div class="hn-card__img"><img src="https://picsum.photos/seed/hn-h4/120/120" alt="" loading="lazy"></div><div class="hn-card__body"><span class="hn-card__cat" style="color:#0f766e">Alzheimer's</span><h3 class="hn-card__title">New Drug Slows Alzheimer's Decline by 40% in Phase 3</h3><div class="hn-card__meta"><i class="fas fa-clock"></i> Yesterday</div></div></a>
-    </div>
-  </div>
-</div>
-
-<div class="archive-hd"><div class="wrap"><span class="label"><i class="fas fa-flask"></i> Category</span><h1>Medical News</h1><p>Latest research, drug approvals, and clinical breakthroughs reviewed by our medical editorial board</p><span class="count">3,210 articles · Medically reviewed</span></div></div>
-
-<main style="padding:32px 0 60px">
-<div class="wrap">
-  <div class="grid g-main" style="gap:32px">
-    <div>
-      <div class="grid g3">
-        <article class="card"><a href="single.html" class="card__thumb"><img src="https://picsum.photos/seed/hna1/500/280" alt="" loading="lazy"><span class="card__cat">WHO</span></a><div class="card__body"><div class="card__meta"><span>1h ago</span><span class="dot">6 min</span></div><h3 class="card__title"><a href="single.html">WHO Approves First mRNA Malaria Vaccine: 94% Efficacy</a></h3><p class="card__excerpt">A landmark moment in global public health...</p></div></article>
-        <article class="card"><a href="single.html" class="card__thumb"><img src="https://picsum.photos/seed/hna2/500/280" alt="" loading="lazy"><span class="card__cat" style="background:#6366f1">Genetics</span></a><div class="card__body"><div class="card__meta"><span>3h ago</span><span class="dot">5 min</span></div><h3 class="card__title"><a href="single.html">CRISPR Therapy Restores Hearing in Hereditary Deafness Trial</a></h3></div></article>
-        <article class="card"><a href="single.html" class="card__thumb"><img src="https://picsum.photos/seed/hna3/500/280" alt="" loading="lazy"><span class="card__cat" style="background:#7c3aed">Alzheimer's</span></a><div class="card__body"><div class="card__meta"><span>Yesterday</span><span class="dot">7 min</span></div><h3 class="card__title"><a href="single.html">New Alzheimer's Drug Slows Cognitive Decline by 40%</a></h3></div></article>
-        <article class="card"><a href="single.html" class="card__thumb"><img src="https://picsum.photos/seed/hna4/500/280" alt="" loading="lazy"><span class="card__cat" style="background:#f59e0b;color:#000">Cardiology</span></a><div class="card__body"><div class="card__meta"><span>2d ago</span><span class="dot">5 min</span></div><h3 class="card__title"><a href="single.html">GLP-1 Drugs Dramatically Reduce Heart Attack Risk Beyond Weight</a></h3></div></article>
-        <article class="card"><a href="single.html" class="card__thumb"><img src="https://picsum.photos/seed/hna5/500/280" alt="" loading="lazy"><span class="card__cat" style="background:#6366f1">Mental Health</span></a><div class="card__body"><div class="card__meta"><span>3d ago</span><span class="dot">8 min</span></div><h3 class="card__title"><a href="single.html">Ketamine Therapy Now Available in 30 More Countries for Depression</a></h3></div></article>
-        <article class="card"><a href="single.html" class="card__thumb"><img src="https://picsum.photos/seed/hna6/500/280" alt="" loading="lazy"><span class="card__cat" style="background:#22c55e">Nutrition</span></a><div class="card__body"><div class="card__meta"><span>4d ago</span><span class="dot">4 min</span></div><h3 class="card__title"><a href="single.html">Mediterranean Diet Reduces Dementia Risk: Largest Study to Date</a></h3></div></article>
-        <article class="card"><a href="single.html" class="card__thumb"><img src="https://picsum.photos/seed/hna7/500/280" alt="" loading="lazy"><span class="card__cat">Cancer</span></a><div class="card__body"><div class="card__meta"><span>1w ago</span><span class="dot">9 min</span></div><h3 class="card__title"><a href="single.html">Pan-Cancer mRNA Vaccine Enters Phase 2 Trials Across 18 Hospitals</a></h3></div></article>
-        <article class="card"><a href="single.html" class="card__thumb"><img src="https://picsum.photos/seed/hna8/500/280" alt="" loading="lazy"><span class="card__cat" style="background:#14b8a6">Gut Health</span></a><div class="card__body"><div class="card__meta"><span>1w ago</span><span class="dot">5 min</span></div><h3 class="card__title"><a href="single.html">Microbiome Modulation Shows Promise Against Autoimmune Diseases</a></h3></div></article>
-        <article class="card"><a href="single.html" class="card__thumb"><img src="https://picsum.photos/seed/hna9/500/280" alt="" loading="lazy"><span class="card__cat" style="background:#ef4444">Pediatrics</span></a><div class="card__body"><div class="card__meta"><span>2w ago</span><span class="dot">6 min</span></div><h3 class="card__title"><a href="single.html">Screen Time Under Age 2 Linked to Delayed Language Development</a></h3></div></article>
+    <div class="health-header__bar">
+      <a href="index.html" class="health-logo"><div class="health-logo__icon"><i class="fas fa-heartbeat"></i></div><div>صحة<span>+</span></div></a>
+      <div class="health-header__actions">
+        <button class="health-btn-icon search-trigger"><i class="fas fa-search"></i></button>
+        <a href="archive.html" class="health-btn-live"><i class="fas fa-bolt"></i> نصائح صحية</a>
       </div>
-      <nav class="pagination"><span class="current">1</span><a href="#">2</a><a href="#">3</a><span>…</span><a href="#">161</a><a href="#" style="width:auto;padding:0 14px">Next <i class="fas fa-arrow-right"></i></a></nav>
     </div>
-    <aside class="sidebar">
-      <div class="newsletter-widget" style="background:linear-gradient(135deg,#042f2e,#134e4a)"><div class="nl-icon" style="background:#14b8a6"><i class="fas fa-heartbeat"></i></div><h4>Health Weekly</h4><p>Evidence-based updates</p><form class="nl-form"><input type="email" placeholder="your@email.com"><button style="background:#14b8a6">Subscribe</button></form></div>
-      <div class="widget"><div class="widget__title">Sub-categories</div><div class="widget__body">
-        <div class="tags"><a class="tag" href="#">Cardiology</a><a class="tag" href="#">Neurology</a><a class="tag" href="#">Oncology</a><a class="tag" href="#">Genetics</a><a class="tag" href="#">Vaccines</a><a class="tag" href="#">Pediatrics</a><a class="tag" href="#">Mental Health</a><a class="tag" href="#">Nutrition</a></div>
-      </div></div>
-      <div class="ad-wrap"><p class="ad-label">Advertisement</p><div class="ad-box" style="height:250px;border-radius:8px;background:linear-gradient(135deg,#042f2e,#134e4a);color:rgba(255,255,255,.2)">300 × 250</div></div>
-    </aside>
+    <nav class="health-nav site-nav site-nav--chips" aria-label="الأقسام الصحية">
+      <ul class="health-nav__list site-nav__list">
+      <li class="health-nav__item site-nav__item active"><a href="index.html"><i class="fas fa-home" aria-hidden="true"></i><span>الرئيسية</span></a></li>
+      <li class="health-nav__item site-nav__item" data-cat="nutrition" style="--nav-accent:#22c55e"><a href="archive.html?cat=nutrition"><i class="fas fa-apple-alt" aria-hidden="true"></i><span>تغذية</span></a></li>
+      <li class="health-nav__item site-nav__item" data-cat="fitness" style="--nav-accent:#f97316"><a href="archive.html?cat=fitness"><i class="fas fa-dumbbell" aria-hidden="true"></i><span>لياقة</span></a></li>
+      <li class="health-nav__item site-nav__item" data-cat="mental" style="--nav-accent:#6366f1"><a href="archive.html?cat=mental"><i class="fas fa-brain" aria-hidden="true"></i><span>نفسية</span></a></li>
+      <li class="health-nav__item site-nav__item" data-cat="medicine" style="--nav-accent:#ef4444"><a href="archive.html?cat=medicine"><i class="fas fa-stethoscope" aria-hidden="true"></i><span>طب</span></a></li>
+      <li class="health-nav__item site-nav__item" data-cat="wellness" style="--nav-accent:#14b8a6"><a href="archive.html?cat=wellness"><i class="fas fa-spa" aria-hidden="true"></i><span>عافية</span></a></li>
+      <li class="health-nav__item site-nav__item" data-cat="research" style="--nav-accent:#0ea5e9"><a href="archive.html?cat=research"><i class="fas fa-flask" aria-hidden="true"></i><span>أبحاث</span></a></li>
+      </ul>
+    </nav>
   </div>
-</div>
-</main>
-
-<footer class="footer-main"><div class="wrap"><div class="footer-grid"><div class="footer-brand"><a href="index.html" class="logo"><i class="fas fa-heartbeat" style="color:#14b8a6"></i> Health<span>Wave</span></a><p>Evidence-based health news.</p></div><div class="footer-col"><h4>Topics</h4><ul><li><a href="#">Medical News</a></li><li><a href="#">Wellness</a></li><li><a href="#">Nutrition</a></li></ul></div><div class="footer-col"><h4>Legal</h4><ul><li><a href="#">Medical Disclaimer</a></li><li><a href="#">Privacy</a></li></ul></div></div></div></footer>
-<div class="footer-bottom"><div class="wrap"><span>© 2026 HealthWave. Not medical advice.</span></div></div>
-<button class="back-top" id="backTop" style="background:#14b8a6"><i class="fas fa-chevron-up"></i></button>
-<script src="../assets/js/pds-main.js"></script>
-</body>
-</html>
+</header>
+<div class="archive-hd" id="archiveHeader"></div>
+<div class="health-ticker"><div class="health-ticker__label"><span class="health-ticker__dot"></span>عاجل</div><div class="health-ticker__track"><div class="health-ticker__inner ticker__inner" id="tickerInner"></div></div></div>
+<main style="padding:0 0 60px"><div class="wrap"><div class="grid g-main" style="gap:32px;margin-top:8px">
+  <div><div id="archiveGrid"></div><nav class="pagination" style="margin-top:32px"><a href="#" style="width:auto;padding:0 14px;color:var(--text-muted)"><i class="fas fa-arrow-right"></i> السابق</a><span class="current">1</span><a href="#" style="color:var(--text-muted)">2</a><a href="#" style="width:auto;padding:0 14px;color:var(--text-muted)">التالي <i class="fas fa-arrow-left"></i></a></nav></div>
+  <aside class="sidebar" id="archiveSidebar"></aside>
+</div></div></main>
+<div id="siteFooter"></div><button class="back-top" id="backTop"><i class="fas fa-chevron-up"></i></button>
+<script src="data/articles.js"></script><script src="js/shared.js"></script><script src="js/archive.js"></script><script src="../assets/js/pds-main.js"></script>
+</body></html>

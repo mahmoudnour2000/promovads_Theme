@@ -79,14 +79,50 @@ function promovads_reading_time( int $post_id = 0 ): string {
 	}
 
 	$content    = get_post_field( 'post_content', $post_id );
-	$word_count = str_word_count( wp_strip_all_tags( $content ) );
-	$minutes    = (int) ceil( $word_count / 200 );
+	$word_count = promovads_count_words( $content );
+	$minutes    = max( 1, (int) ceil( $word_count / 200 ) );
 
 	return sprintf(
 		/* translators: %d: number of minutes */
-		esc_html( _n( '%d min read', '%d min read', $minutes, 'promovads' ) ),
+		_n( '%d دقيقة قراءة', '%d دقائق قراءة', $minutes, 'promovads' ),
 		$minutes
 	);
+}
+
+/**
+ * Count words in mixed Arabic/Latin content.
+ */
+function promovads_count_words( string $text ): int {
+	$text = trim( preg_replace( '/\s+/u', ' ', wp_strip_all_tags( $text ) ) );
+	if ( '' === $text ) {
+		return 0;
+	}
+	$parts = preg_split( '/\s+/u', $text, -1, PREG_SPLIT_NO_EMPTY );
+	return is_array( $parts ) ? count( $parts ) : 0;
+}
+
+/**
+ * Author display name (avoid showing login email).
+ */
+function promovads_author_display_name( int $author_id = 0 ): string {
+	if ( ! $author_id ) {
+		$author_id = (int) get_the_author_meta( 'ID' );
+	}
+
+	$candidates = array(
+		get_the_author_meta( 'display_name', $author_id ),
+		get_the_author_meta( 'nickname', $author_id ),
+		trim( get_the_author_meta( 'first_name', $author_id ) . ' ' . get_the_author_meta( 'last_name', $author_id ) ),
+	);
+
+	foreach ( $candidates as $name ) {
+		$name = trim( (string) $name );
+		if ( $name && ! str_contains( $name, '@' ) ) {
+			return $name;
+		}
+	}
+
+	return __( 'محرر', 'promovads' );
 }
 
 /**
@@ -257,13 +293,13 @@ function promovads_share_urls( int $post_id = 0 ): array {
  * Breadcrumb trail.
  */
 function promovads_breadcrumb(): void {
-	$separator = '<span class="pds-bc__sep" aria-hidden="true">›</span>';
+	$separator = '<li class="pds-bc__sep" aria-hidden="true"><span>›</span></li>';
 	$items     = array();
 
 	$items[] = sprintf(
 		'<li class="pds-bc__item"><a href="%s">%s</a></li>',
 		esc_url( home_url( '/' ) ),
-		esc_html__( 'Home', 'promovads' )
+		esc_html( promovads_active_demo() ? __( 'الرئيسية', 'promovads' ) : __( 'Home', 'promovads' ) )
 	);
 
 	if ( is_category() ) {

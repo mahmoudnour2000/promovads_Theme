@@ -1,146 +1,162 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl" class="demo-gaming">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LevelUp — Gaming News, Reviews & Esports</title>
+<title>جيمر+ — أخبار الألعاب وeSports</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <link rel="stylesheet" href="../assets/css/pds-core.css">
-<style>
-  :root { --c-primary:#a855f7;--c-primary-dk:#9333ea;--c-secondary:#0f0717;--c-accent:#e879f9; }
-  body { background:#0f0717;color:#e4e0f0; }
-  .site-header { background:#130921;border-bottom:2px solid rgba(168,85,247,.3); }
-  .site-nav { background:#0a0412; }
-  .ticker { background:#0a0412;border-color:rgba(168,85,247,.2); }
-  .ticker__label { background:#a855f7; }
-  .ticker__item { color:rgba(255,255,255,.8); }
-  .card { background:#1a0e2a;border-color:rgba(168,85,247,.15); }
-  .card__title { color:#f0e8f8; }
-  .card__meta, .card__excerpt { color:#8878aa; }
-  .card__foot { border-color:rgba(168,85,247,.12); }
-  h1,h2,h3,h4 { color:#f0e8f8; }
-  .logo { color:#f0e8f8; } .logo span { color:#a855f7; }
-  .section-hd { border-color:rgba(168,85,247,.2); }
-  .widget { background:#1a0e2a;border-color:rgba(168,85,247,.15); }
-  .widget__title { background:#130921; }
-
-  /* Neon accent glow */
-  .card:hover { box-shadow:0 8px 32px rgba(168,85,247,.2); }
-
-  /* Review score circle */
-  .score-circle { position:absolute;bottom:10px;right:10px;width:46px;height:46px;border-radius:50%;background:#a855f7;color:#fff;font-weight:900;font-size:1rem;display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:3;box-shadow:0 0 14px rgba(168,85,247,.6);line-height:1; }
-  .score-circle .score { font-size:1.2rem;font-weight:900; }
-  .score-circle .max { font-size:.55rem;opacity:.7; }
-
-  /* Esports Banner */
-  .esports-bar { background:linear-gradient(90deg,#0a0412,#1a0e2a,#0a0412);border-bottom:1px solid rgba(168,85,247,.15);padding:6px 0;overflow:hidden; }
-  .esports-inner { display:flex;gap:24px;white-space:nowrap;animation:scroll-left 30s linear infinite;align-items:center; }
-  .esports-match { display:flex;align-items:center;gap:8px;padding:0 16px;border-right:1px solid rgba(168,85,247,.1);font-size:.78rem;color:rgba(255,255,255,.75); }
-  .esports-live { background:#a855f7;color:#fff;font-size:.6rem;font-weight:700;padding:1px 5px;border-radius:2px;text-transform:uppercase; }
-
-  /* Platform badges */
-  .platform { display:inline-flex;align-items:center;gap:4px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);padding:2px 8px;border-radius:4px;font-size:.7rem;font-weight:600;color:rgba(255,255,255,.7); }
-</style>
+<link rel="stylesheet" href="css/game-ar.css">
 </head>
 <body>
 
-<!-- Esports Ticker -->
-<div class="esports-bar"><div class="wrap">
-  <div class="esports-inner">
-    <span style="color:#a855f7;font-weight:700;font-size:.72rem;flex-shrink:0;text-transform:uppercase;letter-spacing:.1em">ESPORTS:</span>
-    <div class="esports-match"><span class="esports-live">LIVE</span>T1 <strong>2–1</strong> Fnatic · Worlds 2026</div>
-    <div class="esports-match"><span class="esports-live">LIVE</span>Navi <strong>16–14</strong> FaZe · CS2 ESL Major</div>
-    <div class="esports-match" style="color:#22c55e">Cloud9 wins VCT Challengers NA Championship</div>
-    <div class="esports-match">GTA VI launch breaks 20M concurrent players record</div>
-    <div class="esports-match">PlayStation 6 Pro confirmed for November 2026</div>
-    <!-- duplicate -->
-    <div class="esports-match"><span class="esports-live">LIVE</span>T1 <strong>2–1</strong> Fnatic · Worlds 2026</div>
-    <div class="esports-match"><span class="esports-live">LIVE</span>Navi <strong>16–14</strong> FaZe · CS2 ESL Major</div>
-  </div>
-</div></div>
+<div class="progress-bar" id="progress"></div>
 
-<div class="topbar" style="background:#0a0412"><div class="wrap"><span class="topbar__date"><i class="fas fa-gamepad" style="color:#a855f7;margin-right:5px"></i>Mon Jun 15, 2026 · E3 Week</span><div class="topbar__social"><a href="#"><i class="fab fa-x-twitter"></i></a><a href="#"><i class="fab fa-discord"></i></a><a href="#"><i class="fab fa-youtube"></i></a><a href="#"><i class="fab fa-twitch"></i></a></div></div></div>
-
-<header class="site-header"><div class="wrap"><a href="index.html" class="logo"><i class="fas fa-gamepad" style="color:#a855f7"></i> Level<span>Up</span></a><div class="header-actions"><button class="btn-icon search-trigger" style="background:rgba(255,255,255,.07)"><i class="fas fa-search"></i></button><button class="btn-icon dark-toggle" style="background:rgba(255,255,255,.07)"><i class="fas fa-moon"></i></button><a href="#" class="btn btn-primary" style="background:#a855f7"><i class="fas fa-bell"></i> Subscribe</a></div></div></header>
-
-<nav class="site-nav"><div class="wrap"><ul class="nav-menu"><li class="nav-item active"><a href="index.html" class="nav-link">Home</a></li><li class="nav-item"><a href="#" class="nav-link">Reviews <i class="fas fa-chevron-down"></i></a><div class="dropdown" style="background:#1a0e2a;border-color:rgba(168,85,247,.2)"><a href="#" style="border-color:rgba(168,85,247,.08)">PS6</a><a href="#" style="border-color:rgba(168,85,247,.08)">Xbox Series</a><a href="#" style="border-color:rgba(168,85,247,.08)">Nintendo Switch 2</a><a href="#" style="border-color:rgba(168,85,247,.08)">PC Games</a></div></li><li class="nav-item"><a href="#" class="nav-link">Esports</a></li><li class="nav-item"><a href="#" class="nav-link">PC Gaming</a></li><li class="nav-item"><a href="#" class="nav-link">Mobile</a></li><li class="nav-item"><a href="#" class="nav-link">Upcoming</a></li><li class="nav-item"><a href="#" class="nav-link" style="color:#e879f9">🔴 Live</a></li></ul></div></nav>
-
-<!-- Header News Strip -->
-<div class="header-news" style="background:#0a0412;border-color:rgba(168,85,247,.2)">
+<div class="game-topbar">
   <div class="wrap">
-    <div class="header-news__label" style="background:#a855f7">Latest</div>
-    <div class="hn-grid">
-      <a href="single.html" class="hn-card"><div class="hn-card__img"><img src="https://picsum.photos/seed/hn-g1/120/120" alt="" loading="lazy"></div><div class="hn-card__body"><span class="hn-card__cat" style="color:#a855f7">Rockstar</span><h3 class="hn-card__title" style="color:rgba(255,255,255,.88)">GTA VI Sets Opening Day Record: 20M Concurrent Players</h3><div class="hn-card__meta" style="color:rgba(255,255,255,.4)"><i class="fas fa-clock"></i> 1h ago</div></div></a>
-      <a href="single.html" class="hn-card"><div class="hn-card__img"><img src="https://picsum.photos/seed/hn-g2/120/120" alt="" loading="lazy"></div><div class="hn-card__body"><span class="hn-card__cat" style="color:#a855f7">PlayStation</span><h3 class="hn-card__title" style="color:rgba(255,255,255,.88)">PS6 Pro Announced for Nov 2026 — 8K Gaming &amp; 2TB SSD</h3><div class="hn-card__meta" style="color:rgba(255,255,255,.4)"><i class="fas fa-clock"></i> 3h ago</div></div></a>
-      <a href="single.html" class="hn-card"><div class="hn-card__img"><img src="https://picsum.photos/seed/hn-g3/120/120" alt="" loading="lazy"></div><div class="hn-card__body"><span class="hn-card__cat" style="color:#a855f7">Esports</span><h3 class="hn-card__title" style="color:rgba(255,255,255,.88)">Faker Wins Record 5th World Championship — T1 Dynasty Continues</h3><div class="hn-card__meta" style="color:rgba(255,255,255,.4)"><i class="fas fa-clock"></i> 5h ago</div></div></a>
-      <a href="single.html" class="hn-card"><div class="hn-card__img"><img src="https://picsum.photos/seed/hn-g4/120/120" alt="" loading="lazy"></div><div class="hn-card__body"><span class="hn-card__cat" style="color:#a855f7">Nintendo</span><h3 class="hn-card__title" style="color:rgba(255,255,255,.88)">Switch 2 Sells 10M Units in First Month — Fastest Console Ever</h3><div class="hn-card__meta" style="color:rgba(255,255,255,.4)"><i class="fas fa-clock"></i> Yesterday</div></div></a>
+    <div class="game-topbar__left">
+      <span class="game-topbar__live"><i class="fas fa-newspaper"></i> أخبار الألعاب يومياً</span>
+      <span><i class="fas fa-calendar-alt" style="color:#d8b4fe;margin-left:5px"></i> الاثنين، 15 يونيو 2026</span>
+    </div>
+    <div class="game-topbar__social">
+      <a href="#"><i class="fab fa-x-twitter"></i></a>
+      <a href="#"><i class="fab fa-twitch"></i></a>
+      <a href="#"><i class="fab fa-discord"></i></a>
     </div>
   </div>
 </div>
 
-<div class="ticker"><div class="ticker__label"><span class="ticker__dot"></span>BREAKING</div><div class="ticker__track"><div class="ticker__inner"><span class="ticker__item"><a href="#">GTA VI Crosses 20M Concurrent Players on Opening Day — New World Record</a></span><span class="ticker__item"><a href="#">Nintendo Switch 2 sells 10M units in first month — fastest selling console ever</a></span><span class="ticker__item"><a href="#">T1's Faker wins record 5th World Championship title</a></span><span class="ticker__item"><a href="#">PlayStation 6 Pro announced for November 2026 — 8K gaming confirmed</a></span><span class="ticker__item"><a href="#">GTA VI Crosses 20M Concurrent Players</a></span></div></div></div>
+<header class="game-header">
+  <div class="wrap">
+    <div class="game-header__bar">
+      <a href="index.html" class="game-logo">
+        <div class="game-logo__icon"><i class="fas fa-gamepad"></i></div>
+        <div>
+          جيمر<span>+</span>
+          <span class="game-logo__sub">ألعاب، مراجعات وeSports</span>
+        </div>
+      </a>
+      <div class="game-search search-trigger" role="button" tabindex="0">
+        <i class="fas fa-search"></i>
+        <input type="search" placeholder="ابحث عن لعبة، مراجعة، بطولة…" readonly>
+      </div>
+      <div class="game-header__actions">
+        <button class="game-btn-icon search-trigger" title="بحث"><i class="fas fa-search"></i></button>
+        <a href="archive.html" class="game-btn-live"><i class="fas fa-newspaper"></i> كل الأخبار</a>
+      </div>
+    </div>
+    <nav class="game-nav site-nav site-nav--skew" aria-label="أقسام الألعاب">
+      <ul class="game-nav__list site-nav__list">
+      <li class="game-nav__item site-nav__item active"><a href="index.html"><i class="fas fa-home" aria-hidden="true"></i><span>الرئيسية</span></a></li>
+      <li class="game-nav__item site-nav__item" data-cat="pc"><a href="archive.html?cat=pc"><i class="fas fa-desktop" aria-hidden="true"></i><span>PC</span></a></li>
+      <li class="game-nav__item site-nav__item" data-cat="console"><a href="archive.html?cat=console"><i class="fas fa-gamepad" aria-hidden="true"></i><span>كونsole</span></a></li>
+      <li class="game-nav__item site-nav__item" data-cat="mobile"><a href="archive.html?cat=mobile"><i class="fas fa-mobile-screen" aria-hidden="true"></i><span>موبايل</span></a></li>
+      <li class="game-nav__item site-nav__item" data-cat="esports"><a href="archive.html?cat=esports"><i class="fas fa-trophy" aria-hidden="true"></i><span>eSports</span></a></li>
+      <li class="game-nav__item site-nav__item" data-cat="reviews"><a href="archive.html?cat=reviews"><i class="fas fa-star" aria-hidden="true"></i><span>مراجعات</span></a></li>
+      <li class="game-nav__item site-nav__item" data-cat="releases"><a href="archive.html?cat=releases"><i class="fas fa-rocket" aria-hidden="true"></i><span>إصدارات</span></a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
 
-<main style="padding:32px 0 60px">
+<section class="game-hero-zone">
+  <div class="wrap">
+    <div class="game-hero-zone__head">
+      <div class="game-hero-zone__title"><i class="fas fa-star"></i> أبرز أخبار الألعاب</div>
+      <a href="archive.html" style="font-size:.82rem;font-weight:700;color:var(--c-primary)">عرض الكل <i class="fas fa-arrow-left"></i></a>
+    </div>
+    <div class="game-hero" id="headerHero"></div>
+  </div>
+</section>
+
+<div class="game-ticker">
+  <div class="game-ticker__label"><span class="game-ticker__dot"></span>عاجل</div>
+  <div class="game-ticker__track">
+    <div class="game-ticker__inner ticker__inner" id="tickerInner"></div>
+  </div>
+  <button class="ticker__pause" style="padding:0 12px;color:#d8b4fe;font-size:12px;background:none;border:none;cursor:pointer" title="إيقاف"><i class="fas fa-pause"></i></button>
+</div>
+
+<main style="padding:36px 0 60px">
 <div class="wrap">
 
-  <!-- Hero Grid -->
-  <div class="g-hero" style="gap:4px;border-radius:14px;overflow:hidden;margin-bottom:44px">
-    <div class="card card--hero" style="min-height:480px">
-      <div class="card__thumb" style="height:100%"><img src="https://picsum.photos/seed/gaming1/900/540" alt="Gaming Hero"></div>
-      <div class="card__body"><span class="card__cat" style="background:#a855f7">Review</span><div class="score-circle"><span class="score">9.6</span><span class="max">/10</span></div><h1 class="card__title" style="font-size:1.7rem;color:#fff">GTA VI Review: Rockstar Redefines Open World Gaming — A Masterpiece Decade in the Making</h1><p class="card__excerpt" style="color:rgba(255,255,255,.75)">After 12 years of waiting, Grand Theft Auto VI delivers an experience that validates every minute of anticipation...</p><div class="card__meta" style="color:rgba(255,255,255,.65)"><span>Kyle Mitchell</span><span class="dot">1h ago</span><span class="dot">12 min read</span></div></div>
-    </div>
-    <div style="display:flex;flex-direction:column;gap:4px">
-      <div class="card card--hero" style="flex:1;min-height:232px"><div class="card__thumb" style="height:100%"><img src="https://picsum.photos/seed/gaming2/500/260" alt=""></div><div class="card__body" style="padding:14px"><span class="card__cat" style="background:#06b6d4;font-size:.68rem">Hardware</span><h3 class="card__title" style="font-size:.95rem;color:#fff;margin-top:6px">PS6 Pro Revealed: 8K Native, PSVR3 Support, Ray Tracing 4.0</h3></div></div>
-      <div class="card card--hero" style="flex:1;min-height:232px"><div class="card__thumb" style="height:100%"><img src="https://picsum.photos/seed/gaming3/500/260" alt=""></div><div class="card__body" style="padding:14px"><span class="card__cat" style="background:#f59e0b;color:#000;font-size:.68rem">Esports</span><h3 class="card__title" style="font-size:.95rem;color:#fff;margin-top:6px">Faker Makes History: 5th World Championship at 29 Years Old</h3></div></div>
-    </div>
-  </div>
-
-  <!-- Main + Sidebar -->
   <div class="grid g-main" style="gap:32px">
     <div>
-      <!-- Reviews Section -->
-      <div class="section-hd"><h2 class="section-title">Latest <span>Reviews</span></h2><a href="archive.html" class="see-all">All Reviews <i class="fas fa-arrow-right"></i></a></div>
-      <div class="grid g3" style="margin-bottom:44px">
-        <article class="card"><a href="single.html" class="card__thumb" style="position:relative"><img src="https://picsum.photos/seed/rev1g/500/280" alt="" loading="lazy"><span class="card__cat">Review</span><div class="score-circle"><span class="score">9.6</span><span class="max">/10</span></div></a><div class="card__body"><div style="display:flex;gap:4px;margin-bottom:8px"><span class="platform"><i class="fab fa-playstation"></i> PS6</span><span class="platform"><i class="fab fa-xbox"></i> Xbox</span></div><h3 class="card__title"><a href="single.html">GTA VI — Open World Perfection</a></h3><p class="card__excerpt">Rockstar's magnum opus raises the bar for every open world game that follows...</p></div></article>
-        <article class="card"><a href="single.html" class="card__thumb" style="position:relative"><img src="https://picsum.photos/seed/rev2g/500/280" alt="" loading="lazy"><span class="card__cat" style="background:#06b6d4">Review</span><div class="score-circle" style="background:#22c55e"><span class="score">9.2</span><span class="max">/10</span></div></a><div class="card__body"><div style="display:flex;gap:4px;margin-bottom:8px"><span class="platform"><i class="fas fa-tv"></i> Switch 2</span></div><h3 class="card__title"><a href="single.html">Zelda: Echoes of Infinity — Nintendo's New Masterwork</a></h3></div></article>
-        <article class="card"><a href="single.html" class="card__thumb" style="position:relative"><img src="https://picsum.photos/seed/rev3g/500/280" alt="" loading="lazy"><span class="card__cat" style="background:#f59e0b;color:#000">Review</span><div class="score-circle" style="background:#f59e0b;color:#000"><span class="score">8.7</span><span class="max">/10</span></div></a><div class="card__body"><div style="display:flex;gap:4px;margin-bottom:8px"><span class="platform"><i class="fas fa-desktop"></i> PC</span></div><h3 class="card__title"><a href="single.html">Black Myth: Wukong 2 — Stunning But Flawed</a></h3></div></article>
-      </div>
-
-      <!-- News Grid -->
-      <div class="section-hd"><h2 class="section-title">Gaming <span>News</span></h2><a href="archive.html" class="see-all">All News <i class="fas fa-arrow-right"></i></a></div>
-      <div class="grid g3">
-        <article class="card"><a href="single.html" class="card__thumb"><img src="https://picsum.photos/seed/gn1/500/280" alt="" loading="lazy"><span class="card__cat" style="background:#06b6d4">Hardware</span></a><div class="card__body"><div class="card__meta"><span>3h ago</span><span class="dot">4 min</span></div><h3 class="card__title"><a href="single.html">NVIDIA RTX 5090 Ti Leaked: 32GB VRAM for $1,599</a></h3></div></article>
-        <article class="card"><a href="single.html" class="card__thumb"><img src="https://picsum.photos/seed/gn2/500/280" alt="" loading="lazy"><span class="card__cat" style="background:#e879f9">Esports</span></a><div class="card__body"><div class="card__meta"><span>4h ago</span><span class="dot">5 min</span></div><h3 class="card__title"><a href="single.html">Worlds 2026 Finals: T1 vs Gen.G Set to Break Viewer Records</a></h3></div></article>
-        <article class="card"><a href="single.html" class="card__thumb"><img src="https://picsum.photos/seed/gn3/500/280" alt="" loading="lazy"><span class="card__cat" style="background:#22c55e">Industry</span></a><div class="card__body"><div class="card__meta"><span>6h ago</span><span class="dot">3 min</span></div><h3 class="card__title"><a href="single.html">Microsoft Acquires Sega for $8B — Sonic, Total War Join Xbox</a></h3></div></article>
-      </div>
+      <div id="categorySections"></div>
+      <section class="latest-gaming" id="latestSection">
+        <div class="latest-gaming__head">
+          <h2 class="latest-gaming__title">آخر <span style="color:var(--c-primary)">الأخبار</span></h2>
+          <a href="archive.html" class="game-section__btn"><i class="fas fa-newspaper"></i> عرض الكل</a>
+        </div>
+        <div id="latestList"></div>
+      </section>
     </div>
     <aside class="sidebar">
-      <!-- Game of Year widget -->
-      <div class="widget"><div class="widget__title">🏆 Game of the Month</div><div class="widget__body" style="padding:10px">
-        <div style="position:relative;border-radius:8px;overflow:hidden"><img src="https://picsum.photos/seed/goty/300/160" alt="GTA VI" style="width:100%;height:120px;object-fit:cover"><div style="position:absolute;bottom:6px;left:6px"><span style="background:#a855f7;color:#fff;font-size:.68rem;font-weight:700;padding:2px 7px;border-radius:3px">EDITORS PICK</span></div></div>
-        <div style="padding:10px 4px"><h4 style="color:#f0e8f8;margin-bottom:4px;font-size:.9rem">GTA VI</h4><div style="font-size:.75rem;color:#8878aa;margin-bottom:8px">Rockstar Games · 2026</div><div style="display:flex;align-items:center;gap:4px;font-size:.82rem;color:#a855f7;font-weight:700">★★★★★ 9.6/10</div></div>
-      </div></div>
-      <div class="newsletter-widget" style="background:linear-gradient(135deg,#0f0717,#1a0e2a)"><div class="nl-icon" style="background:#a855f7"><i class="fas fa-gamepad"></i></div><h4>LevelUp Weekly</h4><p>Game releases, reviews, esports results</p><form class="nl-form"><input type="email" placeholder="your@email.com"><button style="background:#a855f7">Subscribe</button></form></div>
-      <div class="widget"><div class="widget__title">🎮 Upcoming Releases</div><div class="widget__body">
-        <div style="display:flex;flex-direction:column;gap:10px">
-          <div style="display:flex;gap:10px;align-items:center"><div style="width:42px;height:42px;background:#a855f7;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:.78rem;font-weight:700;color:#fff;flex-shrink:0;text-align:center;line-height:1.1">Jul<br>4</div><div><div style="font-size:.83rem;font-weight:600;color:#f0e8f8">Elden Ring: Nightfall DLC</div><div style="font-size:.72rem;color:#8878aa">PC / PS6 / Xbox</div></div></div>
-          <div style="display:flex;gap:10px;align-items:center"><div style="width:42px;height:42px;background:#06b6d4;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:.78rem;font-weight:700;color:#fff;flex-shrink:0;text-align:center;line-height:1.1">Aug<br>22</div><div><div style="font-size:.83rem;font-weight:600;color:#f0e8f8">Call of Duty: Future Warfare</div><div style="font-size:.72rem;color:#8878aa">All Platforms</div></div></div>
-          <div style="display:flex;gap:10px;align-items:center"><div style="width:42px;height:42px;background:#f59e0b;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:.78rem;font-weight:700;color:#000;flex-shrink:0;text-align:center;line-height:1.1">Sep<br>10</div><div><div style="font-size:.83rem;font-weight:600;color:#f0e8f8">Metroid Prime 4</div><div style="font-size:.72rem;color:#8878aa">Switch 2</div></div></div>
+      <div class="widget">
+        <div class="widget__title">🔥 الأكثر قراءة</div>
+        <div class="widget__body" style="padding:8px 16px">
+          <div id="trendingList"></div>
         </div>
-      </div></div>
-      <div class="ad-wrap"><p class="ad-label">Advertisement</p><div class="ad-box" style="height:250px;border-radius:8px;background:linear-gradient(135deg,#0f0717,#2d0a50);color:rgba(255,255,255,.2)">300 × 250</div></div>
+      </div>
+      <div class="widget">
+        <div class="widget__title">وسوم الألعاب</div>
+        <div class="widget__body" style="padding:12px 16px">
+          <div class="tags" id="sidebarTags"></div>
+        </div>
+      </div>
     </aside>
   </div>
 </div>
 </main>
 
-<div class="footer-nl" style="background:#9333ea"><div class="wrap"><div><h3>LevelUp Newsletter</h3><p>Weekly game releases, reviews, and esports wrap-ups</p></div><form class="footer-nl-form"><input type="email" placeholder="your@email.com"><button type="submit"><i class="fas fa-gamepad"></i> Subscribe</button></form></div></div>
-<footer class="footer-main" style="background:#0a0412"><div class="wrap"><div class="footer-grid"><div class="footer-brand"><a href="index.html" class="logo"><i class="fas fa-gamepad" style="color:#a855f7"></i> Level<span>Up</span></a><p>Your ultimate gaming destination — reviews, news, and esports coverage.</p><div class="footer-social"><a href="#"><i class="fab fa-x-twitter"></i></a><a href="#"><i class="fab fa-discord"></i></a><a href="#"><i class="fab fa-youtube"></i></a><a href="#"><i class="fab fa-twitch"></i></a></div></div><div class="footer-col"><h4>Sections</h4><ul><li><a href="#">Reviews</a></li><li><a href="#">Esports</a></li><li><a href="#">PC Gaming</a></li><li><a href="#">Mobile</a></li></ul></div><div class="footer-col"><h4>Platforms</h4><ul><li><a href="#">PlayStation 6</a></li><li><a href="#">Xbox Series</a></li><li><a href="#">Nintendo Switch 2</a></li><li><a href="#">PC</a></li></ul></div><div class="footer-col"><h4>Latest</h4><div class="footer-recent"><div class="footer-recent-item"><img src="https://picsum.photos/seed/gf1/80/60" alt=""><div><h5><a href="single.html" style="color:rgba(255,255,255,.8)">GTA VI Review: 9.6/10</a></h5><span>1h ago</span></div></div><div class="footer-recent-item"><img src="https://picsum.photos/seed/gf2/80/60" alt=""><div><h5><a href="single.html" style="color:rgba(255,255,255,.8)">PS6 Pro Specs Revealed</a></h5><span>3h ago</span></div></div></div></div></div></div></footer>
-<div class="footer-bottom" style="background:rgba(0,0,0,.5)"><div class="wrap"><span>© 2026 LevelUp Gaming. All rights reserved.</span><div class="footer-bottom-links"><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Sitemap</a></div></div></div>
+<footer class="footer-main" style="background:#0f172a">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo"><i class="fas fa-gamepad" style="color:#a855f7"></i> جيمر<span style="color:#fff">+</span></a>
+        <p style="color:rgba(255,255,255,.65)">مصدرك لأخبار الألعاب والمراجعات وeSports بالعربية.</p>
+      </div>
+      <div class="footer-col">
+        <h4>الأقسام</h4>
+        <ul>
+          <li><a href="archive.html?cat=pc">PC</a></li>
+          <li><a href="archive.html?cat=console">كونsole</a></li>
+          <li><a href="archive.html?cat=esports">eSports</a></li>
+          <li><a href="archive.html?cat=reviews">مراجعات</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>الموقع</h4>
+        <ul>
+          <li><a href="#">من نحن</a></li>
+          <li><a href="#">تواصل</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+<div class="footer-bottom" style="background:#020617">
+  <div class="wrap"><span style="color:rgba(255,255,255,.5)">© 2026 جيمر+. جميع الحقوق محفوظة.</span></div>
+</div>
 
-<button class="back-top" id="backTop" style="background:#a855f7"><i class="fas fa-chevron-up"></i></button>
+<div class="search-overlay" id="searchOverlay">
+  <button class="search-close" style="position:absolute;top:20px;left:20px;color:#fff;font-size:1.5rem;background:none;border:none;cursor:pointer"><i class="fas fa-times"></i></button>
+  <div class="search-box">
+    <div class="search-input-wrap" style="background:#fff;border:1px solid var(--game-border);border-radius:12px;padding:4px 12px">
+      <i class="fas fa-search" style="color:#a855f7"></i>
+      <input type="search" placeholder="ابحث عن لعبة، مراجعة، بطولة…" style="font-size:1.05rem;background:transparent;color:#0f172a">
+    </div>
+    <div class="search-results" id="searchPreview" style="background:#fff;border:1px solid var(--game-border);border-radius:12px;margin-top:12px"></div>
+  </div>
+</div>
+
+<button class="back-top" id="backTop"><i class="fas fa-chevron-up"></i></button>
+
+<script src="data/articles.js"></script>
+<script src="js/shared.js"></script>
+<script src="js/app.js"></script>
 <script src="../assets/js/pds-main.js"></script>
 </body>
 </html>

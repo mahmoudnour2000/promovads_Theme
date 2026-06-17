@@ -1,0 +1,118 @@
+/**
+ * Demo color system — maps --pds-* tokens to all UI parts.
+ * Loaded after demo CSS; values come from inline PHP (promovads_theme_colors_css).
+ */
+
+body[class*="demo-"] {
+  background: var(--pds-bg);
+  color: var(--pds-text-body);
+}
+
+body[class*="demo-"] .card__title,
+body[class*="demo-"] .card__title a,
+body[class*="demo-"] .latest-item__title a,
+body[class*="demo-"] .trending-item h4 a {
+  color: var(--pds-text-heading);
+}
+
+body[class*="demo-"] .card__meta,
+body[class*="demo-"] .card__excerpt,
+body[class*="demo-"] .card__author,
+body[class*="demo-"] .card__stats,
+body[class*="demo-"] .latest-item__meta,
+body[class*="demo-"] .trending-item span,
+body[class*="demo-"] .article-meta,
+body[class*="demo-"] .article-subtitle {
+  color: var(--pds-text-muted);
+}
+
+body[class*="demo-"] .breadcrumb {
+  color: var(--pds-text-subtle);
+}
+
+body[class*="demo-"] .breadcrumb a {
+  color: var(--pds-link);
+}
+
+body[class*="demo-"] .author-box {
+  background: var(--pds-surface-alt);
+  border-color: var(--pds-border);
+}
+
+body[class*="demo-"] .pds-demo-single .entry-content-wrap,
+body[class*="demo-"] .post-nav a {
+  background: var(--pds-surface);
+  border-color: var(--pds-border);
+}
+
+body[class*="demo-"] .pds-demo-search-form button {
+  background: var(--pds-btn-bg);
+  color: var(--pds-btn-text);
+}
+
+body[class*="demo-"] .tag,
+body[class*="demo-"] .pds-demo-home .tag {
+  border-color: var(--pds-border);
+  color: var(--pds-text-body);
+}
+
+body[class*="demo-"] .tag:hover {
+  background: var(--pds-primary);
+  border-color: var(--pds-primary);
+  color: var(--pds-btn-text);
+}
+
+body[class*="demo-"] .archive-hd h1,
+body[class*="demo-"] .archive-hd .label {
+  color: var(--pds-text-on-dark);
+}
+
+body[class*="demo-"] .archive-hd p,
+body[class*="demo-"] .archive-hd .count {
+  color: color-mix(in srgb, var(--pds-text-on-dark) 65%, transparent);
+}
+
+body[class*="demo-"] [class*="-topbar__badge"] {
+  color: color-mix(in srgb, var(--pds-primary) 70%, #fff) !important;
+}
+
+body[class*="demo-"] [class*="-hero-zone__link"],
+body[class*="demo-"] [class*="-hero-zone__title"] i,
+body[class*="demo-"] .trending-item .n {
+  color: var(--pds-primary);
+}
+
+body[class*="demo-"] [class*="-btn-icon"] {
+  color: var(--pds-primary);
+  border-color: var(--pds-border);
+  background: var(--pds-bg);
+}
+
+body[class*="demo-"] [class*="-btn-icon"]:hover {
+  background: var(--pds-primary);
+  color: var(--pds-btn-text);
+  border-color: var(--pds-primary);
+}
+
+body[class*="demo-"] .pagination a.page-numbers {
+  color: var(--pds-text-muted);
+  border-color: var(--pds-border);
+  background: var(--pds-surface);
+}
+
+body[class*="demo-"] .pagination a.page-numbers:hover {
+  border-color: var(--pds-primary);
+  color: var(--pds-primary);
+}
+
+body[class*="demo-"] .search-overlay .search-input-wrap i {
+  color: var(--pds-primary);
+}
+
+body[class*="demo-"] .footer-brand p {
+  color: color-mix(in srgb, var(--pds-footer-text) 80%, transparent);
+}
+
+body[class*="demo-"] .footer-col h4 {
+  color: color-mix(in srgb, var(--pds-footer-text) 45%, transparent);
+}

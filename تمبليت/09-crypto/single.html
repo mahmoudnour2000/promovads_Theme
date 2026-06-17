@@ -1,127 +1,93 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl" class="demo-crypto">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bitcoin Breaks $107K — CryptoSignal</title>
+<title>خبر كريبتو — كريبتو+</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <link rel="stylesheet" href="../assets/css/pds-core.css">
-<style>
-  :root { --c-primary:#f7931a;--c-primary-dk:#e07d0e;--c-secondary:#0d1117;--c-accent:#f0b429; }
-  body { background:#0d1117;color:#e4e4f0; }
-  .site-header { background:#0d1117;border-bottom:1px solid rgba(247,147,26,.2); }
-  .site-nav { background:#060a0f; }
-  h1,h2,h3,h4 { color:#f0f0f8; }
-  .logo { color:#f0f0f8; } .logo span { color:#f7931a; }
-  .entry-content { color:#c4c4d8; }
-  .entry-content h2 { color:#f0f0f8;border-color:rgba(247,147,26,.2); }
-  .entry-content blockquote { background:#161b22;border-color:#f7931a;color:#f0b429; }
-  .article-meta { border-color:rgba(247,147,26,.2);color:#8888aa; }
-  .author-box { background:#161b22;border-color:rgba(247,147,26,.2); }
-  .post-nav__item { border-color:rgba(247,147,26,.12);background:#161b22; }
-  .post-nav__label { color:#8888aa; }
-  .card { background:#161b22;border-color:rgba(247,147,26,.12); }
-  .card__title { color:#f0f0f8; }
-  .widget { background:#161b22;border-color:rgba(247,147,26,.12); }
-  .widget__title { background:#0d1117; }
-
-  .price-widget { background:linear-gradient(135deg,#0d1117,#1a1f2e);border:1px solid rgba(247,147,26,.2);border-radius:12px;padding:20px;text-align:center;margin-bottom:20px; }
-  .price-widget .sym { font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:#8888aa;margin-bottom:6px; }
-  .price-widget .price { font-size:2.4rem;font-weight:900;font-family:'Playfair Display',serif;color:#f7931a; }
-  .price-widget .change { font-size:1rem;font-weight:600;color:#22c55e;margin-top:4px; }
-  .price-widget .stats { display:flex;justify-content:space-around;margin-top:14px;padding-top:14px;border-top:1px solid rgba(247,147,26,.12); }
-  .price-widget .stat-item label { font-size:.65rem;color:#8888aa;display:block;margin-bottom:2px;text-transform:uppercase;letter-spacing:.06em; }
-  .price-widget .stat-item strong { font-size:.88rem;color:#f0f0f8; }
-</style>
+<link rel="stylesheet" href="css/crypto-ar.css">
 </head>
-<body>
-<div class="topbar" style="background:#060a0f"><div class="wrap"><span class="topbar__date"><i class="fab fa-bitcoin" style="color:#f7931a;margin-right:5px"></i>BTC: $107,440 ▲ +2.8% · Global Cap: $4.28T</span></div></div>
-<header class="site-header"><div class="wrap"><a href="index.html" class="logo"><i class="fab fa-bitcoin" style="color:#f7931a"></i> Crypto<span>Signal</span></a><div class="header-actions"><button class="btn-icon dark-toggle" style="background:rgba(255,255,255,.06)"><i class="fas fa-moon"></i></button><a href="#" class="btn btn-primary" style="background:#f7931a;color:#000;font-weight:700">Subscribe</a></div></div></header>
-<nav class="site-nav"><div class="wrap"><ul class="nav-menu"><li class="nav-item"><a href="index.html" class="nav-link">Home</a></li><li class="nav-item active"><a href="#" class="nav-link">Bitcoin</a></li><li class="nav-item"><a href="#" class="nav-link">Ethereum</a></li><li class="nav-item"><a href="#" class="nav-link">DeFi</a></li><li class="nav-item"><a href="#" class="nav-link">NFT</a></li></ul></div></nav>
+<body class="page-inner">
 
-<!-- Header News Strip -->
-<div class="header-news" style="background:#060a0f;border-color:rgba(247,147,26,.15)">
+<div class="progress-bar" id="progress"></div>
+
+<div class="crypto-topbar">
   <div class="wrap">
-    <div class="header-news__label" style="background:#f7931a">Latest</div>
-    <div class="hn-grid">
-      <a href="single.html" class="hn-card"><div class="hn-card__img"><img src="https://picsum.photos/seed/hn-c1/120/120" alt="" loading="lazy"></div><div class="hn-card__body"><span class="hn-card__cat" style="color:#f7931a">Bitcoin</span><h3 class="hn-card__title" style="color:rgba(255,255,255,.88)">Bitcoin Breaks $107K — Analysts Eye $120K Before Year End</h3><div class="hn-card__meta" style="color:rgba(255,255,255,.4)"><i class="fas fa-clock"></i> 30min ago</div></div></a>
-      <a href="single.html" class="hn-card"><div class="hn-card__img"><img src="https://picsum.photos/seed/hn-c2/120/120" alt="" loading="lazy"></div><div class="hn-card__body"><span class="hn-card__cat" style="color:#f7931a">Ethereum</span><h3 class="hn-card__title" style="color:rgba(255,255,255,.88)">ETH 4.0 "Verge" Upgrade Live — Staking Yields Rise to 8.2%</h3><div class="hn-card__meta" style="color:rgba(255,255,255,.4)"><i class="fas fa-clock"></i> 2h ago</div></div></a>
-      <a href="single.html" class="hn-card"><div class="hn-card__img"><img src="https://picsum.photos/seed/hn-c3/120/120" alt="" loading="lazy"></div><div class="hn-card__body"><span class="hn-card__cat" style="color:#f7931a">ETF</span><h3 class="hn-card__title" style="color:rgba(255,255,255,.88)">BlackRock Bitcoin ETF Crosses $100 Billion AUM Milestone</h3><div class="hn-card__meta" style="color:rgba(255,255,255,.4)"><i class="fas fa-clock"></i> 4h ago</div></div></a>
-      <a href="single.html" class="hn-card"><div class="hn-card__img"><img src="https://picsum.photos/seed/hn-c4/120/120" alt="" loading="lazy"></div><div class="hn-card__body"><span class="hn-card__cat" style="color:#f7931a">DeFi</span><h3 class="hn-card__title" style="color:rgba(255,255,255,.88)">Solana DeFi Volume Hits Record $2.8B Daily</h3><div class="hn-card__meta" style="color:rgba(255,255,255,.4)"><i class="fas fa-clock"></i> 6h ago</div></div></a>
+    <div class="crypto-topbar__left">
+      <span class="crypto-topbar__live"><i class="fas fa-newspaper"></i> أخبار Web3 يومياً</span>
+      <span><i class="fas fa-calendar-alt" style="color:#fdba74;margin-left:5px"></i> الاثنين، 15 يونيو 2026</span>
     </div>
+    <div class="crypto-topbar__social">
+      <a href="#"><i class="fab fa-x-twitter"></i></a>
+      <a href="#"><i class="fab fa-telegram"></i></a>
+      <a href="#"><i class="fab fa-discord"></i></a>
+    </div>
+  </div>
+</div>
+
+<header class="crypto-header crypto-header--compact">
+  <div class="wrap">
+    <div class="crypto-header__bar">
+      <a href="index.html" class="crypto-logo">
+        <div class="crypto-logo__icon"><i class="fab fa-bitcoin"></i></div>
+        <div>كريبتو<span>+</span><span class="crypto-logo__sub">Web3</span></div>
+      </a>
+      <div class="crypto-header__actions">
+        <button class="crypto-btn-icon search-trigger" title="بحث"><i class="fas fa-search"></i></button>
+        <a href="archive.html" class="crypto-btn-live"><i class="fas fa-newspaper"></i> كل الأخبار</a>
+      </div>
+    </div>
+  </div>
+  <div class="crypto-nav-band">
+    <div class="wrap">
+    <nav class="crypto-nav site-nav site-nav--dark" aria-label="أقسام الكريبتو">
+      <ul class="crypto-nav__list site-nav__list">
+      <li class="crypto-nav__item site-nav__item active"><a href="index.html"><i class="fas fa-home" aria-hidden="true"></i><span>الرئيسية</span></a></li>
+      <li class="crypto-nav__item site-nav__item" data-cat="bitcoin"><a href="archive.html?cat=bitcoin"><i class="fab fa-bitcoin" aria-hidden="true"></i><span>بيتكوين</span></a></li>
+      <li class="crypto-nav__item site-nav__item" data-cat="altcoins"><a href="archive.html?cat=altcoins"><i class="fas fa-coins" aria-hidden="true"></i><span>عملات بديلة</span></a></li>
+      <li class="crypto-nav__item site-nav__item" data-cat="defi"><a href="archive.html?cat=defi"><i class="fas fa-layer-group" aria-hidden="true"></i><span>DeFi</span></a></li>
+      <li class="crypto-nav__item site-nav__item" data-cat="nft"><a href="archive.html?cat=nft"><i class="fas fa-image" aria-hidden="true"></i><span>NFT</span></a></li>
+      <li class="crypto-nav__item site-nav__item" data-cat="regulation"><a href="archive.html?cat=regulation"><i class="fas fa-gavel" aria-hidden="true"></i><span>تنظيم</span></a></li>
+      <li class="crypto-nav__item site-nav__item" data-cat="analysis"><a href="archive.html?cat=analysis"><i class="fas fa-chart-line" aria-hidden="true"></i><span>تحليل</span></a></li>
+      </ul>
+    </nav>
+    </div>
+  </div>
+</header>
+
+<div class="crypto-ticker">
+  <div class="crypto-ticker__label"><span class="crypto-ticker__dot"></span>عاجل</div>
+  <div class="crypto-ticker__track">
+    <div class="crypto-ticker__inner ticker__inner" id="tickerInner"></div>
   </div>
 </div>
 
 <main style="padding:36px 0 60px">
 <div class="wrap">
   <div class="grid g-main" style="gap:36px">
-    <article>
-      <nav class="breadcrumb" style="color:#8888aa"><a href="index.html" style="color:#8888aa">Home</a><span class="sep">›</span><a href="archive.html" style="color:#8888aa">Bitcoin</a><span class="sep">›</span><span class="current" style="color:#f0f0f8">BTC $107K</span></nav>
-      <div class="article-cats"><a href="#" style="background:#f7931a;color:#000">Bitcoin</a><a href="#" style="background:#0d1117;border:1px solid rgba(247,147,26,.3);color:#f7931a">Market Analysis</a></div>
-      <h1 class="article-title">Bitcoin Breaks $107,000: On-Chain Data Points to $120K Target as Institutional Wave Intensifies</h1>
-      <p class="article-subtitle">BTC hit a new all-time high as ETF inflows reach $3.2B in a single week — the most since January 2024. Analysts are now revising year-end targets upward.</p>
-      <div class="article-meta">
-        <div class="author"><img src="https://i.pravatar.cc/80?img=60" alt="Michael Torres"><div><strong style="color:#f0f0f8">Michael Torres</strong><div style="font-size:.72rem;color:#f7931a">Bitcoin Analyst</div></div></div>
-        <span><i class="fas fa-calendar-alt"></i> June 15, 2026</span>
-        <span><i class="far fa-clock"></i> 8 min read</span>
-        <span><i class="far fa-eye"></i> 186,000 views</span>
-        <div class="share"><a href="#" class="share-btn share-tw"><i class="fab fa-x-twitter"></i></a><a href="#" class="share-btn share-wa"><i class="fab fa-whatsapp"></i></a></div>
-      </div>
-      <figure class="article-feat"><img src="https://picsum.photos/seed/btc107/1200/640" alt="Bitcoin price chart"><figcaption>Bitcoin's price chart showing the recent breakout above $107,000. © TradingView</figcaption></figure>
-      <div class="entry-content">
-        <p>Bitcoin crossed the $107,000 mark early Monday morning, reaching a new all-time high and extending the 2026 bull market cycle. The move comes after a 72-hour consolidation period above $104,000, during which on-chain metrics continued to flash bullish signals.</p>
-        <h2>What's Driving the Move?</h2>
-        <p>Three key factors are pushing Bitcoin to new highs:</p>
-        <ul>
-          <li><strong>ETF Inflows</strong>: US spot Bitcoin ETFs recorded $3.2B in net inflows last week, the highest since January 2024. BlackRock's IBIT alone attracted $1.8B.</li>
-          <li><strong>Halving Effect</strong>: The April 2024 halving's supply shock is now fully priced in, with exchange BTC reserves at a 7-year low.</li>
-          <li><strong>Corporate Treasury</strong>: MicroStrategy, now holding 570,000 BTC, has been joined by 28 more public companies adding BTC to their treasury in Q2 2026.</li>
-        </ul>
-        <blockquote>"This is unlike any previous cycle. Institutional investors are absorbing nearly 3x the daily issuance from miners. The supply crisis is real." — PlanB, Bitcoin Analyst</blockquote>
-        <h2>Technical Analysis</h2>
-        <p>From a technical perspective, Bitcoin has broken out of the $100K–$106K range with significant volume. The next major resistance levels are at $112,000 (1.618 Fibonacci extension) and $120,000 (psychological level with options clusters).</p>
-        <p>The Relative Strength Index (RSI) on the weekly chart stands at 72, indicating bullish momentum without extreme overbought conditions. The Moving Average Convergence Divergence (MACD) shows a fresh bullish crossover on the daily chart.</p>
-        <h2>What Could Stop the Rally?</h2>
-        <p>Risks include a sudden regulatory shock (SEC enforcement action), broader risk-off sentiment in equities, or a Mt. Gox-related distribution event. However, current on-chain data suggests large holders are accumulating, not distributing.</p>
-      </div>
-      <div class="article-tags"><h4 style="color:#8888aa">Tags</h4><div class="tags"><a href="#" class="tag">#Bitcoin</a><a href="#" class="tag">#BTC</a><a href="#" class="tag">#CryptoMarkets</a><a href="#" class="tag">#ETF</a><a href="#" class="tag">#Bullrun2026</a></div></div>
-      <div class="author-box">
-        <img src="https://i.pravatar.cc/120?img=60" alt="Michael Torres" class="author-box__avatar">
-        <div><h3 class="author-box__name" style="color:#f0f0f8">Michael Torres</h3><div class="author-box__role">Bitcoin Analyst · CryptoSignal</div><p class="author-box__bio" style="color:#8888aa">Michael has covered cryptocurrency markets since 2016. Former quant trader at Goldman Sachs.</p><div class="author-social"><a href="#" style="background:#161b22;border-color:rgba(247,147,26,.2)"><i class="fab fa-x-twitter"></i></a><a href="#" style="background:#161b22;border-color:rgba(247,147,26,.2)"><i class="fab fa-linkedin-in"></i></a></div></div>
-      </div>
-      <nav class="post-nav">
-        <div class="post-nav__item"><img src="https://picsum.photos/seed/cpr1/140/104" alt=""><div><div class="post-nav__label"><i class="fas fa-arrow-left"></i> Previous</div><div class="post-nav__title" style="color:#f0f0f8">Why BTC Held $100K Support</div></div></div>
-        <div class="post-nav__item post-nav__item--next"><img src="https://picsum.photos/seed/cpr2/140/104" alt=""><div><div class="post-nav__label">Next <i class="fas fa-arrow-right"></i></div><div class="post-nav__title" style="color:#f0f0f8">Altcoins Primed for 10x Runs</div></div></div>
-      </nav>
-      <section class="related"><h3 class="section-title" style="color:#f0f0f8">Related <span>Articles</span></h3><div class="grid g3" style="margin-top:20px">
-        <article class="card"><a href="single.html" class="card__thumb"><img src="https://picsum.photos/seed/cr1c/500/280" alt="" loading="lazy"><span class="card__cat" style="background:#f7931a;color:#000">Bitcoin</span></a><div class="card__body"><h3 class="card__title"><a href="single.html">BTC Price Prediction: 10 Analysts Share Q3 Targets</a></h3></div></article>
-        <article class="card"><a href="single.html" class="card__thumb"><img src="https://picsum.photos/seed/cr2c/500/280" alt="" loading="lazy"><span class="card__cat" style="background:#627eea">ETF</span></a><div class="card__body"><h3 class="card__title"><a href="single.html">BlackRock IBIT: Inside the World's Largest Bitcoin Fund</a></h3></div></article>
-        <article class="card"><a href="single.html" class="card__thumb"><img src="https://picsum.photos/seed/cr3c/500/280" alt="" loading="lazy"><span class="card__cat" style="background:#a855f7">Altcoins</span></a><div class="card__body"><h3 class="card__title"><a href="single.html">Ethereum Outperforms BTC for First Time in 14 Months</a></h3></div></article>
-      </div></section>
-    </article>
-    <aside class="sidebar">
-      <div class="price-widget">
-        <div class="sym">Bitcoin (BTC)</div>
-        <div class="price">$107,440</div>
-        <div class="change">▲ +$2,924 (+2.8%)</div>
-        <div class="stats">
-          <div class="stat-item"><label>24h High</label><strong style="color:#22c55e">$108,200</strong></div>
-          <div class="stat-item"><label>24h Low</label><strong style="color:#ef4444">$104,100</strong></div>
-          <div class="stat-item"><label>7d Change</label><strong style="color:#22c55e">+14.2%</strong></div>
-        </div>
-      </div>
-      <div class="newsletter-widget" style="background:linear-gradient(135deg,#0d1117,#1a1f2e)"><div class="nl-icon" style="background:#f7931a"><i class="fab fa-bitcoin"></i></div><h4>Crypto Signals</h4><p>Daily alpha & market analysis</p><form class="nl-form"><input type="email" placeholder="your@email.com"><button style="background:#f7931a;color:#000">Subscribe</button></form></div>
-      <div class="ad-wrap"><p class="ad-label">Advertisement</p><div class="ad-box" style="height:600px;border-radius:8px;background:linear-gradient(180deg,#0d1117,#1a2a3a);color:rgba(255,255,255,.2);font-size:.75rem">160 × 600<br>Skyscraper</div></div>
-    </aside>
+    <article id="articleContent"></article>
+    <aside class="sidebar" id="singleSidebar"></aside>
   </div>
 </div>
 </main>
 
-<footer class="footer-main" style="background:#060a0f"><div class="wrap"><div class="footer-grid"><div class="footer-brand"><a href="index.html" class="logo"><i class="fab fa-bitcoin" style="color:#f7931a"></i> Crypto<span>Signal</span></a><p>Your #1 source for crypto news worldwide.</p><div class="footer-social"><a href="#"><i class="fab fa-x-twitter"></i></a><a href="#"><i class="fab fa-discord"></i></a><a href="#"><i class="fab fa-telegram"></i></a></div></div><div class="footer-col"><h4>Coins</h4><ul><li><a href="#">Bitcoin</a></li><li><a href="#">Ethereum</a></li><li><a href="#">Solana</a></li></ul></div><div class="footer-col"><h4>Topics</h4><ul><li><a href="#">DeFi</a></li><li><a href="#">NFT</a></li><li><a href="#">Web3</a></li></ul></div><div class="footer-col"><h4>Legal</h4><ul><li><a href="#">Disclaimer</a></li><li><a href="#">Privacy</a></li></ul></div></div></div></footer>
-<div class="footer-bottom" style="background:#040608"><div class="wrap"><span>© 2026 CryptoSignal. Not financial advice.</span></div></div>
-<button class="back-top" id="backTop" style="background:#f7931a;color:#000"><i class="fas fa-chevron-up"></i></button>
+<div id="siteFooter"></div>
+<button class="back-top" id="backTop"><i class="fas fa-chevron-up"></i></button>
+
+<div class="search-overlay" id="searchOverlay">
+  <div class="search-box">
+    <button class="search-close" aria-label="إغلاق"><i class="fas fa-times"></i></button>
+    <h3>ابحث في أخبار الكريبتو</h3>
+    <div class="search-input-wrap"><input type="search" placeholder="اكتب للبحث…" autofocus></div>
+  </div>
+</div>
+
+<script src="data/articles.js"></script>
+<script src="js/shared.js"></script>
+<script src="js/single.js"></script>
 <script src="../assets/js/pds-main.js"></script>
 </body>
 </html>

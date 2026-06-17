@@ -1,148 +1,104 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl" class="demo-education">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>EduPulse — Education News & Learning</title>
+<title>تعليم+ — منح وجامعات وتقنية تعليم</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <link rel="stylesheet" href="../assets/css/pds-core.css">
-<style>
-  :root { --c-primary:#f59e0b;--c-primary-dk:#d97706;--c-secondary:#1c1917;--c-accent:#fbbf24; }
-  .site-header { border-bottom:3px solid #f59e0b; }
-  .site-nav { background:#1c1917; }
-  .ticker { background:#fffbeb;border-color:#fde68a; }
-  .ticker__label { background:#f59e0b;color:#000; }
-  .ticker__item a { color:#78350f; }
-  .card__cat { background:#f59e0b;color:#000; }
-  .section-hd::before { background:#f59e0b; }
-  .widget__title { background:#1c1917; }
-
-  .edu-hero { background:linear-gradient(135deg,#1c1917,#292524);padding:70px 0;color:#fff; }
-  .edu-hero .wrap { display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center; }
-  .edu-hero h1 { font-size:clamp(1.8rem,4vw,2.8rem);margin-bottom:14px;line-height:1.2; }
-  .edu-hero h1 span { color:#f59e0b; }
-  .edu-hero p { color:rgba(255,255,255,.75);margin-bottom:24px;line-height:1.7; }
-  .edu-search { display:flex;gap:0;background:#fff;border-radius:8px;overflow:hidden; }
-  .edu-search input { flex:1;padding:12px 16px;border:none;outline:none;font-size:.88rem; }
-  .edu-search button { background:#f59e0b;color:#000;padding:12px 20px;font-weight:700;font-size:.88rem;white-space:nowrap; }
-
-  /* Course card */
-  .course-card { background:#fff;border:1px solid #e8e8e8;border-radius:12px;overflow:hidden;transition:all .25s; }
-  .course-card:hover { transform:translateY(-4px);box-shadow:0 8px 28px rgba(245,158,11,.15);border-color:#f59e0b; }
-  .course-card__thumb { position:relative;aspect-ratio:16/9;overflow:hidden; }
-  .course-card__thumb img { width:100%;height:100%;object-fit:cover; }
-  .course-badge { position:absolute;top:10px;left:10px;background:#f59e0b;color:#000;font-size:.68rem;font-weight:700;padding:3px 9px;border-radius:4px; }
-  .course-card__body { padding:14px; }
-  .course-card__univ { font-size:.72rem;color:#f59e0b;font-weight:600;margin-bottom:4px;display:flex;align-items:center;gap:5px; }
-  .course-card__title { font-size:.9rem;font-weight:700;color:#1c1917;margin-bottom:8px;line-height:1.4; }
-  .course-card__meta { font-size:.75rem;color:#888;display:flex;gap:12px; }
-  .course-rating { color:#f59e0b;font-size:.78rem; }
-</style>
+<link rel="stylesheet" href="css/edu-ar.css">
 </head>
 <body>
-<div class="topbar" style="background:#1c1917"><div class="wrap"><span class="topbar__date"><i class="fas fa-graduation-cap" style="color:#f59e0b;margin-right:5px"></i>Academic Year 2026-27 · Registration Open</span><div class="topbar__social"><a href="#"><i class="fab fa-x-twitter"></i></a><a href="#"><i class="fab fa-linkedin-in"></i></a></div></div></div>
-
-<header class="site-header"><div class="wrap"><a href="index.html" class="logo"><i class="fas fa-graduation-cap" style="color:#f59e0b"></i> Edu<span>Pulse</span></a><div class="header-actions"><button class="btn-icon search-trigger"><i class="fas fa-search"></i></button><button class="btn-icon dark-toggle"><i class="fas fa-moon"></i></button><a href="#" class="btn btn-primary" style="background:#f59e0b;color:#000"><i class="fas fa-book-open"></i> Browse Courses</a></div></div></header>
-
-<nav class="site-nav"><div class="wrap"><ul class="nav-menu"><li class="nav-item active"><a href="index.html" class="nav-link">Home</a></li><li class="nav-item"><a href="#" class="nav-link">Higher Ed</a></li><li class="nav-item"><a href="#" class="nav-link">EdTech</a></li><li class="nav-item"><a href="#" class="nav-link">K-12</a></li><li class="nav-item"><a href="#" class="nav-link">Scholarships</a></li><li class="nav-item"><a href="#" class="nav-link">Online Learning</a></li><li class="nav-item"><a href="#" class="nav-link" style="color:#fbbf24">📚 Free Courses</a></li></ul></div></nav>
-
-<!-- Header News Strip -->
-<div class="header-news" style="border-color:#fde68a">
+<div class="progress-bar" id="progress"></div>
+<div class="edu-topbar">
   <div class="wrap">
-    <div class="header-news__label" style="background:#f59e0b;color:#000">Latest</div>
-    <div class="hn-grid">
-      <a href="single.html" class="hn-card"><div class="hn-card__img"><img src="https://picsum.photos/seed/hn-e1/120/120" alt="" loading="lazy"></div><div class="hn-card__body"><span class="hn-card__cat" style="color:#d97706">Rankings</span><h3 class="hn-card__title">Oxford Claims #1 in QS Rankings 2026 — Harvard Drops to #3</h3><div class="hn-card__meta"><i class="fas fa-clock"></i> 2h ago</div></div></a>
-      <a href="single.html" class="hn-card"><div class="hn-card__img"><img src="https://picsum.photos/seed/hn-e2/120/120" alt="" loading="lazy"></div><div class="hn-card__body"><span class="hn-card__cat" style="color:#d97706">Scholarships</span><h3 class="hn-card__title">MIT AI Graduate Program — Full Scholarships Open for 2027</h3><div class="hn-card__meta"><i class="fas fa-clock"></i> 4h ago</div></div></a>
-      <a href="single.html" class="hn-card"><div class="hn-card__img"><img src="https://picsum.photos/seed/hn-e3/120/120" alt="" loading="lazy"></div><div class="hn-card__body"><span class="hn-card__cat" style="color:#d97706">EdTech</span><h3 class="hn-card__title">OpenAI + Coursera: Free AI Literacy Program for 10 Million Learners</h3><div class="hn-card__meta"><i class="fas fa-clock"></i> 6h ago</div></div></a>
-      <a href="single.html" class="hn-card"><div class="hn-card__img"><img src="https://picsum.photos/seed/hn-e4/120/120" alt="" loading="lazy"></div><div class="hn-card__body"><span class="hn-card__cat" style="color:#d97706">KAUST</span><h3 class="hn-card__title">KAUST Enters Top 10 World University Rankings — Saudi Excellence</h3><div class="hn-card__meta"><i class="fas fa-clock"></i> Yesterday</div></div></a>
+    <div class="edu-topbar__left">
+      <span class="edu-topbar__live"><i class="fas fa-newspaper"></i> أخبار تعليمية يومياً</span>
+      <span><i class="fas fa-calendar-alt" style="color:var(--c-primary);margin-left:5px;opacity:.7"></i> الاثنين، 15 يونيو 2026</span>
+    </div>
+    <div class="edu-topbar__social">
+      <a href="#"><i class="fab fa-x-twitter"></i></a>
+      <a href="#"><i class="fab fa-youtube"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
     </div>
   </div>
 </div>
-
-<div class="ticker"><div class="ticker__label"><span class="ticker__dot"></span>EDU NEWS</div><div class="ticker__track"><div class="ticker__inner"><span class="ticker__item"><a href="#">MIT opens applications for 2027 AI Graduate Program — full scholarships available</a></span><span class="ticker__item"><a href="#">UNESCO report: 300M children globally still lack basic literacy skills</a></span><span class="ticker__item"><a href="#">OpenAI and Coursera launch free AI literacy program for 10 million learners</a></span><span class="ticker__item"><a href="#">Harvard ranking drops to #3 — Oxford claims top spot for 2026</a></span><span class="ticker__item"><a href="#">MIT opens applications for 2027 AI Graduate Program</a></span></div></div></div>
-
-<!-- Hero -->
-<div class="edu-hero">
+<header class="edu-header">
   <div class="wrap">
-    <div>
-      <h1>Your Gateway to <span>Education</span> News & Learning</h1>
-      <p>Covering higher education, EdTech innovation, scholarships, and the future of learning for students and educators worldwide.</p>
-      <div class="edu-search" style="margin-bottom:20px">
-        <input type="text" placeholder="Search courses, universities, news...">
-        <button><i class="fas fa-search"></i> Search</button>
+    <div class="edu-header__bar">
+      <a href="index.html" class="edu-logo">
+        <div class="edu-logo__icon"><i class="fas fa-graduation-cap"></i></div>
+        <div>تعليم<span>+</span><span class="edu-logo__sub">منح · جامعات · EdTech</span></div>
+      </a>
+      <div class="edu-search search-trigger" role="button" tabindex="0">
+        <i class="fas fa-search"></i>
+        <input type="search" placeholder="ابحث عن منحة، جامعة، امتحان…" readonly>
       </div>
-      <div style="display:flex;gap:10px;flex-wrap:wrap">
-        <a href="#" style="background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:#fff;padding:6px 14px;border-radius:20px;font-size:.78rem"><i class="fas fa-university"></i> Universities</a>
-        <a href="#" style="background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:#fff;padding:6px 14px;border-radius:20px;font-size:.78rem"><i class="fas fa-laptop-code"></i> EdTech</a>
-        <a href="#" style="background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:#fff;padding:6px 14px;border-radius:20px;font-size:.78rem"><i class="fas fa-award"></i> Scholarships</a>
-        <a href="#" style="background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:#fff;padding:6px 14px;border-radius:20px;font-size:.78rem"><i class="fas fa-globe"></i> Rankings</a>
+      <div class="edu-header__actions">
+        <button class="edu-btn-icon search-trigger" title="بحث"><i class="fas fa-search"></i></button>
+        <a href="archive.html" class="edu-btn-live"><i class="fas fa-bolt"></i> منح اليوم</a>
       </div>
     </div>
-    <div><img src="https://picsum.photos/seed/edu-hero/600/400" alt="Education" style="width:100%;border-radius:16px;box-shadow:0 20px 60px rgba(0,0,0,.4)"></div>
+    <nav class="edu-nav site-nav site-nav--segments" aria-label="أقسام التعليم">
+      <ul class="edu-nav__list site-nav__list">
+      <li class="edu-nav__item site-nav__item active"><a href="index.html"><i class="fas fa-home" aria-hidden="true"></i><span>الرئيسية</span></a></li>
+      <li class="edu-nav__item site-nav__item" data-cat="schools"><a href="archive.html?cat=schools"><i class="fas fa-school" aria-hidden="true"></i><span>مدارس</span></a></li>
+      <li class="edu-nav__item site-nav__item" data-cat="university"><a href="archive.html?cat=university"><i class="fas fa-university" aria-hidden="true"></i><span>جامعات</span></a></li>
+      <li class="edu-nav__item site-nav__item" data-cat="scholarships"><a href="archive.html?cat=scholarships"><i class="fas fa-award" aria-hidden="true"></i><span>منح</span></a></li>
+      <li class="edu-nav__item site-nav__item" data-cat="edtech"><a href="archive.html?cat=edtech"><i class="fas fa-laptop-code" aria-hidden="true"></i><span>EdTech</span></a></li>
+      <li class="edu-nav__item site-nav__item" data-cat="exams"><a href="archive.html?cat=exams"><i class="fas fa-file-alt" aria-hidden="true"></i><span>امتحانات</span></a></li>
+      <li class="edu-nav__item site-nav__item" data-cat="careers"><a href="archive.html?cat=careers"><i class="fas fa-briefcase" aria-hidden="true"></i><span>مسارات</span></a></li>
+      </ul>
+    </nav>
   </div>
+</header>
+<section class="edu-hero-zone">
+  <div class="wrap">
+    <div class="edu-hero-zone__head">
+      <div class="edu-hero-zone__title"><i class="fas fa-star"></i> أبرز أخبار التعليم</div>
+      <a href="archive.html" style="font-size:.82rem;font-weight:700;color:var(--c-primary)">عرض الكل <i class="fas fa-arrow-left"></i></a>
+    </div>
+    <div class="edu-hero" id="headerHero"></div>
+  </div>
+</section>
+<div class="edu-ticker">
+  <div class="edu-ticker__label"><span class="edu-ticker__dot"></span>عاجل</div>
+  <div class="edu-ticker__track"><div class="edu-ticker__inner ticker__inner" id="tickerInner"></div></div>
 </div>
-
-<main style="padding:48px 0 60px">
-<div class="wrap">
-
-  <!-- Breaking Education News -->
-  <div class="section-hd" style="margin-bottom:20px"><h2 class="section-title">Breaking <span>Education News</span></h2><a href="archive.html" class="see-all">All <i class="fas fa-arrow-right"></i></a></div>
+<main style="padding:36px 0 60px"><div class="wrap">
   <div class="grid g-main" style="gap:32px">
     <div>
-      <div class="g-hero" style="gap:4px;border-radius:14px;overflow:hidden;margin-bottom:40px">
-        <div class="card card--hero" style="min-height:400px"><div class="card__thumb" style="height:100%"><img src="https://picsum.photos/seed/edu1/900/480" alt=""></div><div class="card__body"><a href="#" class="card__cat" style="background:#f59e0b;color:#000">Rankings</a><h2 class="card__title" style="font-size:1.5rem">Oxford Overtakes Harvard in QS World University Rankings 2026</h2><p class="card__excerpt" style="color:rgba(255,255,255,.75)">For the first time in 20 years, a European institution tops the global rankings amid US funding cuts...</p><div class="card__meta" style="color:rgba(255,255,255,.65)"><span>Emma Watson</span><span class="dot">2h ago</span><span class="dot">5 min</span></div></div></div>
-        <div style="display:flex;flex-direction:column;gap:4px">
-          <div class="card card--hero" style="flex:1;min-height:196px"><div class="card__thumb" style="height:100%"><img src="https://picsum.photos/seed/edu2/500/240" alt=""></div><div class="card__body" style="padding:12px"><a href="#" class="card__cat" style="background:#6366f1;font-size:.68rem">EdTech</a><h3 class="card__title" style="font-size:.9rem;color:#fff;margin-top:5px">OpenAI + Coursera: Free AI Literacy for 10M Learners</h3></div></div>
-          <div class="card card--hero" style="flex:1;min-height:196px"><div class="card__thumb" style="height:100%"><img src="https://picsum.photos/seed/edu3/500/240" alt=""></div><div class="card__body" style="padding:12px"><a href="#" class="card__cat" style="background:#22c55e;font-size:.68rem">Scholarships</a><h3 class="card__title" style="font-size:.9rem;color:#fff;margin-top:5px">MIT AI Graduate Program Opens Applications — Full Rides Available</h3></div></div>
+      <div id="categorySections"></div>
+      <section class="latest-edu" id="latestSection">
+        <div class="latest-edu__head">
+          <h2 class="latest-edu__title">آخر <span style="color:var(--c-primary)">الأخبار</span></h2>
+          <a href="archive.html" class="edu-section__btn"><i class="fas fa-newspaper"></i> عرض الكل</a>
         </div>
-      </div>
-
-      <!-- Featured Courses -->
-      <div class="section-hd"><h2 class="section-title">Featured <span>Online Courses</span></h2><a href="archive.html" class="see-all">All Courses <i class="fas fa-arrow-right"></i></a></div>
-      <div class="grid g3" style="margin-bottom:40px">
-        <div class="course-card">
-          <div class="course-card__thumb"><img src="https://picsum.photos/seed/course1/400/225" alt="" loading="lazy"><span class="course-badge">Free</span></div>
-          <div class="course-card__body"><div class="course-card__univ"><i class="fas fa-university"></i> MIT OpenCourseWare</div><div class="course-card__title">Introduction to Machine Learning with Python</div><div class="course-card__meta"><span><i class="far fa-clock"></i> 12h</span><span><i class="fas fa-users"></i> 2.4M enrolled</span></div><div class="course-rating">★★★★★ <span style="color:#888">4.9 (142K reviews)</span></div></div>
-        </div>
-        <div class="course-card">
-          <div class="course-card__thumb"><img src="https://picsum.photos/seed/course2/400/225" alt="" loading="lazy"><span class="course-badge" style="background:#6366f1;color:#fff">Certificate</span></div>
-          <div class="course-card__body"><div class="course-card__univ"><i class="fas fa-university"></i> Harvard Online</div><div class="course-card__title">Data Science & Analytics: Professional Certificate</div><div class="course-card__meta"><span><i class="far fa-clock"></i> 36h</span><span><i class="fas fa-users"></i> 890K enrolled</span></div><div class="course-rating">★★★★★ <span style="color:#888">4.8 (88K reviews)</span></div></div>
-        </div>
-        <div class="course-card">
-          <div class="course-card__thumb"><img src="https://picsum.photos/seed/course3/400/225" alt="" loading="lazy"><span class="course-badge" style="background:#22c55e">New</span></div>
-          <div class="course-card__body"><div class="course-card__univ"><i class="fas fa-university"></i> Stanford Online</div><div class="course-card__title">Entrepreneurship in an AI World</div><div class="course-card__meta"><span><i class="far fa-clock"></i> 20h</span><span><i class="fas fa-users"></i> 420K enrolled</span></div><div class="course-rating">★★★★½ <span style="color:#888">4.7 (34K reviews)</span></div></div>
-        </div>
-      </div>
-
-      <!-- Latest News Grid -->
-      <div class="section-hd"><h2 class="section-title">Latest <span>News</span></h2></div>
-      <div class="grid g3">
-        <article class="card"><a href="single.html" class="card__thumb"><img src="https://picsum.photos/seed/en1/500/280" alt="" loading="lazy"><span class="card__cat">Higher Ed</span></a><div class="card__body"><div class="card__meta"><span>3h ago</span><span class="dot">5 min</span></div><h3 class="card__title"><a href="single.html">US Student Loan Crisis Deepens: Average Debt Now $52,000</a></h3></div></article>
-        <article class="card"><a href="single.html" class="card__thumb"><img src="https://picsum.photos/seed/en2/500/280" alt="" loading="lazy"><span class="card__cat" style="background:#6366f1">EdTech</span></a><div class="card__body"><div class="card__meta"><span>5h ago</span><span class="dot">6 min</span></div><h3 class="card__title"><a href="single.html">AI Tutors Now Outperform Human Tutors in STEM for 8-16 Year Olds</a></h3></div></article>
-        <article class="card"><a href="single.html" class="card__thumb"><img src="https://picsum.photos/seed/en3/500/280" alt="" loading="lazy"><span class="card__cat" style="background:#22c55e">Scholarships</span></a><div class="card__body"><div class="card__meta"><span>Yesterday</span><span class="dot">4 min</span></div><h3 class="card__title"><a href="single.html">Top 50 Fully-Funded Scholarships Still Open for 2026-27</a></h3></div></article>
-      </div>
+        <div id="latestList"></div>
+      </section>
     </div>
     <aside class="sidebar">
-      <div class="newsletter-widget" style="background:linear-gradient(135deg,#1c1917,#292524)"><div class="nl-icon" style="background:#f59e0b"><i class="fas fa-graduation-cap" style="color:#000"></i></div><h4>EduPulse Weekly</h4><p>Scholarships, rankings & EdTech news</p><form class="nl-form"><input type="email" placeholder="your@email.com"><button style="background:#f59e0b;color:#000">Subscribe</button></form></div>
-      <div class="widget"><div class="widget__title">Trending</div><div class="widget__body" style="padding:6px 16px">
-        <div class="trending-item"><span class="n">01</span><div><h4><a href="single.html">Oxford Beats Harvard: World Rankings 2026</a></h4><span>98K views</span></div></div>
-        <div class="trending-item"><span class="n">02</span><div><h4><a href="single.html">Top 50 Fully-Funded Scholarships 2026-27</a></h4><span>84K views</span></div></div>
-        <div class="trending-item"><span class="n">03</span><div><h4><a href="single.html">AI Tutors vs Human Tutors: The Data</a></h4><span>71K views</span></div></div>
-        <div class="trending-item"><span class="n">04</span><div><h4><a href="single.html">US Student Loan Crisis: What Students Must Know</a></h4><span>66K views</span></div></div>
-      </div></div>
-      <div class="ad-wrap"><p class="ad-label">Advertisement</p><div class="ad-box" style="height:250px;border-radius:8px;background:linear-gradient(135deg,#1c1917,#292524);color:rgba(255,255,255,.2)">300 × 250</div></div>
+      <div class="widget"><div class="widget__title">🔥 الأكثر قراءة</div><div class="widget__body" style="padding:8px 16px"><div id="trendingList"></div></div></div>
+      <div class="widget"><div class="widget__title">وسوم تعليمية</div><div class="widget__body" style="padding:12px 16px"><div class="tags" id="sidebarTags"></div></div></div>
     </aside>
   </div>
+</div></main>
+<div id="siteFooter"></div>
+<button class="back-top" id="backTop"><i class="fas fa-chevron-up"></i></button>
+<div class="search-overlay" id="searchOverlay">
+  <button class="search-close" style="position:absolute;top:20px;left:20px;color:#fff;font-size:1.5rem;background:none;border:none;cursor:pointer"><i class="fas fa-times"></i></button>
+  <div class="search-box">
+    <div class="search-input-wrap" style="background:#fff;border:1px solid var(--edu-border);border-radius:12px;padding:4px 12px">
+      <i class="fas fa-search" style="color:var(--c-primary)"></i>
+      <input type="search" placeholder="ابحث عن منحة، جامعة، امتحان…" style="font-size:1.05rem;background:transparent;color:#0f172a">
+    </div>
+    <div class="search-results" id="searchPreview" style="background:#fff;border:1px solid var(--edu-border);border-radius:12px;margin-top:12px"></div>
+  </div>
 </div>
-</main>
-
-<div class="footer-nl" style="background:#d97706"><div class="wrap"><div><h3>EduPulse Newsletter</h3><p>Scholarship alerts, EdTech news, and university rankings weekly</p></div><form class="footer-nl-form"><input type="email" placeholder="your@email.com"><button type="submit"><i class="fas fa-graduation-cap"></i> Subscribe</button></form></div></div>
-<footer class="footer-main" style="background:#111"><div class="wrap"><div class="footer-grid"><div class="footer-brand"><a href="index.html" class="logo"><i class="fas fa-graduation-cap" style="color:#f59e0b"></i> Edu<span style="color:#f59e0b">Pulse</span></a><p>Your trusted source for global education news, scholarships, and EdTech innovation.</p><div class="footer-social"><a href="#"><i class="fab fa-x-twitter"></i></a><a href="#"><i class="fab fa-linkedin-in"></i></a><a href="#"><i class="fab fa-youtube"></i></a></div></div><div class="footer-col"><h4>Topics</h4><ul><li><a href="#">Higher Ed</a></li><li><a href="#">EdTech</a></li><li><a href="#">K-12</a></li><li><a href="#">Online Learning</a></li></ul></div><div class="footer-col"><h4>Resources</h4><ul><li><a href="#">Scholarships</a></li><li><a href="#">University Rankings</a></li><li><a href="#">Course Reviews</a></li></ul></div><div class="footer-col"><h4>Company</h4><ul><li><a href="#">About</a></li><li><a href="#">Advertise</a></li><li><a href="#">Privacy</a></li><li><a href="#">Terms</a></li></ul></div></div></div></footer>
-<div class="footer-bottom"><div class="wrap"><span>© 2026 EduPulse. All rights reserved.</span></div></div>
-
-<button class="back-top" id="backTop" style="background:#f59e0b"><i class="fas fa-chevron-up" style="color:#000"></i></button>
+<script src="data/articles.js"></script>
+<script src="js/shared.js"></script>
+<script src="js/app.js"></script>
 <script src="../assets/js/pds-main.js"></script>
-</body>
-</html>
+</body></html>

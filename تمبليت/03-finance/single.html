@@ -1,124 +1,91 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl" class="demo-finance">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Federal Reserve Holds Rates — FinanceWire</title>
+<title>مقال — مال+</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <link rel="stylesheet" href="../assets/css/pds-core.css">
-<style>
-  :root { --c-primary:#22c55e;--c-primary-dk:#16a34a;--c-secondary:#052e16;--c-accent:#86efac; }
-  .market-bar { background:#052e16;height:36px;overflow:hidden;display:flex;align-items:center }
-  .market-bar-inner { display:flex;gap:0;white-space:nowrap;animation:scroll-left 40s linear infinite }
-  .ticker-item { padding:0 20px;font-size:.74rem;display:flex;align-items:center;gap:8px;border-right:1px solid rgba(255,255,255,.06) }
-  .ticker-sym { font-weight:700;color:#fff }
-  .ticker-price { color:rgba(255,255,255,.75) }
-  .up { color:#4ade80 }
-  .down { color:#f87171 }
-  .site-header { border-bottom:3px solid #22c55e }
-  .site-nav { background:#052e16 }
-  .card { background:#fff }
-  .widget__title { background:#052e16 }
-  .data-box { background:#f0fdf4;border:1px solid #bbf7d0;border-radius:12px;padding:20px;margin:24px 0 }
-  .data-box strong { color:#16a34a;font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;display:block;margin-bottom:10px }
-  .data-grid { display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:12px }
-  .data-item label { font-size:.7rem;color:#888;display:block;margin-bottom:2px }
-  .data-item strong { font-size:1rem;font-weight:700;color:#052e16;font-size:.9rem;color:#052e16 }
-</style>
+<link rel="stylesheet" href="css/finance-ar.css">
 </head>
-<body>
-<div class="market-bar"><div class="market-bar-inner"><div class="ticker-item"><span class="ticker-sym">S&P500</span><span class="ticker-price">5,842</span><span class="up">+0.94%</span></div><div class="ticker-item"><span class="ticker-sym">NASDAQ</span><span class="ticker-price">19,284</span><span class="up">+1.12%</span></div><div class="ticker-item"><span class="ticker-sym">DOW</span><span class="ticker-price">42,185</span><span class="down">-0.21%</span></div><div class="ticker-item"><span class="ticker-sym">NVDA</span><span class="ticker-price">$1,240</span><span class="up">+3.41%</span></div><div class="ticker-item"><span class="ticker-sym">AAPL</span><span class="ticker-price">$225</span><span class="up">+2.13%</span></div><div class="ticker-item"><span class="ticker-sym">BTC</span><span class="ticker-price">$107K</span><span class="up">+2.8%</span></div><div class="ticker-item"><span class="ticker-sym">GOLD</span><span class="ticker-price">$2,480</span><span class="up">+0.4%</span></div><div class="ticker-item"><span class="ticker-sym">OIL</span><span class="ticker-price">$82.15</span><span class="down">-0.78%</span></div><div class="ticker-item"><span class="ticker-sym">EUR/USD</span><span class="ticker-price">1.0824</span><span class="up">+0.15%</span></div></div></div>
-<div class="topbar"><div class="wrap"><span class="topbar__date"><i class="fas fa-chart-line" style="color:#22c55e;margin-right:5px"></i>Mon Jun 15, 2026 · Markets Open</span><div class="topbar__links"><a href="#">Subscribe</a></div></div></div>
-<header class="site-header"><div class="wrap"><a href="index.html" class="logo"><i class="fas fa-chart-line" style="color:#22c55e"></i> Finance<span>Wire</span></a><div class="header-actions"><button class="btn-icon dark-toggle"><i class="fas fa-moon"></i></button><a href="#" class="btn btn-primary" style="background:#22c55e">Subscribe</a></div></div></header>
-<nav class="site-nav"><div class="wrap"><ul class="nav-menu"><li class="nav-item"><a href="index.html" class="nav-link">Markets</a></li><li class="nav-item active"><a href="#" class="nav-link">Economy</a></li><li class="nav-item"><a href="#" class="nav-link">Stocks</a></li><li class="nav-item"><a href="#" class="nav-link">Banking</a></li><li class="nav-item"><a href="#" class="nav-link">Cryptocurrency</a></li></ul></div></nav>
+<body class="page-inner">
 
-<!-- Header News Strip -->
-<div class="header-news" style="background:#052e16;border-color:rgba(34,197,94,.15)">
+<div class="progress-bar" id="progress"></div>
+
+<div class="fin-topbar">
   <div class="wrap">
-    <div class="header-news__label" style="background:#22c55e">Latest</div>
-    <div class="hn-grid">
-      <a href="single.html" class="hn-card"><div class="hn-card__img"><img src="https://picsum.photos/seed/hn-f1/120/120" alt="" loading="lazy"></div><div class="hn-card__body"><span class="hn-card__cat" style="color:#4ade80">Fed</span><h3 class="hn-card__title" style="color:rgba(255,255,255,.88)">Fed Holds Rates at 4.25% — September Cut Now 80% Priced In</h3><div class="hn-card__meta" style="color:rgba(255,255,255,.4)"><i class="fas fa-clock"></i> 1h ago</div></div></a>
-      <a href="single.html" class="hn-card"><div class="hn-card__img"><img src="https://picsum.photos/seed/hn-f2/120/120" alt="" loading="lazy"></div><div class="hn-card__body"><span class="hn-card__cat" style="color:#4ade80">Stocks</span><h3 class="hn-card__title" style="color:rgba(255,255,255,.88)">S&amp;P 500 Hits All-Time High 5,980 After Strong Jobs Report</h3><div class="hn-card__meta" style="color:rgba(255,255,255,.4)"><i class="fas fa-clock"></i> 3h ago</div></div></a>
-      <a href="single.html" class="hn-card"><div class="hn-card__img"><img src="https://picsum.photos/seed/hn-f3/120/120" alt="" loading="lazy"></div><div class="hn-card__body"><span class="hn-card__cat" style="color:#4ade80">Earnings</span><h3 class="hn-card__title" style="color:rgba(255,255,255,.88)">Apple Reports $98B Revenue Q2 — Beats Estimates by $4.2B</h3><div class="hn-card__meta" style="color:rgba(255,255,255,.4)"><i class="fas fa-clock"></i> 5h ago</div></div></a>
-      <a href="single.html" class="hn-card"><div class="hn-card__img"><img src="https://picsum.photos/seed/hn-f4/120/120" alt="" loading="lazy"></div><div class="hn-card__body"><span class="hn-card__cat" style="color:#4ade80">Oil</span><h3 class="hn-card__title" style="color:rgba(255,255,255,.88)">Brent Crude Slips Below $80 as Dollar Strengthens</h3><div class="hn-card__meta" style="color:rgba(255,255,255,.4)"><i class="fas fa-clock"></i> 7h ago</div></div></a>
+    <div class="fin-topbar__left">
+      <span><i class="fas fa-newspaper" style="color:#4ade80;margin-left:5px"></i> أخبار اقتصادية</span>
+      <span><i class="fas fa-calendar-alt" style="color:#22c55e;margin-left:5px"></i> الاثنين، 15 يونيو 2026</span>
     </div>
+    <div class="fin-topbar__social">
+      <a href="#"><i class="fab fa-x-twitter"></i></a>
+      <a href="#"><i class="fab fa-linkedin-in"></i></a>
+      <a href="#"><i class="fab fa-telegram-plane"></i></a>
+    </div>
+  </div>
+</div>
+
+<header class="fin-header fin-header--compact">
+  <div class="wrap">
+    <div class="fin-header__bar">
+      <a href="index.html" class="fin-logo">
+        <div class="fin-logo__icon"><i class="fas fa-chart-line"></i></div>
+        مال<span>+</span><span class="fin-logo__tag">Economy</span>
+      </a>
+      <div class="fin-header__actions">
+        <button class="fin-btn-icon search-trigger" title="بحث"><i class="fas fa-search"></i></button>
+        <a href="archive.html?cat=mk" class="fin-btn-markets"><i class="fas fa-chart-bar"></i> الأسواق</a>
+      </div>
+    </div>
+  </div>
+  <div class="wrap">
+    <nav class="fin-nav site-nav site-nav--pills-solid" aria-label="أقسام مالية">
+      <ul class="fin-nav__list site-nav__list">
+      <li class="fin-nav__item site-nav__item active"><a href="index.html"><i class="fas fa-home" aria-hidden="true"></i><span>الرئيسية</span></a></li>
+      <li class="fin-nav__item site-nav__item" data-cat="mk"><a href="archive.html?cat=mk"><i class="fas fa-chart-line" aria-hidden="true"></i><span>أسواق</span></a></li>
+      <li class="fin-nav__item site-nav__item" data-cat="biz"><a href="archive.html?cat=biz"><i class="fas fa-building" aria-hidden="true"></i><span>أعمال</span></a></li>
+      <li class="fin-nav__item site-nav__item" data-cat="eco"><a href="archive.html?cat=eco"><i class="fas fa-globe" aria-hidden="true"></i><span>اقتصاد</span></a></li>
+      <li class="fin-nav__item site-nav__item" data-cat="bank"><a href="archive.html?cat=bank"><i class="fas fa-university" aria-hidden="true"></i><span>بنوك</span></a></li>
+      <li class="fin-nav__item site-nav__item" data-cat="energy"><a href="archive.html?cat=energy"><i class="fas fa-gas-pump" aria-hidden="true"></i><span>طاقة</span></a></li>
+      <li class="fin-nav__item site-nav__item" data-cat="analysis"><a href="archive.html?cat=analysis"><i class="fas fa-chart-pie" aria-hidden="true"></i><span>تحليلات</span></a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="fin-ticker">
+  <div class="fin-ticker__label"><span class="fin-ticker__dot"></span>عاجل</div>
+  <div class="fin-ticker__track">
+    <div class="fin-ticker__inner ticker__inner" id="tickerInner"></div>
   </div>
 </div>
 
 <main style="padding:36px 0 60px">
 <div class="wrap">
   <div class="grid g-main" style="gap:36px">
-    <article>
-      <nav class="breadcrumb"><a href="index.html">Home</a><span class="sep">›</span><a href="#">Economy</a><span class="sep">›</span><span class="current">Fed Rate Decision</span></nav>
-      <div class="article-cats"><a href="#" style="background:#22c55e">Economy</a><a href="#" style="background:#f59e0b;color:#000">Fed Watch</a></div>
-      <h1 class="article-title">Federal Reserve Holds Rates Steady at 4.25% — Markets Rally on Positive Inflation Data</h1>
-      <p class="article-subtitle">The central bank's decision aligns with consensus expectations as Core PCE falls to 2.1%, the closest to the Fed's 2% target since 2021. Markets interpret the statement as signaling a September cut.</p>
-      <div class="article-meta">
-        <div class="author"><img src="https://i.pravatar.cc/80?img=44" alt="Sarah Thompson"><div><strong>Sarah Thompson</strong><div style="font-size:.72rem;color:#22c55e">Economics Editor</div></div></div>
-        <span><i class="fas fa-calendar-alt"></i> June 15, 2026</span>
-        <span><i class="far fa-clock"></i> 7 min read</span>
-        <span><i class="far fa-eye"></i> 48,200 views</span>
-        <div class="share"><a href="#" class="share-btn share-li"><i class="fab fa-linkedin-in"></i></a><a href="#" class="share-btn share-tw"><i class="fab fa-x-twitter"></i></a><a href="#" class="share-btn share-wa"><i class="fab fa-whatsapp"></i></a></div>
-      </div>
-      <figure class="article-feat"><img src="https://picsum.photos/seed/fed1/1200/640" alt="Federal Reserve Building"><figcaption>The Federal Reserve headquarters in Washington D.C. © AP Photo</figcaption></figure>
-      <div class="data-box">
-        <strong><i class="fas fa-table"></i> Key Data Points</strong>
-        <div class="data-grid">
-          <div class="data-item"><label>Fed Funds Rate</label><strong>4.25% – 4.50%</strong></div>
-          <div class="data-item"><label>Core PCE (May)</label><strong>2.1% YoY</strong></div>
-          <div class="data-item"><label>S&P 500 Reaction</label><strong style="color:#16a34a">+0.94%</strong></div>
-          <div class="data-item"><label>10-yr Treasury</label><strong>4.28%</strong></div>
-          <div class="data-item"><label>Next Meeting</label><strong>September 16</strong></div>
-          <div class="data-item"><label>Rate Cut Odds</label><strong style="color:#16a34a">68% (Sep)</strong></div>
-        </div>
-      </div>
-      <div class="entry-content">
-        <p>The Federal Open Market Committee voted unanimously to keep the target range for the federal funds rate at 4.25%–4.50% at its June meeting, as widely expected. However, the accompanying statement contained notably more dovish language than March's meeting, prompting an immediate rally in equities and a drop in Treasury yields.</p>
-        <p>Chair Jerome Powell, speaking at the post-meeting press conference, acknowledged that "inflation has made meaningful progress" toward the 2% target, while noting that the labor market remains "broadly balanced." The key phrase markets latched onto was Powell's comment that "the question of when to begin reducing rates is now approaching."</p>
-        <h2>Market Reaction</h2>
-        <p>The S&P 500 jumped 0.94% by mid-afternoon, with rate-sensitive sectors leading gains. Technology stocks, which benefit from lower discount rates, outperformed with the Nasdaq rising 1.12%. The 10-year Treasury yield fell 8 basis points to 4.28%, its lowest in three weeks.</p>
-        <blockquote>"This is the most dovish statement since before the hiking cycle began. A September cut is now the base case." — Mohamed El-Erian, Allianz Chief Economic Adviser</blockquote>
-        <h2>What's Next</h2>
-        <p>Markets are now pricing in a 68% probability of a 25-basis-point cut at the September 16 meeting, according to CME FedWatch. Two cuts are now expected by year-end, up from one cut priced in before today's statement.</p>
-        <p>The next major data points that will influence the Fed's decision include July CPI (August 13), July PCE (August 30), and August jobs report (September 5).</p>
-      </div>
-      <div class="article-tags"><h4>Tags</h4><div class="tags"><a href="#" class="tag">#FederalReserve</a><a href="#" class="tag">#InterestRates</a><a href="#" class="tag">#Economy</a><a href="#" class="tag">#Inflation</a><a href="#" class="tag">#Markets</a></div></div>
-      <div class="author-box">
-        <img src="https://i.pravatar.cc/120?img=44" alt="Sarah Thompson" class="author-box__avatar">
-        <div><h3 class="author-box__name">Sarah Thompson</h3><div class="author-box__role">Economics Editor · FinanceWire</div><p class="author-box__bio">Sarah covers macroeconomics, monetary policy, and global markets with 12 years of experience. Former Bloomberg correspondent.</p><div class="author-social"><a href="#"><i class="fab fa-linkedin-in"></i></a><a href="#"><i class="fab fa-x-twitter"></i></a></div></div>
-      </div>
-      <nav class="post-nav">
-        <div class="post-nav__item"><img src="https://picsum.photos/seed/pn1/140/104" alt=""><div><div class="post-nav__label"><i class="fas fa-arrow-left"></i> Previous</div><div class="post-nav__title">ECB Signals End of Rate Hiking Cycle</div></div></div>
-        <div class="post-nav__item post-nav__item--next"><img src="https://picsum.photos/seed/pn2/140/104" alt=""><div><div class="post-nav__label">Next <i class="fas fa-arrow-right"></i></div><div class="post-nav__title">Jobs Data Shows Labor Market Cooling</div></div></div>
-      </nav>
-      <section class="related"><h3 class="section-title">Related <span>Articles</span></h3><div class="grid g3" style="margin-top:20px">
-        <article class="card"><a href="single.html" class="card__thumb"><img src="https://picsum.photos/seed/rr1/500/280" alt="" loading="lazy"><span class="card__cat" style="background:#22c55e">Economy</span></a><div class="card__body"><h3 class="card__title"><a href="single.html">What a September Rate Cut Means for Your Portfolio</a></h3></div></article>
-        <article class="card"><a href="single.html" class="card__thumb"><img src="https://picsum.photos/seed/rr2/500/280" alt="" loading="lazy"><span class="card__cat" style="background:#f59e0b;color:#000">Bonds</span></a><div class="card__body"><h3 class="card__title"><a href="single.html">Treasury Yield Curve Flattens as Rate Cut Bets Build</a></h3></div></article>
-        <article class="card"><a href="single.html" class="card__thumb"><img src="https://picsum.photos/seed/rr3/500/280" alt="" loading="lazy"><span class="card__cat">Banking</span></a><div class="card__body"><h3 class="card__title"><a href="single.html">How Banks Are Positioning for Lower Rates</a></h3></div></article>
-      </div></section>
-    </article>
-    <aside class="sidebar">
-      <div class="widget"><div class="widget__title">Markets Now</div><div class="widget__body">
-        <div style="display:flex;flex-direction:column;gap:6px">
-          <div style="display:flex;justify-content:space-between;font-size:.82rem;padding:6px 0;border-bottom:1px solid #f0f0f0"><span style="font-weight:600">S&P 500</span><span style="color:#16a34a;font-weight:700">5,842 ▲</span></div>
-          <div style="display:flex;justify-content:space-between;font-size:.82rem;padding:6px 0;border-bottom:1px solid #f0f0f0"><span style="font-weight:600">NASDAQ</span><span style="color:#16a34a;font-weight:700">19,284 ▲</span></div>
-          <div style="display:flex;justify-content:space-between;font-size:.82rem;padding:6px 0;border-bottom:1px solid #f0f0f0"><span style="font-weight:600">DOW</span><span style="color:#dc2626;font-weight:700">42,185 ▼</span></div>
-          <div style="display:flex;justify-content:space-between;font-size:.82rem;padding:6px 0"><span style="font-weight:600">Gold</span><span style="color:#16a34a;font-weight:700">$2,480 ▲</span></div>
-        </div>
-      </div></div>
-      <div class="newsletter-widget" style="background:linear-gradient(135deg,#052e16,#14532d)"><div class="nl-icon"><i class="fas fa-chart-line"></i></div><h4>Morning Briefing</h4><p>Pre-market analysis at 7am daily</p><form class="nl-form"><input type="email" placeholder="your@email.com"><button>Subscribe</button></form></div>
-      <div class="ad-wrap"><p class="ad-label">Advertisement</p><div class="ad-box" style="height:600px;border-radius:8px;background:linear-gradient(180deg,#052e16,#15803d);color:rgba(255,255,255,.2);font-size:.75rem">160 × 600<br>Skyscraper</div></div>
-    </aside>
+    <article id="articleContent"></article>
+    <aside class="sidebar" id="singleSidebar"></aside>
   </div>
 </div>
 </main>
 
-<footer class="footer-main"><div class="wrap"><div class="footer-grid"><div class="footer-brand"><a href="index.html" class="logo"><i class="fas fa-chart-line" style="color:#22c55e"></i> Finance<span>Wire</span></a><p>Trusted financial news for investors worldwide.</p><div class="footer-social"><a href="#"><i class="fab fa-linkedin-in"></i></a><a href="#"><i class="fab fa-x-twitter"></i></a></div></div><div class="footer-col"><h4>Sections</h4><ul><li><a href="#">Markets</a></li><li><a href="#">Economy</a></li><li><a href="#">Stocks</a></li><li><a href="#">Crypto</a></li></ul></div><div class="footer-col"><h4>Company</h4><ul><li><a href="#">About</a></li><li><a href="#">Advertise</a></li><li><a href="#">Contact</a></li></ul></div><div class="footer-col"><h4>Legal</h4><ul><li><a href="#">Disclaimer</a></li><li><a href="#">Privacy</a></li><li><a href="#">Terms</a></li></ul></div></div></div></footer>
-<div class="footer-bottom"><div class="wrap"><span>© 2026 FinanceWire. Not financial advice.</span></div></div>
-
+<div id="siteFooter"></div>
 <button class="back-top" id="backTop"><i class="fas fa-chevron-up"></i></button>
+
+<div class="search-overlay" id="searchOverlay">
+  <div class="search-box">
+    <button class="search-close" aria-label="إغلاق"><i class="fas fa-times"></i></button>
+    <h3>ابحث في الأخبار المالية</h3>
+    <div class="search-input-wrap"><input type="search" placeholder="اكتب للبحث…" autofocus></div>
+  </div>
+</div>
+
+<script src="data/articles.js"></script>
+<script src="js/shared.js"></script>
+<script src="js/single.js"></script>
 <script src="../assets/js/pds-main.js"></script>
 </body>
 </html>

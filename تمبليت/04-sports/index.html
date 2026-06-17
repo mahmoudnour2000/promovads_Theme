@@ -1,185 +1,162 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl" class="demo-sports">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SportsPulse — Live Scores, News & Analysis</title>
+<title>سبورت+ — أخبار رياضية وتحليلات</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <link rel="stylesheet" href="../assets/css/pds-core.css">
-<style>
-  :root { --c-primary:#e63329;--c-primary-dk:#c02820;--c-secondary:#1a0508;--c-accent:#f97316; }
-  body { background:#111; color:#f0f0f0; }
-  .site-header { background:#1a0508;border-bottom:3px solid #e63329; }
-  .site-nav { background:#0d0204; }
-  .ticker { background:#0d0204;border-color:rgba(230,51,41,.2); }
-  .ticker__label { background:#e63329; }
-  .ticker__item { color:rgba(255,255,255,.8); }
-  .card { background:#1e0c10;border-color:rgba(230,51,41,.15); }
-  .card__title { color:#f8e8ea; }
-  .card__meta, .card__excerpt { color:#aa8890; }
-  h1,h2,h3,h4 { color:#f8e8ea; }
-  .logo { color:#f8e8ea; } .logo span { color:#e63329; }
-  .section-hd { border-color:rgba(230,51,41,.25); }
-  .widget { background:#1e0c10;border-color:rgba(230,51,41,.15); }
-  .widget__title { background:#1a0508; }
-
-  /* Live Score Banner */
-  .live-banner { background:linear-gradient(90deg,#1a0508,#2d0510,#1a0508);border-bottom:1px solid rgba(230,51,41,.25);overflow:hidden; }
-  .live-banner-inner { display:flex;gap:0;white-space:nowrap;animation:scroll-left 50s linear infinite; }
-  .live-match { display:flex;align-items:center;gap:8px;padding:8px 24px;border-right:1px solid rgba(230,51,41,.12);font-size:.78rem; }
-  .live-dot { width:7px;height:7px;background:#e63329;border-radius:50%;animation:blink 1s infinite;flex-shrink:0; }
-  .live-badge { background:#e63329;color:#fff;font-size:.6rem;font-weight:700;padding:1px 5px;border-radius:2px;text-transform:uppercase; }
-  .match-score { font-weight:900;font-size:1rem;font-family:'Playfair Display',serif;color:#fff;margin:0 6px; }
-  .match-teams { color:rgba(255,255,255,.75); }
-  .match-min { color:#f97316;font-size:.72rem; }
-
-  /* Sports Tabs */
-  .sports-tabs { display:flex;gap:0;overflow-x:auto;scrollbar-width:none;border-bottom:1px solid rgba(230,51,41,.2); }
-  .sports-tabs::-webkit-scrollbar { display:none; }
-  .sports-tab { padding:10px 18px;font-size:.78rem;font-weight:600;color:rgba(255,255,255,.55);border-bottom:2px solid transparent;margin-bottom:-1px;white-space:nowrap;cursor:pointer;transition:all .2s;display:flex;align-items:center;gap:7px; }
-  .sports-tab.active { color:#e63329;border-bottom-color:#e63329; }
-  .sports-tab:hover { color:rgba(255,255,255,.85); }
-  .sports-tab i { font-size:1em; }
-
-  /* Match Card */
-  .match-card { background:#1e0c10;border:1px solid rgba(230,51,41,.15);border-radius:10px;padding:16px;display:flex;align-items:center;gap:12px; }
-  .team { display:flex;flex-direction:column;align-items:center;gap:6px;flex:1;text-align:center; }
-  .team img { width:48px;height:48px;object-fit:contain; }
-  .team-name { font-size:.78rem;font-weight:600;color:rgba(255,255,255,.88); }
-  .score-box { text-align:center;min-width:70px; }
-  .score-main { font-size:2rem;font-weight:900;font-family:'Playfair Display',serif;color:#fff;line-height:1; }
-  .score-time { font-size:.72rem;color:#f97316;background:rgba(249,115,22,.1);border:1px solid rgba(249,115,22,.2);border-radius:4px;padding:2px 7px;display:inline-block;margin-top:4px; }
-  .score-status { font-size:.68rem;color:rgba(255,255,255,.45);margin-top:3px; }
-</style>
+<link rel="stylesheet" href="css/sports-ar.css">
 </head>
 <body>
 
-<!-- Live Score Ticker -->
-<div class="live-banner">
-  <div class="live-banner-inner">
-    <div class="live-match"><span class="live-dot"></span><span class="live-badge">LIVE</span><span class="match-teams">Real Madrid</span><span class="match-score">3 – 1</span><span class="match-teams">Barcelona</span><span class="match-min">78'</span></div>
-    <div class="live-match"><span class="live-dot"></span><span class="live-badge">LIVE</span><span class="match-teams">Man City</span><span class="match-score">2 – 2</span><span class="match-teams">Liverpool</span><span class="match-min">65'</span></div>
-    <div class="live-match"><span style="background:#22c55e;width:7px;height:7px;border-radius:50%;display:inline-block;flex-shrink:0"></span><span style="background:#22c55e;color:#fff;font-size:.6rem;font-weight:700;padding:1px 5px;border-radius:2px">FT</span><span class="match-teams">PSG</span><span class="match-score">4 – 0</span><span class="match-teams">Monaco</span></div>
-    <div class="live-match"><span class="live-dot"></span><span class="live-badge">LIVE</span><span class="match-teams">Bayern</span><span class="match-score">1 – 0</span><span class="match-teams">Dortmund</span><span class="match-min">34'</span></div>
-    <div class="live-match"><span style="background:#22c55e;width:7px;height:7px;border-radius:50%;display:inline-block;flex-shrink:0"></span><span style="background:#22c55e;color:#fff;font-size:.6rem;font-weight:700;padding:1px 5px;border-radius:2px">FT</span><span class="match-teams">Juventus</span><span class="match-score">1 – 2</span><span class="match-teams">Napoli</span></div>
-    <!-- duplicate -->
-    <div class="live-match"><span class="live-dot"></span><span class="live-badge">LIVE</span><span class="match-teams">Real Madrid</span><span class="match-score">3 – 1</span><span class="match-teams">Barcelona</span><span class="match-min">78'</span></div>
-    <div class="live-match"><span class="live-dot"></span><span class="live-badge">LIVE</span><span class="match-teams">Man City</span><span class="match-score">2 – 2</span><span class="match-teams">Liverpool</span><span class="match-min">65'</span></div>
-  </div>
-</div>
+<div class="progress-bar" id="progress"></div>
 
-<div class="topbar" style="background:#0d0204"><div class="wrap"><span class="topbar__date"><i class="fas fa-trophy" style="color:#f97316;margin-right:5px"></i>Mon Jun 15, 2026 · 12 Live Matches</span><div class="topbar__social"><a href="#"><i class="fab fa-x-twitter"></i></a><a href="#"><i class="fab fa-youtube"></i></a><a href="#"><i class="fab fa-instagram"></i></a></div></div></div>
-
-<header class="site-header"><div class="wrap"><a href="index.html" class="logo"><i class="fas fa-futbol" style="color:#e63329"></i> Sports<span>Pulse</span></a><div class="header-actions"><button class="btn-icon search-trigger" style="background:rgba(255,255,255,.08)"><i class="fas fa-search"></i></button><button class="btn-icon dark-toggle" style="background:rgba(255,255,255,.08)"><i class="fas fa-moon"></i></button><a href="#" class="btn btn-primary"><i class="fas fa-bell"></i> Alerts</a></div></div></header>
-
-<nav class="site-nav"><div class="wrap"><ul class="nav-menu"><li class="nav-item active"><a href="index.html" class="nav-link">Home</a></li><li class="nav-item"><a href="#" class="nav-link">⚽ Football</a></li><li class="nav-item"><a href="#" class="nav-link">🏀 Basketball</a></li><li class="nav-item"><a href="#" class="nav-link">🎾 Tennis</a></li><li class="nav-item"><a href="#" class="nav-link">🏋️ F1</a></li><li class="nav-item"><a href="#" class="nav-link">🥊 Boxing</a></li><li class="nav-item"><a href="#" class="nav-link">🏏 Cricket</a></li><li class="nav-item"><a href="#" class="nav-link" style="color:#f97316">⚡ Live Scores</a></li></ul></div></nav>
-
-<!-- Header News Strip -->
-<div class="header-news" style="background:#1a0508;border-color:rgba(230,51,41,.2)">
+<div class="sport-topbar">
   <div class="wrap">
-    <div class="header-news__label" style="background:#e63329">Latest</div>
-    <div class="hn-grid">
-      <a href="single.html" class="hn-card"><div class="hn-card__img"><img src="https://picsum.photos/seed/hn-sp1/120/120" alt="" loading="lazy"></div><div class="hn-card__body"><span class="hn-card__cat" style="color:#f87171">Football</span><h3 class="hn-card__title" style="color:rgba(255,255,255,.88)">Mbappe Hat-Trick: Real Madrid 3-1 Barcelona in El Clasico</h3><div class="hn-card__meta" style="color:rgba(255,255,255,.4)"><i class="fas fa-clock"></i> 45min ago</div></div></a>
-      <a href="single.html" class="hn-card"><div class="hn-card__img"><img src="https://picsum.photos/seed/hn-sp2/120/120" alt="" loading="lazy"></div><div class="hn-card__body"><span class="hn-card__cat" style="color:#f87171">F1</span><h3 class="hn-card__title" style="color:rgba(255,255,255,.88)">Leclerc Wins Canadian GP as Verstappen Suffers DNF</h3><div class="hn-card__meta" style="color:rgba(255,255,255,.4)"><i class="fas fa-clock"></i> 2h ago</div></div></a>
-      <a href="single.html" class="hn-card"><div class="hn-card__img"><img src="https://picsum.photos/seed/hn-sp3/120/120" alt="" loading="lazy"></div><div class="hn-card__body"><span class="hn-card__cat" style="color:#f87171">Tennis</span><h3 class="hn-card__title" style="color:rgba(255,255,255,.88)">Djokovic Reaches Wimbledon Final at 39 — Defies All Odds</h3><div class="hn-card__meta" style="color:rgba(255,255,255,.4)"><i class="fas fa-clock"></i> 4h ago</div></div></a>
-      <a href="single.html" class="hn-card"><div class="hn-card__img"><img src="https://picsum.photos/seed/hn-sp4/120/120" alt="" loading="lazy"></div><div class="hn-card__body"><span class="hn-card__cat" style="color:#f87171">NBA</span><h3 class="hn-card__title" style="color:rgba(255,255,255,.88)">LeBron James Announces 23rd NBA Season — Fans React</h3><div class="hn-card__meta" style="color:rgba(255,255,255,.4)"><i class="fas fa-clock"></i> 6h ago</div></div></a>
+    <div class="sport-topbar__left">
+      <span><i class="fas fa-newspaper" style="color:#fca5a5;margin-left:5px"></i> أخبار رياضية</span>
+      <span><i class="fas fa-calendar-alt" style="color:#fca5a5;margin-left:5px"></i> الاثنين، 15 يونيو 2026</span>
+    </div>
+    <div class="sport-topbar__social">
+      <a href="#"><i class="fab fa-x-twitter"></i></a>
+      <a href="#"><i class="fab fa-youtube"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
     </div>
   </div>
 </div>
 
-<div class="ticker"><div class="ticker__label"><span class="ticker__dot"></span>BREAKING</div><div class="ticker__track"><div class="ticker__inner"><span class="ticker__item"><a href="#">Mbappe scores hat-trick as Real Madrid thrash Barcelona 3-1 in El Clasico</a></span><span class="ticker__item"><a href="#">Man City confirm Haaland contract extension until 2030</a></span><span class="ticker__item"><a href="#">Novak Djokovic reaches Wimbledon final at 39 — defies age expectations</a></span><span class="ticker__item"><a href="#">LeBron James announces return for his 23rd NBA season</a></span><span class="ticker__item"><a href="#">Ferrari wins Canadian GP — Verstappen DNF hands lead to Leclerc</a></span><span class="ticker__item"><a href="#">Mbappe scores hat-trick as Real Madrid thrash Barcelona 3-1</a></span></div></div></div>
-
-<main style="padding:32px 0 60px">
-<div class="wrap">
-
-  <!-- Sports Tabs -->
-  <div class="sports-tabs" style="margin-bottom:28px">
-    <button class="sports-tab active"><i class="fas fa-futbol"></i> Football</button>
-    <button class="sports-tab"><i class="fas fa-basketball-ball"></i> Basketball</button>
-    <button class="sports-tab"><i class="fas fa-tennis-ball"></i> Tennis</button>
-    <button class="sports-tab"><i class="fas fa-flag-checkered"></i> Formula 1</button>
-    <button class="sports-tab"><i class="fas fa-fist-raised"></i> Boxing</button>
-    <button class="sports-tab"><i class="fas fa-cricket"></i> Cricket</button>
-    <button class="sports-tab"><i class="fas fa-dumbbell"></i> UFC</button>
-  </div>
-
-  <!-- Hero -->
-  <div class="g-hero" style="gap:4px;border-radius:14px;overflow:hidden;margin-bottom:40px">
-    <div class="card card--hero" style="min-height:480px">
-      <div class="card__thumb" style="height:100%"><img src="https://picsum.photos/seed/sports1/900/520" alt="Sports Hero"></div>
-      <div class="card__body"><span style="background:#e63329;color:#fff;font-size:.68rem;font-weight:700;padding:2px 8px;border-radius:3px;text-transform:uppercase;margin-bottom:8px;display:inline-block">⚽ Football</span><h1 class="card__title" style="font-size:1.7rem;color:#fff">El Clasico: Mbappe Hat-Trick Sends Real Madrid 7 Points Clear at La Liga Summit</h1><p class="card__excerpt" style="color:rgba(255,255,255,.75)">A stunning performance from France's talisman sealed a dominant victory at Santiago Bernabéu...</p><div class="card__meta" style="color:rgba(255,255,255,.65)"><span>Alex Roberts</span><span class="dot">1h ago</span><span class="dot">5 min</span><span style="background:rgba(230,51,41,.3);color:#f87171;padding:2px 7px;border-radius:3px;font-size:.7rem">LIVE UPDATES</span></div></div>
-    </div>
-    <div style="display:flex;flex-direction:column;gap:4px">
-      <div class="card card--hero" style="flex:1;min-height:232px"><div class="card__thumb" style="height:100%"><img src="https://picsum.photos/seed/sports2/500/260" alt=""></div><div class="card__body" style="padding:14px"><span style="background:#f97316;color:#fff;font-size:.68rem;font-weight:700;padding:2px 7px;border-radius:3px">🏋️ F1</span><h3 class="card__title" style="font-size:.95rem;color:#fff;margin-top:6px">Ferrari Wins Canada GP — Leclerc Cuts Verstappen's Lead to 18 Points</h3></div></div>
-      <div class="card card--hero" style="flex:1;min-height:232px"><div class="card__thumb" style="height:100%"><img src="https://picsum.photos/seed/sports3/500/260" alt=""></div><div class="card__body" style="padding:14px"><span style="background:#6366f1;color:#fff;font-size:.68rem;font-weight:700;padding:2px 7px;border-radius:3px">🎾 Tennis</span><h3 class="card__title" style="font-size:.95rem;color:#fff;margin-top:6px">Djokovic Reaches Wimbledon SF at 39 — "Age Is Just a Number"</h3></div></div>
-    </div>
-  </div>
-
-  <!-- Today's Matches -->
-  <div class="section-hd" style="margin-bottom:20px"><h2 class="section-title">Today's <span>Matches</span></h2><a href="#" class="see-all">Full Schedule <i class="fas fa-arrow-right"></i></a></div>
-  <div class="grid g3" style="margin-bottom:44px">
-    <div class="match-card">
-      <div class="team"><img src="https://picsum.photos/seed/team1/80/80" alt="Real Madrid"><span class="team-name">Real Madrid</span></div>
-      <div class="score-box"><div class="score-main">3 – 1</div><div class="score-time">⚡ LIVE 78'</div><div class="score-status">La Liga GW32</div></div>
-      <div class="team"><img src="https://picsum.photos/seed/team2/80/80" alt="Barcelona"><span class="team-name">Barcelona</span></div>
-    </div>
-    <div class="match-card">
-      <div class="team"><img src="https://picsum.photos/seed/team3/80/80" alt="Man City"><span class="team-name">Man City</span></div>
-      <div class="score-box"><div class="score-main">2 – 2</div><div class="score-time">⚡ LIVE 65'</div><div class="score-status">Premier League</div></div>
-      <div class="team"><img src="https://picsum.photos/seed/team4/80/80" alt="Liverpool"><span class="team-name">Liverpool</span></div>
-    </div>
-    <div class="match-card">
-      <div class="team"><img src="https://picsum.photos/seed/team5/80/80" alt="Bayern"><span class="team-name">Bayern Munich</span></div>
-      <div class="score-box"><div class="score-main">1 – 0</div><div class="score-time">⚡ LIVE 34'</div><div class="score-status">Bundesliga</div></div>
-      <div class="team"><img src="https://picsum.photos/seed/team6/80/80" alt="Dortmund"><span class="team-name">Dortmund</span></div>
-    </div>
-  </div>
-
-  <!-- Main + Sidebar -->
-  <div class="grid g-main" style="gap:32px">
-    <div>
-      <div class="section-hd"><h2 class="section-title">Latest <span>News</span></h2><a href="archive.html" class="see-all">All <i class="fas fa-arrow-right"></i></a></div>
-      <div class="grid g3">
-        <article class="card"><a href="single.html" class="card__thumb"><img src="https://picsum.photos/seed/sp1/500/280" alt="" loading="lazy"><span class="card__cat">⚽ Football</span></a><div class="card__body"><div class="card__meta"><span>2h ago</span><span class="dot">4 min</span></div><h3 class="card__title"><a href="single.html">Premier League Title Race: Arsenal and Man City Separated by One Point</a></h3></div></article>
-        <article class="card"><a href="single.html" class="card__thumb"><img src="https://picsum.photos/seed/sp2/500/280" alt="" loading="lazy"><span class="card__cat" style="background:#f97316">🏋️ F1</span></a><div class="card__body"><div class="card__meta"><span>3h ago</span><span class="dot">6 min</span></div><h3 class="card__title"><a href="single.html">Hamilton's Final Season With Ferrari: A Bittersweet Campaign So Far</a></h3></div></article>
-        <article class="card"><a href="single.html" class="card__thumb"><img src="https://picsum.photos/seed/sp3/500/280" alt="" loading="lazy"><span class="card__cat" style="background:#6366f1">🏀 NBA</span></a><div class="card__body"><div class="card__meta"><span>5h ago</span><span class="dot">5 min</span></div><h3 class="card__title"><a href="single.html">NBA Finals 2026: Celtics vs Lakers — Full Series Preview</a></h3></div></article>
-        <article class="card"><a href="single.html" class="card__thumb"><img src="https://picsum.photos/seed/sp4/500/280" alt="" loading="lazy"><span class="card__cat" style="background:#22c55e">🎾 Tennis</span></a><div class="card__body"><div class="card__meta"><span>7h ago</span><span class="dot">3 min</span></div><h3 class="card__title"><a href="single.html">Alcaraz vs Djokovic: Wimbledon Semi-Final Predictions</a></h3></div></article>
-        <article class="card"><a href="single.html" class="card__thumb"><img src="https://picsum.photos/seed/sp5/500/280" alt="" loading="lazy"><span class="card__cat" style="background:#ef4444">🥊 Boxing</span></a><div class="card__body"><div class="card__meta"><span>Yesterday</span><span class="dot">4 min</span></div><h3 class="card__title"><a href="single.html">Canelo Alvarez Retains Title in Brutal 12-Round War</a></h3></div></article>
-        <article class="card"><a href="single.html" class="card__thumb"><img src="https://picsum.photos/seed/sp6/500/280" alt="" loading="lazy"><span class="card__cat" style="background:#06b6d4">🏏 Cricket</span></a><div class="card__body"><div class="card__meta"><span>Yesterday</span><span class="dot">7 min</span></div><h3 class="card__title"><a href="single.html">India Wins ICC World Test Championship Final vs Australia</a></h3></div></article>
+<header class="sport-header">
+  <div class="wrap">
+    <div class="sport-header__bar">
+      <a href="index.html" class="sport-logo">
+        <div class="sport-logo__icon"><i class="fas fa-futbol"></i></div>
+        <div>
+          سبورت<span>+</span>
+          <span class="sport-logo__sub">أخبار وتحليلات رياضية</span>
+        </div>
+      </a>
+      <div class="sport-search search-trigger" role="button" tabindex="0">
+        <i class="fas fa-search"></i>
+        <input type="search" placeholder="ابحث في الأخبار الرياضية…" readonly>
+      </div>
+      <div class="sport-header__actions">
+        <button class="sport-btn-icon search-trigger" title="بحث"><i class="fas fa-search"></i></button>
+        <a href="archive.html" class="sport-btn-live"><i class="fas fa-newspaper"></i> كل الأخبار</a>
       </div>
     </div>
+    <nav class="sport-nav site-nav site-nav--underline" aria-label="الرياضات">
+      <ul class="sport-nav__list site-nav__list">
+      <li class="sport-nav__item site-nav__item active"><a href="index.html">الرئيسية</a></li>
+      <li class="sport-nav__item site-nav__item" data-cat="football"><a href="archive.html?cat=football">كرة قدم</a></li>
+      <li class="sport-nav__item site-nav__item" data-cat="basketball"><a href="archive.html?cat=basketball">كرة سلة</a></li>
+      <li class="sport-nav__item site-nav__item" data-cat="tennis"><a href="archive.html?cat=tennis">تنس</a></li>
+      <li class="sport-nav__item site-nav__item" data-cat="f1"><a href="archive.html?cat=f1">فورمولا 1</a></li>
+      <li class="sport-nav__item site-nav__item" data-cat="boxing"><a href="archive.html?cat=boxing">ملاكمة</a></li>
+      <li class="sport-nav__item site-nav__item" data-cat="cricket"><a href="archive.html?cat=cricket">كريكيت</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="sport-hero-zone">
+  <div class="wrap">
+    <div class="sport-hero-zone__head">
+      <div class="sport-hero-zone__title"><i class="fas fa-star"></i> أبرز الأخبار الرياضية</div>
+      <a href="archive.html" style="font-size:.82rem;font-weight:700;color:var(--c-primary)">عرض الكل <i class="fas fa-arrow-left"></i></a>
+    </div>
+    <div class="sport-hero" id="headerHero"></div>
+  </div>
+</section>
+
+<div class="sport-ticker">
+  <div class="sport-ticker__label"><span class="sport-ticker__dot"></span>عاجل</div>
+  <div class="sport-ticker__track">
+    <div class="sport-ticker__inner ticker__inner" id="tickerInner"></div>
+  </div>
+  <button class="ticker__pause" style="padding:0 12px;color:#fca5a5;font-size:12px;background:none;border:none;cursor:pointer" title="إيقاف"><i class="fas fa-pause"></i></button>
+</div>
+
+<main style="padding:36px 0 60px">
+<div class="wrap">
+
+  <div class="grid g-main" style="gap:32px">
+    <div>
+      <div id="categorySections"></div>
+      <section class="latest-sports" id="latestSection">
+        <div class="latest-sports__head">
+          <h2 class="latest-sports__title">آخر <span style="color:var(--c-primary)">الأخبار</span></h2>
+          <a href="archive.html" class="sport-section__btn"><i class="fas fa-newspaper"></i> عرض الكل</a>
+        </div>
+        <div id="latestList"></div>
+      </section>
+    </div>
     <aside class="sidebar">
-      <div class="widget"><div class="widget__title">🏆 League Table</div><div class="widget__body" style="padding:8px 14px">
-        <table style="width:100%;font-size:.78rem;border-collapse:collapse">
-          <thead><tr style="border-bottom:1px solid rgba(230,51,41,.2)"><th style="text-align:left;padding:5px 4px;color:#aa8890;font-size:.68rem">#</th><th style="text-align:left;padding:5px 4px;color:#aa8890;font-size:.68rem">Club</th><th style="text-align:center;padding:5px 4px;color:#aa8890;font-size:.68rem">P</th><th style="text-align:center;padding:5px 4px;color:#aa8890;font-size:.68rem">W</th><th style="text-align:center;padding:5px 4px;color:#aa8890;font-size:.68rem">Pts</th></tr></thead>
-          <tbody>
-            <tr style="border-bottom:1px solid rgba(255,255,255,.05)"><td style="padding:6px 4px;color:#e63329;font-weight:700">1</td><td style="padding:6px 4px;font-weight:600;color:#f8e8ea">Real Madrid</td><td style="text-align:center;padding:6px 4px;color:#aa8890">32</td><td style="text-align:center;padding:6px 4px;color:#aa8890">22</td><td style="text-align:center;padding:6px 4px;font-weight:700;color:#f8e8ea">73</td></tr>
-            <tr style="border-bottom:1px solid rgba(255,255,255,.05)"><td style="padding:6px 4px;color:#aa8890">2</td><td style="padding:6px 4px;font-weight:600;color:#f8e8ea">Barcelona</td><td style="text-align:center;padding:6px 4px;color:#aa8890">32</td><td style="text-align:center;padding:6px 4px;color:#aa8890">20</td><td style="text-align:center;padding:6px 4px;font-weight:700;color:#f8e8ea">66</td></tr>
-            <tr style="border-bottom:1px solid rgba(255,255,255,.05)"><td style="padding:6px 4px;color:#aa8890">3</td><td style="padding:6px 4px;font-weight:600;color:#f8e8ea">Atletico</td><td style="text-align:center;padding:6px 4px;color:#aa8890">32</td><td style="text-align:center;padding:6px 4px;color:#aa8890">18</td><td style="text-align:center;padding:6px 4px;font-weight:700;color:#f8e8ea">60</td></tr>
-            <tr style="border-bottom:1px solid rgba(255,255,255,.05)"><td style="padding:6px 4px;color:#aa8890">4</td><td style="padding:6px 4px;font-weight:600;color:#f8e8ea">Villarreal</td><td style="text-align:center;padding:6px 4px;color:#aa8890">32</td><td style="text-align:center;padding:6px 4px;color:#aa8890">16</td><td style="text-align:center;padding:6px 4px;font-weight:700;color:#f8e8ea">54</td></tr>
-            <tr><td style="padding:6px 4px;color:#aa8890">5</td><td style="padding:6px 4px;font-weight:600;color:#f8e8ea">Sevilla</td><td style="text-align:center;padding:6px 4px;color:#aa8890">32</td><td style="text-align:center;padding:6px 4px;color:#aa8890">15</td><td style="text-align:center;padding:6px 4px;font-weight:700;color:#f8e8ea">51</td></tr>
-          </tbody>
-        </table>
-      </div></div>
-      <div class="newsletter-widget"><div class="nl-icon" style="background:#e63329"><i class="fas fa-futbol"></i></div><h4>Sports Daily</h4><p>Scores, highlights & news every morning</p><form class="nl-form"><input type="email" placeholder="your@email.com"><button>Subscribe</button></form></div>
-      <div class="ad-wrap"><p class="ad-label">Advertisement</p><div class="ad-box" style="height:250px;border-radius:8px;background:linear-gradient(135deg,#1a0508,#450c14);color:rgba(255,255,255,.2)">300 × 250</div></div>
-      <div class="widget"><div class="widget__title">🔥 Hot Takes</div><div class="widget__body" style="padding:6px 16px">
-        <div class="trending-item"><span class="n">01</span><div><h4><a href="single.html" style="color:#f8e8ea">Is Mbappe the Best Player in the World Right Now?</a></h4><span style="color:#aa8890">88K views · 1h ago</span></div></div>
-        <div class="trending-item"><span class="n">02</span><div><h4><a href="single.html" style="color:#f8e8ea">Haaland vs Mbappe: Statistical Deep Dive</a></h4><span style="color:#aa8890">62K views</span></div></div>
-        <div class="trending-item"><span class="n">03</span><div><h4><a href="single.html" style="color:#f8e8ea">NBA Finals 2026 Player Power Rankings</a></h4><span style="color:#aa8890">44K views</span></div></div>
-      </div></div>
+      <div class="widget">
+        <div class="widget__title">🔥 الأكثر قراءة</div>
+        <div class="widget__body" style="padding:8px 16px">
+          <div id="trendingList"></div>
+        </div>
+      </div>
+      <div class="widget">
+        <div class="widget__title">وسوم رياضية</div>
+        <div class="widget__body" style="padding:12px 16px">
+          <div class="tags" id="sidebarTags"></div>
+        </div>
+      </div>
     </aside>
   </div>
 </div>
 </main>
 
-<div class="footer-nl" style="background:#c02820"><div class="wrap"><div><h3>Sports Alerts</h3><p>Get live score notifications and breaking news</p></div><form class="footer-nl-form"><input type="email" placeholder="your@email.com"><button type="submit"><i class="fas fa-bell"></i> Enable Alerts</button></form></div></div>
-<footer class="footer-main" style="background:#1a0508"><div class="wrap"><div class="footer-grid"><div class="footer-brand"><a href="index.html" class="logo"><i class="fas fa-futbol" style="color:#e63329"></i> Sports<span>Pulse</span></a><p>Your ultimate source for live scores, news, and analysis across all major sports.</p><div class="footer-social"><a href="#"><i class="fab fa-x-twitter"></i></a><a href="#"><i class="fab fa-youtube"></i></a><a href="#"><i class="fab fa-instagram"></i></a></div></div><div class="footer-col"><h4>Sports</h4><ul><li><a href="#">Football</a></li><li><a href="#">Basketball</a></li><li><a href="#">Tennis</a></li><li><a href="#">Formula 1</a></li><li><a href="#">Boxing</a></li></ul></div><div class="footer-col"><h4>Leagues</h4><ul><li><a href="#">La Liga</a></li><li><a href="#">Premier League</a></li><li><a href="#">Champions League</a></li><li><a href="#">NBA</a></li><li><a href="#">Wimbledon</a></li></ul></div><div class="footer-col"><h4>Latest</h4><div class="footer-recent"><div class="footer-recent-item"><img src="https://picsum.photos/seed/sf1/80/60" alt=""><div><h5><a href="single.html" style="color:rgba(255,255,255,.8)">El Clasico Result: 3-1</a></h5><span>1h ago</span></div></div><div class="footer-recent-item"><img src="https://picsum.photos/seed/sf2/80/60" alt=""><div><h5><a href="single.html" style="color:rgba(255,255,255,.8)">F1 Canada GP Recap</a></h5><span>3h ago</span></div></div></div></div></div></div></footer>
-<div class="footer-bottom" style="background:rgba(0,0,0,.5)"><div class="wrap"><span>© 2026 SportsPulse. All rights reserved.</span><div class="footer-bottom-links"><a href="#">Privacy</a><a href="#">Terms</a></div></div></div>
+<footer class="footer-main" style="background:#0f172a">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo"><i class="fas fa-futbol" style="color:#e63329"></i> سبورت<span style="color:#fff">+</span></a>
+        <p style="color:rgba(255,255,255,.65)">مصدرك الأول للأخبار الرياضية والتحليلات في العالم العربي.</p>
+      </div>
+      <div class="footer-col">
+        <h4>الرياضات</h4>
+        <ul>
+          <li><a href="archive.html?cat=football">كرة قدم</a></li>
+          <li><a href="archive.html?cat=basketball">كرة سلة</a></li>
+          <li><a href="archive.html?cat=tennis">تنس</a></li>
+          <li><a href="archive.html?cat=f1">فورمولا 1</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>الموقع</h4>
+        <ul>
+          <li><a href="#">من نحن</a></li>
+          <li><a href="#">تواصل</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+<div class="footer-bottom" style="background:#020617">
+  <div class="wrap"><span style="color:rgba(255,255,255,.5)">© 2026 سبورت+. جميع الحقوق محفوظة.</span></div>
+</div>
 
-<button class="back-top" id="backTop" style="background:#e63329"><i class="fas fa-chevron-up"></i></button>
+<div class="search-overlay" id="searchOverlay">
+  <button class="search-close" style="position:absolute;top:20px;left:20px;color:#fff;font-size:1.5rem;background:none;border:none;cursor:pointer"><i class="fas fa-times"></i></button>
+  <div class="search-box">
+    <div class="search-input-wrap" style="background:#fff;border:1px solid var(--sport-border);border-radius:12px;padding:4px 12px">
+      <i class="fas fa-search" style="color:#e63329"></i>
+      <input type="search" placeholder="ابحث عن فريق، لاعب، بطولة…" style="font-size:1.05rem;background:transparent;color:#0f172a">
+    </div>
+    <div class="search-results" id="searchPreview" style="background:#fff;border:1px solid var(--sport-border);border-radius:12px;margin-top:12px"></div>
+  </div>
+</div>
+
+<button class="back-top" id="backTop"><i class="fas fa-chevron-up"></i></button>
+
+<script src="data/articles.js"></script>
+<script src="js/shared.js"></script>
+<script src="js/app.js"></script>
 <script src="../assets/js/pds-main.js"></script>
 </body>
 </html>

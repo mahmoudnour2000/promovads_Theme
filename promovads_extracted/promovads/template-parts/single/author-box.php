@@ -20,7 +20,7 @@ $post_count = count_user_posts( $author_id );
 
 		<h3 class="pds-author-box__name" itemprop="name">
 			<a href="<?php echo esc_url( $author_url ); ?>" itemprop="url">
-				<?php the_author(); ?>
+				<?php echo esc_html( promovads_author_display_name( $author_id ) ); ?>
 			</a>
 		</h3>
 
@@ -42,7 +42,7 @@ $post_count = count_user_posts( $author_id );
 				<?php
 				printf(
 					/* translators: %d: post count */
-					esc_html( _n( '%d Article', '%d Articles', $post_count, 'promovads' ) ),
+					esc_html( _n( '%d مقال', '%d مقال', $post_count, 'promovads' ) ),
 					absint( $post_count )
 				);
 				?>

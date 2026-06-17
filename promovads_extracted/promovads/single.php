@@ -7,42 +7,41 @@
 
 get_header();
 
-// Track views
 if ( is_singular() ) {
 	promovads_increment_views( get_the_ID() );
 }
+
+$config  = promovads_get_demo_config();
+$is_demo = (bool) $config;
 ?>
 
-<main id="primary" class="site-main" role="main">
-<div class="pds-container">
+
+<main id="primary" class="site-main<?php echo $is_demo ? ' pds-demo-single' : ''; ?>" role="main">
+<div class="<?php echo $is_demo ? 'wrap' : 'pds-container'; ?>" style="<?php echo $is_demo ? 'padding:24px 0 60px' : ''; ?>">
 
 	<?php promovads_breadcrumb(); ?>
 
-	<div class="pds-grid pds-grid--main-sidebar pds-site-content">
-
-		<!-- Article -->
-		<div class="pds-main-content">
+	<div class="<?php echo $is_demo ? 'grid g-main' : 'pds-grid pds-grid--main-sidebar pds-site-content'; ?>" style="<?php echo $is_demo ? 'gap:32px' : ''; ?>">
+		<div class="<?php echo $is_demo ? '' : 'pds-main-content'; ?>">
 		<?php
 		while ( have_posts() ) :
 			the_post();
 			?>
 
-			<article id="post-<?php the_ID(); ?>" <?php post_class( 'pds-single' ); ?> itemscope itemtype="https://schema.org/NewsArticle">
+			<article id="post-<?php the_ID(); ?>" <?php post_class( $is_demo ? 'entry-content-wrap' : 'pds-single' ); ?> itemscope itemtype="https://schema.org/NewsArticle">
 
-				<!-- Article Header -->
-				<header class="pds-article-header">
+				<header class="<?php echo $is_demo ? 'article-header' : 'pds-article-header'; ?>">
 
 					<!-- Categories -->
-					<div class="pds-article-cats">
+					<div class="<?php echo $is_demo ? 'article-cats' : 'pds-article-cats'; ?>">
 						<?php
 						$cats = get_the_category();
 						foreach ( $cats as $cat ) :
-							$color = get_term_meta( $cat->term_id, 'pds_color', true );
-							$style = $color ? ' style="background-color:' . esc_attr( $color ) . '"' : '';
+							$color = promovads_get_category_color( $cat->term_id, $config['primary'] ?? '#6366f1' );
 							printf(
-								'<a href="%s"%s>%s</a>',
+								'<a href="%s" style="background-color:%s">%s</a>',
 								esc_url( get_category_link( $cat->term_id ) ),
-								$style,
+								esc_attr( $color ),
 								esc_html( $cat->name )
 							);
 						endforeach;
@@ -50,22 +49,20 @@ if ( is_singular() ) {
 					</div>
 
 					<!-- Title -->
-					<h1 class="pds-article-title" itemprop="headline"><?php the_title(); ?></h1>
+					<h1 class="<?php echo $is_demo ? 'article-title' : 'pds-article-title'; ?>" itemprop="headline"><?php the_title(); ?></h1>
 
-					<!-- Subtitle / Excerpt -->
 					<?php if ( has_excerpt() ) : ?>
-					<p class="pds-article-subtitle" itemprop="description"><?php the_excerpt(); ?></p>
+					<p class="<?php echo $is_demo ? 'article-subtitle' : 'pds-article-subtitle'; ?>" itemprop="description"><?php the_excerpt(); ?></p>
 					<?php endif; ?>
 
-					<!-- Meta -->
-					<div class="pds-article-meta">
+					<div class="<?php echo $is_demo ? 'article-meta' : 'pds-article-meta'; ?>">
 
 						<!-- Author -->
-						<div class="pds-article-meta__author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+						<div class="<?php echo $is_demo ? 'article-meta__author' : 'pds-article-meta__author'; ?>" itemprop="author" itemscope itemtype="https://schema.org/Person">
 							<?php echo get_avatar( get_the_author_meta( 'ID' ), 36, '', '', array( 'itemprop' => 'image' ) ); ?>
 							<div>
 								<a class="name" href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" itemprop="url">
-									<span itemprop="name"><?php the_author(); ?></span>
+									<span itemprop="name"><?php echo esc_html( promovads_author_display_name() ); ?></span>
 								</a>
 							</div>
 						</div>
@@ -83,7 +80,7 @@ if ( is_singular() ) {
 								<?php
 								printf(
 									/* translators: %s: modified date */
-									esc_html__( 'Updated %s', 'promovads' ),
+									esc_html__( 'تحديث %s', 'promovads' ),
 									esc_html( get_the_modified_date() )
 								);
 								?>
@@ -110,7 +107,7 @@ if ( is_singular() ) {
 
 				<!-- Featured Image -->
 				<?php if ( has_post_thumbnail() ) : ?>
-				<figure class="pds-article-featured" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+				<figure class="<?php echo $is_demo ? 'article-featured' : 'pds-article-featured'; ?>" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
 					<?php the_post_thumbnail( 'promovads-hero', array( 'itemprop' => 'url', 'loading' => 'eager', 'decoding' => 'async' ) ); ?>
 					<?php
 					$caption = get_the_post_thumbnail_caption();
@@ -149,11 +146,11 @@ if ( is_singular() ) {
 				$tags = get_the_tags();
 				if ( $tags ) :
 					?>
-					<div class="pds-article-tags">
-						<h4><?php esc_html_e( 'Tags:', 'promovads' ); ?></h4>
-						<div class="pds-tags">
+					<div class="<?php echo $is_demo ? 'article-tags' : 'pds-article-tags'; ?>">
+						<h4><?php esc_html_e( 'الوسوم:', 'promovads' ); ?></h4>
+						<div class="<?php echo $is_demo ? 'tags' : 'pds-tags'; ?>">
 							<?php foreach ( $tags as $tag ) : ?>
-								<a href="<?php echo esc_url( get_tag_link( $tag->term_id ) ); ?>" class="pds-tag">
+								<a href="<?php echo esc_url( get_tag_link( $tag->term_id ) ); ?>" class="<?php echo $is_demo ? 'tag' : 'pds-tag'; ?>">
 									<?php echo esc_html( $tag->name ); ?>
 								</a>
 							<?php endforeach; ?>
@@ -170,12 +167,12 @@ if ( is_singular() ) {
 				<?php get_template_part( 'template-parts/single/author-box' ); ?>
 
 				<!-- Post Navigation -->
-				<nav class="pds-post-nav" aria-label="<?php esc_attr_e( 'Post navigation', 'promovads' ); ?>">
+				<nav class="<?php echo $is_demo ? 'post-nav' : 'pds-post-nav'; ?>" aria-label="<?php esc_attr_e( 'Post navigation', 'promovads' ); ?>">
 					<?php
 					the_post_navigation(
 						array(
-							'prev_text' => '<span class="pds-post-nav__label">' . esc_html__( '← Previous', 'promovads' ) . '</span><span class="pds-post-nav__title">%title</span>',
-							'next_text' => '<span class="pds-post-nav__label">' . esc_html__( 'Next →', 'promovads' ) . '</span><span class="pds-post-nav__title">%title</span>',
+							'prev_text' => '<span class="' . ( $is_demo ? 'post-nav__label' : 'pds-post-nav__label' ) . '"><i class="fas fa-arrow-right" aria-hidden="true"></i> ' . esc_html__( 'السابق', 'promovads' ) . '</span><span class="' . ( $is_demo ? 'post-nav__title' : 'pds-post-nav__title' ) . '">%title</span>',
+							'next_text' => '<span class="' . ( $is_demo ? 'post-nav__label' : 'pds-post-nav__label' ) . '">' . esc_html__( 'التالي', 'promovads' ) . ' <i class="fas fa-arrow-left" aria-hidden="true"></i></span><span class="' . ( $is_demo ? 'post-nav__title' : 'pds-post-nav__title' ) . '">%title</span>',
 						)
 					);
 					?>
@@ -184,12 +181,7 @@ if ( is_singular() ) {
 				<!-- Related Posts -->
 				<?php get_template_part( 'template-parts/single/related-posts' ); ?>
 
-				<!-- Comments -->
-				<?php if ( comments_open() || get_comments_number() ) : ?>
-					<section class="pds-comments">
-						<?php comments_template(); ?>
-					</section>
-				<?php endif; ?>
+
 
 			</article>
 
@@ -197,12 +189,18 @@ if ( is_singular() ) {
 		</div><!-- .pds-main-content -->
 
 		<!-- Sidebar -->
-		<aside class="pds-sidebar" role="complementary" aria-label="<?php esc_attr_e( 'Sidebar', 'promovads' ); ?>">
-			<?php get_sidebar(); ?>
+			<aside class="<?php echo $is_demo ? 'sidebar' : 'pds-sidebar'; ?>" role="complementary" aria-label="<?php esc_attr_e( 'Sidebar', 'promovads' ); ?>">
+			<?php
+			if ( $is_demo ) {
+				get_template_part( 'template-parts/demos/_shared/sidebar' );
+			} else {
+				get_sidebar();
+			}
+			?>
 		</aside>
 
-	</div><!-- .pds-grid -->
-</div><!-- .pds-container -->
+	</div>
+</div>
 </main>
 
 <?php get_footer(); ?>

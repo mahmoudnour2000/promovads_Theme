@@ -1,95 +1,90 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl" class="demo-finance">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Economy — Archive — FinanceWire</title>
+<title>أرشيف — مال+</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <link rel="stylesheet" href="../assets/css/pds-core.css">
-<style>
-  :root { --c-primary:#22c55e;--c-primary-dk:#16a34a;--c-secondary:#052e16;--c-accent:#86efac; }
-  .archive-hd { background: linear-gradient(135deg,#052e16,#14532d); }
-  .site-header { border-bottom:3px solid #22c55e; }
-  .site-nav { background:#052e16; }
-  .widget__title { background:#052e16; }
-  .market-bar { background:#052e16;height:36px;overflow:hidden;display:flex;align-items:center }
-  .market-bar-inner { display:flex;white-space:nowrap;animation:scroll-left 40s linear infinite }
-  .ticker-item { padding:0 20px;font-size:.74rem;display:flex;align-items:center;gap:8px;border-right:1px solid rgba(255,255,255,.06);color:rgba(255,255,255,.8) }
-  .ticker-sym { font-weight:700;color:#fff }
-  .up { color:#4ade80 }
-  .down { color:#f87171 }
-</style>
+<link rel="stylesheet" href="css/finance-ar.css">
 </head>
-<body>
-<div class="market-bar"><div class="market-bar-inner"><div class="ticker-item"><span class="ticker-sym">S&P500</span>5,842 <span class="up">+0.94%</span></div><div class="ticker-item"><span class="ticker-sym">NASDAQ</span>19,284 <span class="up">+1.12%</span></div><div class="ticker-item"><span class="ticker-sym">DOW</span>42,185 <span class="down">-0.21%</span></div><div class="ticker-item"><span class="ticker-sym">NVDA</span>$1,240 <span class="up">+3.41%</span></div><div class="ticker-item"><span class="ticker-sym">BTC</span>$107K <span class="up">+2.8%</span></div><div class="ticker-item"><span class="ticker-sym">GOLD</span>$2,480 <span class="up">+0.4%</span></div></div></div>
-<div class="topbar"><div class="wrap"><span class="topbar__date">Mon Jun 15, 2026 · Markets Open</span></div></div>
-<header class="site-header"><div class="wrap"><a href="index.html" class="logo"><i class="fas fa-chart-line" style="color:#22c55e"></i> Finance<span>Wire</span></a><div class="header-actions"><a href="#" class="btn btn-primary" style="background:#22c55e">Subscribe</a></div></div></header>
-<nav class="site-nav"><div class="wrap"><ul class="nav-menu"><li class="nav-item"><a href="index.html" class="nav-link">Markets</a></li><li class="nav-item active"><a href="#" class="nav-link">Economy</a></li><li class="nav-item"><a href="#" class="nav-link">Stocks</a></li><li class="nav-item"><a href="#" class="nav-link">Banking</a></li><li class="nav-item"><a href="#" class="nav-link">Cryptocurrency</a></li></ul></div></nav>
+<body class="page-inner">
 
-<!-- Header News Strip -->
-<div class="header-news" style="background:#052e16;border-color:rgba(34,197,94,.15)">
+<div class="fin-topbar">
   <div class="wrap">
-    <div class="header-news__label" style="background:#22c55e">Latest</div>
-    <div class="hn-grid">
-      <a href="single.html" class="hn-card"><div class="hn-card__img"><img src="https://picsum.photos/seed/hn-f1/120/120" alt="" loading="lazy"></div><div class="hn-card__body"><span class="hn-card__cat" style="color:#4ade80">Fed</span><h3 class="hn-card__title" style="color:rgba(255,255,255,.88)">Fed Holds at 4.25% — September Cut 80% Priced In</h3><div class="hn-card__meta" style="color:rgba(255,255,255,.4)"><i class="fas fa-clock"></i> 1h ago</div></div></a>
-      <a href="single.html" class="hn-card"><div class="hn-card__img"><img src="https://picsum.photos/seed/hn-f2/120/120" alt="" loading="lazy"></div><div class="hn-card__body"><span class="hn-card__cat" style="color:#4ade80">Stocks</span><h3 class="hn-card__title" style="color:rgba(255,255,255,.88)">S&amp;P 500 Hits All-Time High 5,980 on Jobs Data</h3><div class="hn-card__meta" style="color:rgba(255,255,255,.4)"><i class="fas fa-clock"></i> 3h ago</div></div></a>
-      <a href="single.html" class="hn-card"><div class="hn-card__img"><img src="https://picsum.photos/seed/hn-f3/120/120" alt="" loading="lazy"></div><div class="hn-card__body"><span class="hn-card__cat" style="color:#4ade80">Earnings</span><h3 class="hn-card__title" style="color:rgba(255,255,255,.88)">Apple Reports $98B Q2 Revenue — Beats by $4.2B</h3><div class="hn-card__meta" style="color:rgba(255,255,255,.4)"><i class="fas fa-clock"></i> 5h ago</div></div></a>
-      <a href="single.html" class="hn-card"><div class="hn-card__img"><img src="https://picsum.photos/seed/hn-f4/120/120" alt="" loading="lazy"></div><div class="hn-card__body"><span class="hn-card__cat" style="color:#4ade80">Oil</span><h3 class="hn-card__title" style="color:rgba(255,255,255,.88)">Brent Crude Slips Below $80 as Dollar Strengthens</h3><div class="hn-card__meta" style="color:rgba(255,255,255,.4)"><i class="fas fa-clock"></i> 7h ago</div></div></a>
+    <div class="fin-topbar__left">
+      <span><i class="fas fa-newspaper" style="color:#4ade80;margin-left:5px"></i> أخبار اقتصادية</span>
+      <span><i class="fas fa-calendar-alt" style="color:#22c55e;margin-left:5px"></i> الاثنين، 15 يونيو 2026</span>
+    </div>
+    <div class="fin-topbar__social">
+      <a href="#"><i class="fab fa-x-twitter"></i></a>
+      <a href="#"><i class="fab fa-linkedin-in"></i></a>
+      <a href="#"><i class="fab fa-telegram-plane"></i></a>
     </div>
   </div>
 </div>
 
-<div class="archive-hd">
+<header class="fin-header fin-header--compact">
   <div class="wrap">
-    <span class="label"><i class="fas fa-globe"></i> Section</span>
-    <h1>Economy</h1>
-    <p>Macroeconomic analysis, monetary policy, inflation, trade, and global economic trends</p>
-    <span class="count">1,240 articles · Updated continuously</span>
+    <div class="fin-header__bar">
+      <a href="index.html" class="fin-logo">
+        <div class="fin-logo__icon"><i class="fas fa-chart-line"></i></div>
+        مال<span>+</span><span class="fin-logo__tag">Economy</span>
+      </a>
+      <div class="fin-header__actions">
+        <button class="fin-btn-icon search-trigger" title="بحث"><i class="fas fa-search"></i></button>
+        <a href="archive.html?cat=mk" class="fin-btn-markets"><i class="fas fa-chart-bar"></i> الأسواق</a>
+      </div>
+    </div>
+  </div>
+  <div class="wrap">
+    <nav class="fin-nav site-nav site-nav--pills-solid" aria-label="أقسام مالية">
+      <ul class="fin-nav__list site-nav__list">
+      <li class="fin-nav__item site-nav__item active"><a href="index.html"><i class="fas fa-home" aria-hidden="true"></i><span>الرئيسية</span></a></li>
+      <li class="fin-nav__item site-nav__item" data-cat="mk"><a href="archive.html?cat=mk"><i class="fas fa-chart-line" aria-hidden="true"></i><span>أسواق</span></a></li>
+      <li class="fin-nav__item site-nav__item" data-cat="biz"><a href="archive.html?cat=biz"><i class="fas fa-building" aria-hidden="true"></i><span>أعمال</span></a></li>
+      <li class="fin-nav__item site-nav__item" data-cat="eco"><a href="archive.html?cat=eco"><i class="fas fa-globe" aria-hidden="true"></i><span>اقتصاد</span></a></li>
+      <li class="fin-nav__item site-nav__item" data-cat="bank"><a href="archive.html?cat=bank"><i class="fas fa-university" aria-hidden="true"></i><span>بنوك</span></a></li>
+      <li class="fin-nav__item site-nav__item" data-cat="energy"><a href="archive.html?cat=energy"><i class="fas fa-gas-pump" aria-hidden="true"></i><span>طاقة</span></a></li>
+      <li class="fin-nav__item site-nav__item" data-cat="analysis"><a href="archive.html?cat=analysis"><i class="fas fa-chart-pie" aria-hidden="true"></i><span>تحليلات</span></a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="archive-hd" id="archiveHeader"></div>
+
+<div class="fin-ticker">
+  <div class="fin-ticker__label"><span class="fin-ticker__dot"></span>عاجل</div>
+  <div class="fin-ticker__track">
+    <div class="fin-ticker__inner ticker__inner" id="tickerInner"></div>
   </div>
 </div>
 
-<main style="padding:32px 0 60px">
+<main style="padding:0 0 60px">
 <div class="wrap">
-  <div class="grid g-main" style="gap:32px">
+  <div class="grid g-main" style="gap:32px;margin-top:8px">
     <div>
-      <!-- Featured Article -->
-      <div class="card" style="margin-bottom:24px;display:flex;gap:0;overflow:hidden;border-radius:12px">
-        <div style="flex:1.2;overflow:hidden"><img src="https://picsum.photos/seed/econ1/700/400" alt="" style="width:100%;height:100%;object-fit:cover"></div>
-        <div style="flex:1;padding:28px;display:flex;flex-direction:column;justify-content:space-between">
-          <div><span style="background:#22c55e;color:#fff;font-size:.7rem;font-weight:700;padding:2px 8px;border-radius:3px;text-transform:uppercase">Economy</span><h2 style="font-size:1.4rem;margin:12px 0;font-family:'Playfair Display',serif;line-height:1.25"><a href="single.html">Federal Reserve Holds Rates Steady — Markets Rally on Positive Inflation Data</a></h2><p style="color:#555;font-size:.88rem;line-height:1.65">The central bank signals September rate cut as Core PCE falls to 2.1%...</p></div>
-          <div style="display:flex;gap:12px;font-size:.75rem;color:#888;margin-top:14px"><span><img src="https://i.pravatar.cc/30?img=44" style="width:20px;height:20px;border-radius:50%;object-fit:cover;vertical-align:middle;margin-right:4px">Sarah Thompson</span><span>June 15, 2026</span><span>7 min read</span></div>
-        </div>
-      </div>
-
-      <div class="grid g3">
-        <article class="card"><a href="single.html" class="card__thumb"><img src="https://picsum.photos/seed/e1/500/280" alt="" loading="lazy"><span class="card__cat" style="background:#22c55e">Economy</span></a><div class="card__body"><div class="card__meta"><span>2h ago</span><span class="dot">5 min</span></div><h3 class="card__title"><a href="single.html">CPI Report: US Inflation Falls for Third Consecutive Month</a></h3></div></article>
-        <article class="card"><a href="single.html" class="card__thumb"><img src="https://picsum.photos/seed/e2/500/280" alt="" loading="lazy"><span class="card__cat" style="background:#f59e0b;color:#000">Trade</span></a><div class="card__body"><div class="card__meta"><span>4h ago</span><span class="dot">6 min</span></div><h3 class="card__title"><a href="single.html">US-China Trade Tensions Rise Ahead of G20 Summit</a></h3></div></article>
-        <article class="card"><a href="single.html" class="card__thumb"><img src="https://picsum.photos/seed/e3/500/280" alt="" loading="lazy"><span class="card__cat" style="background:#0ea5e9">Jobs</span></a><div class="card__body"><div class="card__meta"><span>6h ago</span><span class="dot">4 min</span></div><h3 class="card__title"><a href="single.html">June Jobs Report: 180K Added, Unemployment at 4.1%</a></h3></div></article>
-        <article class="card"><a href="single.html" class="card__thumb"><img src="https://picsum.photos/seed/e4/500/280" alt="" loading="lazy"><span class="card__cat">GDP</span></a><div class="card__body"><div class="card__meta"><span>Yesterday</span><span class="dot">8 min</span></div><h3 class="card__title"><a href="single.html">Q1 2026 GDP Revised Up to 2.8% — Economy Stays Resilient</a></h3></div></article>
-        <article class="card"><a href="single.html" class="card__thumb"><img src="https://picsum.photos/seed/e5/500/280" alt="" loading="lazy"><span class="card__cat" style="background:#a855f7">EU</span></a><div class="card__body"><div class="card__meta"><span>Yesterday</span><span class="dot">5 min</span></div><h3 class="card__title"><a href="single.html">European Economy Grows 1.4% — Germany Narrowly Avoids Recession</a></h3></div></article>
-        <article class="card"><a href="single.html" class="card__thumb"><img src="https://picsum.photos/seed/e6/500/280" alt="" loading="lazy"><span class="card__cat" style="background:#ef4444">MENA</span></a><div class="card__body"><div class="card__meta"><span>2d ago</span><span class="dot">7 min</span></div><h3 class="card__title"><a href="single.html">Saudi Arabia Diversification Drive Reduces Oil Dependency to 55%</a></h3></div></article>
-        <article class="card"><a href="single.html" class="card__thumb"><img src="https://picsum.photos/seed/e7/500/280" alt="" loading="lazy"><span class="card__cat" style="background:#06b6d4">Analysis</span></a><div class="card__body"><div class="card__meta"><span>2d ago</span><span class="dot">10 min</span></div><h3 class="card__title"><a href="single.html">Is the US Dollar's Reserve Status Under Threat from BRICS?</a></h3></div></article>
-        <article class="card"><a href="single.html" class="card__thumb"><img src="https://picsum.photos/seed/e8/500/280" alt="" loading="lazy"><span class="card__cat">Policy</span></a><div class="card__body"><div class="card__meta"><span>3d ago</span><span class="dot">6 min</span></div><h3 class="card__title"><a href="single.html">IMF Revises Global Growth Forecast Up to 3.2% for 2026</a></h3></div></article>
-        <article class="card"><a href="single.html" class="card__thumb"><img src="https://picsum.photos/seed/e9/500/280" alt="" loading="lazy"><span class="card__cat" style="background:#f59e0b;color:#000">Opinion</span></a><div class="card__body"><div class="card__meta"><span>4d ago</span><span class="dot">9 min</span></div><h3 class="card__title"><a href="single.html">Opinion: The Era of Free Money Is Over — What Comes Next</a></h3></div></article>
-      </div>
-      <nav class="pagination"><span class="current" style="background:#22c55e;border-color:#22c55e">1</span><a href="#">2</a><a href="#">3</a><span>…</span><a href="#">62</a><a href="#" style="width:auto;padding:0 14px">Next <i class="fas fa-arrow-right"></i></a></nav>
+      <div id="archiveGrid"></div>
+      <nav class="pagination" style="margin-top:32px">
+        <a href="#" style="width:auto;padding:0 14px;color:var(--text-muted)"><i class="fas fa-arrow-right"></i> السابق</a>
+        <span class="current">1</span><a href="#" style="color:var(--text-muted)">2</a><a href="#" style="color:var(--text-muted)">3</a>
+        <a href="#" style="width:auto;padding:0 14px;color:var(--text-muted)">التالي <i class="fas fa-arrow-left"></i></a>
+      </nav>
     </div>
-    <aside class="sidebar">
-      <div class="widget"><div class="widget__title">Markets Now</div><div class="widget__body">
-        <div style="font-size:.82rem"><div style="display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid #f0f0f0"><strong>S&P 500</strong><span style="color:#16a34a;font-weight:700">5,842 ▲ +0.94%</span></div><div style="display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid #f0f0f0"><strong>NASDAQ</strong><span style="color:#16a34a;font-weight:700">19,284 ▲ +1.12%</span></div><div style="display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid #f0f0f0"><strong>DOW</strong><span style="color:#dc2626;font-weight:700">42,185 ▼ -0.21%</span></div><div style="display:flex;justify-content:space-between;padding:7px 0"><strong>Gold</strong><span style="color:#16a34a;font-weight:700">$2,480 ▲ +0.4%</span></div></div>
-      </div></div>
-      <div class="newsletter-widget" style="background:linear-gradient(135deg,#052e16,#14532d)"><div class="nl-icon"><i class="fas fa-chart-line"></i></div><h4>Morning Briefing</h4><p>Pre-market analysis at 7am EST</p><form class="nl-form"><input type="email" placeholder="your@email.com"><button>Subscribe</button></form></div>
-      <div class="ad-wrap"><p class="ad-label">Advertisement</p><div class="ad-box" style="height:250px;border-radius:8px;background:linear-gradient(135deg,#052e16,#15803d);color:rgba(255,255,255,.2)">300 × 250</div></div>
-    </aside>
+    <aside class="sidebar" id="archiveSidebar"></aside>
   </div>
 </div>
 </main>
 
-<footer class="footer-main"><div class="wrap"><div class="footer-grid"><div class="footer-brand"><a href="index.html" class="logo"><i class="fas fa-chart-line" style="color:#22c55e"></i> Finance<span>Wire</span></a><p>Trusted financial news for investors.</p></div><div class="footer-col"><h4>Sections</h4><ul><li><a href="#">Markets</a></li><li><a href="#">Economy</a></li><li><a href="#">Stocks</a></li></ul></div><div class="footer-col"><h4>Company</h4><ul><li><a href="#">About</a></li><li><a href="#">Advertise</a></li></ul></div><div class="footer-col"><h4>Legal</h4><ul><li><a href="#">Disclaimer</a></li><li><a href="#">Privacy</a></li></ul></div></div></div></footer>
-<div class="footer-bottom"><div class="wrap"><span>© 2026 FinanceWire. Not financial advice.</span></div></div>
+<div id="siteFooter"></div>
 <button class="back-top" id="backTop"><i class="fas fa-chevron-up"></i></button>
+
+<script src="data/articles.js"></script>
+<script src="js/shared.js"></script>
+<script src="js/archive.js"></script>
 <script src="../assets/js/pds-main.js"></script>
 </body>
 </html>

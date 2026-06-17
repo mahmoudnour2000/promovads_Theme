@@ -381,6 +381,41 @@ h3 { font-size: clamp(1.1rem,2.5vw,1.5rem); }
 .post-nav__title { font-size: .85rem; font-weight: 600; line-height: 1.3; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
 .post-nav__item--next { text-align: right; flex-direction: row-reverse; }
 
+/* ── Site Nav (standard base — all demos) ───────────────────── */
+.site-nav { width: 100%; background: transparent; }
+.site-nav__list {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  gap: 6px;
+  list-style: none;
+  margin: 0;
+  padding: 0 0 14px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+.site-nav__list::-webkit-scrollbar { display: none; }
+.site-nav__item { flex-shrink: 0; margin: 0; }
+.site-nav__item a {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-family: 'Tajawal', 'Cairo', sans-serif;
+  font-size: .82rem;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--text-muted, #64748b);
+  text-decoration: none;
+  transition: color .2s, background .2s, border-color .2s, box-shadow .2s, transform .2s;
+  white-space: nowrap;
+}
+.site-nav__item a i { font-size: .85rem; opacity: .9; flex-shrink: 0; }
+.site-nav__item a span { display: inline-block; }
+.site-nav__item.active a { color: var(--c-primary); }
+.site-header--compact .site-nav__list,
+[class*="-header--compact"] .site-nav__list { padding-bottom: 10px; }
+
 /* ── Archive Header ──────────────────────────────────────────── */
 .archive-hd { background: var(--c-secondary); color: #fff; padding: 44px 0; margin-bottom: 36px; }
 .archive-hd .label { font-size: .72rem; text-transform: uppercase; letter-spacing: .14em; color: var(--c-primary); display: block; margin-bottom: 8px; }
@@ -491,7 +526,7 @@ body.dark .topbar { background: #0a0a0e; }
 @media (max-width: 768px) {
   :root { --header-h: 60px; }
   .topbar { display: none; }
-  .site-nav { display: none; }
+  .site-header .site-nav { display: none; }
   .g2,.g3,.g4,.g5 { grid-template-columns: 1fr; }
   .g-hero { grid-template-columns: 1fr; }
   .post-nav { grid-template-columns: 1fr; }

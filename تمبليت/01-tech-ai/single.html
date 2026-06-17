@@ -1,252 +1,92 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl" class="demo-tech">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GPT-5 Deep Dive Review — TechAI News</title>
+<title>مقال — تك AI</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <link rel="stylesheet" href="../assets/css/pds-core.css">
-<style>
-  :root { --c-primary:#6366f1;--c-primary-dk:#4f46e5;--c-secondary:#0f0a1e;--c-accent:#06b6d4; }
-  body { background: #0f0a1e; color: #e4e4f0; }
-  .site-header { background: #12102a; border-bottom: 1px solid rgba(99,102,241,.2); }
-  .site-nav { background: #1e1b4b; }
-  .card { background: #1a1730; border-color: rgba(99,102,241,.15); }
-  .card__title { color: #e8e8f8; }
-  h1,h2,h3,h4 { color: #e8e8f8; }
-  .logo { color: #e8e8f8; } .logo span { color: #6366f1; }
-  .entry-content { color: #c4c4d8; }
-  .entry-content h2 { color: #e8e8f8; border-color: rgba(99,102,241,.2); }
-  .entry-content h3 { color: #e8e8f8; }
-  .entry-content blockquote { background: #1a1730; border-color: #6366f1; color: #a5b4fc; }
-  .author-box { background: #1a1730; border-color: rgba(99,102,241,.2); }
-  .article-meta { border-color: rgba(99,102,241,.2); color: #8888aa; }
-  .article-meta .author strong { color: #e8e8f8; }
-  .article-tags { border-color: rgba(99,102,241,.2); }
-  .post-nav__item { border-color: rgba(99,102,241,.15); background: #1a1730; }
-  .post-nav__label { color: #6666aa; }
-  .widget { background: #1a1730; border-color: rgba(99,102,241,.15); }
-  .widget__title { background: #312e81; }
-  .card--list { border-color: rgba(99,102,241,.12); }
-
-  /* Review box */
-  .review-box { background: #1a1730; border: 1px solid rgba(99,102,241,.25); border-radius: 12px; padding: 24px; margin: 28px 0; }
-  .review-box__title { font-size: .72rem; text-transform: uppercase; letter-spacing: .12em; color: #8888aa; margin-bottom: 16px; }
-  .review-scores { display: grid; grid-template-columns: repeat(auto-fill,minmax(160px,1fr)); gap: 14px; margin-bottom: 20px; }
-  .score-item { text-align: center; }
-  .score-item .label { font-size: .75rem; color: #8888aa; margin-bottom: 6px; }
-  .score-bar-wrap { height: 8px; background: rgba(255,255,255,.08); border-radius: 4px; overflow: hidden; }
-  .score-bar { height: 100%; border-radius: 4px; }
-  .score-item .val { font-size: 1.4rem; font-weight: 900; font-family: 'Playfair Display',serif; }
-  .verdict { display: flex; align-items: center; gap: 16px; background: rgba(99,102,241,.1); border: 1px solid rgba(99,102,241,.2); border-radius: 8px; padding: 14px 20px; }
-  .verdict-score { width: 70px; height: 70px; border-radius: 50%; border: 4px solid #6366f1; display: flex; flex-direction: column; align-items: center; justify-content: center; flex-shrink: 0; }
-  .verdict-score .big { font-size: 1.6rem; font-weight: 900; color: #6366f1; line-height: 1; }
-  .verdict-score .small { font-size: .6rem; color: #8888aa; }
-  .verdict h4 { color: #e8e8f8; font-size: 1rem; margin-bottom: 4px; }
-  .verdict p { font-size: .83rem; color: #8888aa; }
-
-  /* Info box */
-  .info-box { background: rgba(6,182,212,.08); border-left: 4px solid #06b6d4; border-radius: 0 8px 8px 0; padding: 16px 20px; margin: 24px 0; }
-  .info-box strong { color: #06b6d4; display: block; margin-bottom: 4px; font-size: .8rem; text-transform: uppercase; letter-spacing: .08em; }
-  .info-box p { color: #a5b4fc; font-size: .88rem; margin: 0; }
-</style>
+<link rel="stylesheet" href="css/tech-ar.css">
 </head>
-<body>
+<body class="page-inner">
+
 <div class="progress-bar" id="progress"></div>
 
-<!-- Topbar -->
-<div class="topbar"><div class="wrap"><span class="topbar__date"><i class="fas fa-calendar-alt" style="color:#6366f1;margin-right:5px"></i>Monday, June 15, 2026</span><div class="topbar__social"><a href="#"><i class="fab fa-x-twitter"></i></a><a href="#"><i class="fab fa-youtube"></i></a><a href="#"><i class="fab fa-discord"></i></a></div><div class="topbar__links"><a href="#">Newsletter</a></div></div></div>
-
-<header class="site-header"><div class="wrap"><a href="index.html" class="logo"><i class="fas fa-microchip" style="color:#6366f1;font-size:1.3rem"></i> Tech<span>AI</span></a><div class="header-actions"><button class="btn-icon search-trigger"><i class="fas fa-search"></i></button><button class="btn-icon dark-toggle"><i class="fas fa-moon"></i></button><a href="#" class="btn btn-primary" style="background:#6366f1"><i class="fas fa-rss"></i> Subscribe</a></div></div></header>
-
-<nav class="site-nav"><div class="wrap"><ul class="nav-menu"><li class="nav-item"><a href="index.html" class="nav-link">Home</a></li><li class="nav-item"><a href="#" class="nav-link">AI <i class="fas fa-chevron-down"></i></a></li><li class="nav-item"><a href="#" class="nav-link">Hardware</a></li><li class="nav-item"><a href="#" class="nav-link">Software</a></li><li class="nav-item"><a href="#" class="nav-link">Reviews</a></li><li class="nav-item"><a href="#" class="nav-link">Startups</a></li></ul></div></nav>
-
-<!-- Header News Strip -->
-<div class="header-news" style="background:#1a1730;border-color:rgba(99,102,241,.2)">
+<div class="tech-topbar">
   <div class="wrap">
-    <div class="header-news__label">Latest</div>
-    <div class="hn-grid">
-      <a href="single.html" class="hn-card"><div class="hn-card__img"><img src="https://picsum.photos/seed/hn-t1/120/120" alt="" loading="lazy"></div><div class="hn-card__body"><span class="hn-card__cat">AI</span><h3 class="hn-card__title" style="color:rgba(255,255,255,.88)">OpenAI Launches GPT-5 With Native Vision &amp; 200K Context Window</h3><div class="hn-card__meta" style="color:rgba(255,255,255,.4)"><i class="fas fa-clock"></i> 1h ago</div></div></a>
-      <a href="single.html" class="hn-card"><div class="hn-card__img"><img src="https://picsum.photos/seed/hn-t2/120/120" alt="" loading="lazy"></div><div class="hn-card__body"><span class="hn-card__cat">Hardware</span><h3 class="hn-card__title" style="color:rgba(255,255,255,.88)">NVIDIA RTX 5090 Benchmarks Leak — 2× Faster Than RTX 4090</h3><div class="hn-card__meta" style="color:rgba(255,255,255,.4)"><i class="fas fa-clock"></i> 3h ago</div></div></a>
-      <a href="single.html" class="hn-card"><div class="hn-card__img"><img src="https://picsum.photos/seed/hn-t3/120/120" alt="" loading="lazy"></div><div class="hn-card__body"><span class="hn-card__cat">Startups</span><h3 class="hn-card__title" style="color:rgba(255,255,255,.88)">Anthropic Raises $3B Series F — Valuation Now $28B</h3><div class="hn-card__meta" style="color:rgba(255,255,255,.4)"><i class="fas fa-clock"></i> 5h ago</div></div></a>
-      <a href="single.html" class="hn-card"><div class="hn-card__img"><img src="https://picsum.photos/seed/hn-t4/120/120" alt="" loading="lazy"></div><div class="hn-card__body"><span class="hn-card__cat">Security</span><h3 class="hn-card__title" style="color:rgba(255,255,255,.88)">Critical Zero-Day in Linux Kernel 6.9 — Patch Available Now</h3><div class="hn-card__meta" style="color:rgba(255,255,255,.4)"><i class="fas fa-clock"></i> 7h ago</div></div></a>
+    <div class="tech-topbar__left">
+      <span class="tech-topbar__badge"><i class="fas fa-newspaper"></i> أخبار التقنية</span>
+      <span><i class="fas fa-calendar-alt" style="color:#6366f1;margin-left:5px"></i> الاثنين، 15 يونيو 2026</span>
     </div>
+    <div class="tech-topbar__social">
+      <a href="#"><i class="fab fa-x-twitter"></i></a>
+      <a href="#"><i class="fab fa-youtube"></i></a>
+      <a href="#"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+  </div>
+</div>
+
+<header class="tech-header tech-header--compact">
+  <div class="wrap">
+    <div class="tech-header__bar">
+      <a href="index.html" class="tech-logo">
+        <div class="tech-logo__icon"><i class="fas fa-microchip"></i></div>
+        <div>
+          تك<span>AI</span>
+          <span class="tech-logo__sub">أخبار التقنية</span>
+        </div>
+      </a>
+      <div class="tech-header__actions">
+        <button class="tech-btn-icon search-trigger" title="بحث"><i class="fas fa-search"></i></button>
+        <a href="archive.html" class="tech-btn-cta"><i class="fas fa-newspaper"></i> كل الأخبار</a>
+      </div>
+    </div>
+    <nav class="tech-nav site-nav site-nav--pills" aria-label="أقسام التقنية">
+      <ul class="tech-nav__list site-nav__list">
+      <li class="tech-nav__item site-nav__item active"><a href="index.html">الرئيسية</a></li>
+      <li class="tech-nav__item site-nav__item" data-cat="ai"><a href="archive.html?cat=ai">ذكاء اصطناعي</a></li>
+      <li class="tech-nav__item site-nav__item" data-cat="hw"><a href="archive.html?cat=hw">أجهزة</a></li>
+      <li class="tech-nav__item site-nav__item" data-cat="sw"><a href="archive.html?cat=sw">برمجيات</a></li>
+      <li class="tech-nav__item site-nav__item" data-cat="sec"><a href="archive.html?cat=sec">أمن</a></li>
+      <li class="tech-nav__item site-nav__item" data-cat="st"><a href="archive.html?cat=st">شركات ناشئة</a></li>
+      <li class="tech-nav__item site-nav__item" data-cat="rev"><a href="archive.html?cat=rev">مراجعات</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="tech-ticker">
+  <div class="tech-ticker__label"><span class="tech-ticker__dot"></span>عاجل</div>
+  <div class="tech-ticker__track">
+    <div class="tech-ticker__inner ticker__inner" id="tickerInner"></div>
   </div>
 </div>
 
 <main style="padding:36px 0 60px">
 <div class="wrap">
   <div class="grid g-main" style="gap:36px">
-
-    <!-- Article -->
-    <article>
-      <nav class="breadcrumb"><a href="index.html">Home</a><span class="sep">›</span><a href="#">AI</a><span class="sep">›</span><span class="current">GPT-5 Deep Dive</span></nav>
-
-      <div class="article-cats">
-        <a href="#">Artificial Intelligence</a>
-        <a href="#" style="background:#06b6d4">Analysis</a>
-      </div>
-
-      <h1 class="article-title">GPT-5 Deep Dive: The Most Comprehensive AI Review You'll Read in 2026</h1>
-      <p class="article-subtitle">After 3 weeks of intensive testing across hundreds of benchmarks, use cases, and real-world scenarios — here's everything you need to know about OpenAI's most ambitious model yet.</p>
-
-      <div class="article-meta">
-        <div class="author">
-          <img src="https://i.pravatar.cc/80?img=11" alt="Sarah Chen">
-          <div>
-            <strong>Sarah Chen</strong>
-            <div style="font-size:.72rem;color:#6366f1">Senior AI Editor</div>
-          </div>
-        </div>
-        <span><i class="fas fa-calendar-alt"></i> June 15, 2026</span>
-        <span><i class="far fa-clock"></i> 12 min read</span>
-        <span><i class="far fa-eye"></i> 52,400 views</span>
-        <div class="share">
-          <a href="#" class="share-btn share-fb"><i class="fab fa-facebook-f"></i></a>
-          <a href="#" class="share-btn share-tw"><i class="fab fa-x-twitter"></i></a>
-          <a href="#" class="share-btn share-wa"><i class="fab fa-whatsapp"></i></a>
-          <a href="#" class="share-btn share-li"><i class="fab fa-linkedin-in"></i></a>
-          <button class="share-btn copy-url" style="background:#444;font-size:11px"><i class="fas fa-link"></i></button>
-        </div>
-      </div>
-
-      <figure class="article-feat">
-        <img src="https://picsum.photos/seed/gpt5/1200/640" alt="GPT-5 Interface Screenshot">
-        <figcaption>GPT-5's new reasoning interface showing step-by-step chain-of-thought output. Image: OpenAI</figcaption>
-      </figure>
-
-      <!-- Ad: inline top -->
-      <div class="ad-wrap" style="margin-bottom:28px"><p class="ad-label">Advertisement</p><div class="ad-box" style="height:90px;border-radius:8px;background:linear-gradient(90deg,#1a1730,#312e81);color:rgba(255,255,255,.2)">728 × 90 — In-Article Ad</div></div>
-
-      <div class="entry-content">
-
-        <p>When OpenAI announced GPT-5 in March 2026, the AI community held its collective breath. After months of speculation, rumors, and benchmark leaks, the reality has finally arrived — and it's both more impressive and more nuanced than anyone predicted.</p>
-
-        <p>I've spent the last three weeks stress-testing GPT-5 against its predecessors, against Google's Gemini Ultra 2.0, and against Anthropic's Claude 4. The results reveal a model that genuinely represents a generational leap in AI capability — but one that comes with important caveats.</p>
-
-        <div class="info-box">
-          <strong><i class="fas fa-info-circle"></i> Quick Summary</strong>
-          <p>GPT-5 achieves human-level performance on 94% of professional certification exams tested, scores 98th percentile on the Bar exam, and demonstrates emergent multi-step reasoning that previous models couldn't handle reliably.</p>
-        </div>
-
-        <h2>What's Actually New in GPT-5?</h2>
-
-        <p>Unlike the incremental jumps from GPT-3.5 to GPT-4, GPT-5 introduces fundamental architectural changes. According to OpenAI's technical report, the model features a novel "adaptive compute" mechanism that dynamically allocates more processing resources to harder problems — essentially slowing down to think more carefully when needed.</p>
-
-        <p>This "think before answering" capability is immediately apparent in testing. When given complex multi-step math problems, GPT-5 visibly walks through its reasoning before committing to an answer, catching errors that would have tripped up GPT-4.</p>
-
-        <h2>Benchmark Performance</h2>
-
-        <!-- Review Score Box -->
-        <div class="review-box">
-          <div class="review-box__title"><i class="fas fa-star" style="color:#f59e0b"></i> TechAI Score — GPT-5</div>
-          <div class="review-scores">
-            <div class="score-item"><div class="label">Reasoning</div><div class="val" style="color:#22c55e">9.7</div><div class="score-bar-wrap"><div class="score-bar" style="width:97%;background:#22c55e"></div></div></div>
-            <div class="score-item"><div class="label">Coding</div><div class="val" style="color:#6366f1">9.3</div><div class="score-bar-wrap"><div class="score-bar" style="width:93%;background:#6366f1"></div></div></div>
-            <div class="score-item"><div class="label">Creativity</div><div class="val" style="color:#a855f7">8.8</div><div class="score-bar-wrap"><div class="score-bar" style="width:88%;background:#a855f7"></div></div></div>
-            <div class="score-item"><div class="label">Speed</div><div class="val" style="color:#06b6d4">8.1</div><div class="score-bar-wrap"><div class="score-bar" style="width:81%;background:#06b6d4"></div></div></div>
-            <div class="score-item"><div class="label">Safety</div><div class="val" style="color:#f59e0b">9.0</div><div class="score-bar-wrap"><div class="score-bar" style="width:90%;background:#f59e0b"></div></div></div>
-            <div class="score-item"><div class="label">Value</div><div class="val" style="color:#ef4444">7.8</div><div class="score-bar-wrap"><div class="score-bar" style="width:78%;background:#ef4444"></div></div></div>
-          </div>
-          <div class="verdict">
-            <div class="verdict-score"><div class="big">9.1</div><div class="small">/10</div></div>
-            <div><h4>Exceptional — Editor's Choice 2026</h4><p>GPT-5 sets a new standard for large language models. Despite the premium pricing, it's the most capable AI assistant available and justifies every dollar for power users.</p></div>
-          </div>
-        </div>
-
-        <h2>Real-World Testing: Where GPT-5 Shines</h2>
-
-        <p>The most impressive demonstrations came in tasks that require sustained reasoning across many steps. GPT-5 can now reliably:</p>
-
-        <ul>
-          <li>Write and debug complex multi-file codebases without losing context</li>
-          <li>Analyze 200-page research papers and generate structured critiques</li>
-          <li>Perform multi-step mathematical proofs with near-zero error rates</li>
-          <li>Maintain consistent personas across hour-long creative writing sessions</li>
-          <li>Translate not just language but cultural context across 50+ languages</li>
-        </ul>
-
-        <blockquote>"GPT-5 is the first model where I genuinely forgot I was talking to an AI during extended technical discussions. It adapts its communication style fluidly." — Dr. James Wilson, Stanford AI Lab</blockquote>
-
-        <h2>Pricing: The Elephant in the Room</h2>
-
-        <p>GPT-5 is significantly more expensive than GPT-4. The API pricing has doubled for input tokens and tripled for output tokens compared to GPT-4 Turbo. This puts it out of reach for many indie developers who built businesses on the affordability of GPT-3.5.</p>
-
-        <!-- Mid-article Ad -->
-        <div class="ad-wrap" style="margin:28px 0"><p class="ad-label">Advertisement</p><div class="ad-box" style="height:90px;border-radius:8px;background:linear-gradient(90deg,#1a1730,#312e81);color:rgba(255,255,255,.2)">728 × 90 — In-Article Ad</div></div>
-
-        <h2>Verdict</h2>
-
-        <p>GPT-5 is the best general-purpose AI model available today, and it's not close. For researchers, developers, and enterprises that can afford it, the capability improvements justify the cost. For casual users and budget-conscious builders, GPT-4o remains the better choice.</p>
-
-      </div>
-
-      <!-- Tags -->
-      <div class="article-tags">
-        <h4>Tags</h4>
-        <div class="tags"><a href="#" class="tag">#GPT5</a><a href="#" class="tag">#OpenAI</a><a href="#" class="tag">#LLM</a><a href="#" class="tag">#AIReview</a><a href="#" class="tag">#MachineLearning</a></div>
-      </div>
-
-      <!-- Author Box -->
-      <div class="author-box">
-        <img src="https://i.pravatar.cc/120?img=11" alt="Sarah Chen" class="author-box__avatar">
-        <div>
-          <h3 class="author-box__name">Sarah Chen</h3>
-          <div class="author-box__role">Senior AI Editor · TechAI News</div>
-          <p class="author-box__bio">Sarah has covered artificial intelligence and machine learning for 8 years, previously at MIT Technology Review and Wired. She holds an MS in Computer Science from Carnegie Mellon. Her analysis has been cited by OpenAI, DeepMind, and Google.</p>
-          <div class="author-social">
-            <a href="#"><i class="fab fa-x-twitter"></i></a>
-            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-            <a href="#"><i class="fas fa-globe"></i></a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Post Nav -->
-      <nav class="post-nav">
-        <div class="post-nav__item">
-          <img src="https://picsum.photos/seed/prev1/140/104" alt="">
-          <div><div class="post-nav__label"><i class="fas fa-arrow-left"></i> Previous</div><div class="post-nav__title">Claude 4 Sonnet Review: Anthropic's Best Yet</div></div>
-        </div>
-        <div class="post-nav__item post-nav__item--next">
-          <img src="https://picsum.photos/seed/next1/140/104" alt="">
-          <div><div class="post-nav__label">Next <i class="fas fa-arrow-right"></i></div><div class="post-nav__title">Gemini Ultra 2.0: Google Strikes Back</div></div>
-        </div>
-      </nav>
-
-      <!-- Related Posts -->
-      <section class="related">
-        <h3 class="section-title">Related <span>Articles</span></h3>
-        <div class="grid g3" style="margin-top:20px">
-          <article class="card"><a href="single.html" class="card__thumb"><img src="https://picsum.photos/seed/rel1/500/280" alt="" loading="lazy"><span class="card__cat">AI</span></a><div class="card__body"><h3 class="card__title"><a href="single.html">How to Build Production Apps with GPT-5 API</a></h3><div class="card__meta"><span>3h ago</span><span class="dot">8 min</span></div></div></article>
-          <article class="card"><a href="single.html" class="card__thumb"><img src="https://picsum.photos/seed/rel2/500/280" alt="" loading="lazy"><span class="card__cat" style="background:#06b6d4">Guide</span></a><div class="card__body"><h3 class="card__title"><a href="single.html">GPT-5 vs Claude 4 vs Gemini Ultra 2: Full Comparison</a></h3><div class="card__meta"><span>1d ago</span><span class="dot">12 min</span></div></div></article>
-          <article class="card"><a href="single.html" class="card__thumb"><img src="https://picsum.photos/seed/rel3/500/280" alt="" loading="lazy"><span class="card__cat" style="background:#a855f7">Opinion</span></a><div class="card__body"><h3 class="card__title"><a href="single.html">Is AGI Closer Than We Think? GPT-5 Analysis</a></h3><div class="card__meta"><span>2d ago</span><span class="dot">6 min</span></div></div></article>
-        </div>
-      </section>
-
-    </article>
-
-    <!-- Sidebar -->
-    <aside class="sidebar">
-      <div class="widget"><div class="widget__title">More from AI</div><div class="widget__body" style="padding:4px 12px">
-        <div class="card--list"><a href="single.html" class="card__thumb" style="width:90px;aspect-ratio:4/3;border-radius:6px;overflow:hidden;flex-shrink:0"><img src="https://picsum.photos/seed/sb1/90/70" alt="" loading="lazy"></a><div class="card__body" style="padding:0;display:flex;flex-direction:column;justify-content:center"><h4 style="font-size:.82rem;line-height:1.4;margin-bottom:3px;color:#e8e8f8"><a href="single.html">Gemini Ultra 2.0: Google's Big Bet on Multimodal AI</a></h4><span style="font-size:.72rem;color:#8888aa">4h ago · 5 min</span></div></div>
-        <div class="card--list"><a href="single.html" class="card__thumb" style="width:90px;aspect-ratio:4/3;border-radius:6px;overflow:hidden;flex-shrink:0"><img src="https://picsum.photos/seed/sb2/90/70" alt="" loading="lazy"></a><div class="card__body" style="padding:0;display:flex;flex-direction:column;justify-content:center"><h4 style="font-size:.82rem;line-height:1.4;margin-bottom:3px;color:#e8e8f8"><a href="single.html">Claude 4 Benchmark: Legal Reasoning at 96th Percentile</a></h4><span style="font-size:.72rem;color:#8888aa">Yesterday · 7 min</span></div></div>
-        <div class="card--list"><a href="single.html" class="card__thumb" style="width:90px;aspect-ratio:4/3;border-radius:6px;overflow:hidden;flex-shrink:0"><img src="https://picsum.photos/seed/sb3/90/70" alt="" loading="lazy"></a><div class="card__body" style="padding:0;display:flex;flex-direction:column;justify-content:center"><h4 style="font-size:.82rem;line-height:1.4;margin-bottom:3px;color:#e8e8f8"><a href="single.html">Mistral Large 3 Surprises the Open-Source Community</a></h4><span style="font-size:.72rem;color:#8888aa">2d ago · 4 min</span></div></div>
-      </div></div>
-      <div class="ad-wrap"><p class="ad-label">Advertisement</p><div class="ad-box" style="height:600px;border-radius:8px;background:linear-gradient(180deg,#1a1730,#312e81);color:rgba(255,255,255,.2);font-size:.78rem">160 × 600<br>Skyscraper Ad</div></div>
-    </aside>
-
+    <article id="articleContent"></article>
+    <aside class="sidebar" id="singleSidebar"></aside>
   </div>
 </div>
 </main>
 
-<div class="footer-nl"><div class="wrap"><div><h3>Stay Ahead of the Curve</h3><p>Get the latest AI & tech news delivered daily</p></div><form class="footer-nl-form"><input type="email" placeholder="Enter your email address"><button type="submit"><i class="fas fa-paper-plane"></i> Subscribe</button></form></div></div>
-<footer class="footer-main"><div class="wrap"><div class="footer-grid"><div class="footer-brand"><a href="index.html" class="logo"><i class="fas fa-microchip" style="color:#6366f1"></i> Tech<span>AI</span></a><p>Your #1 source for AI, hardware, and startup news.</p><div class="footer-social"><a href="#"><i class="fab fa-x-twitter"></i></a><a href="#"><i class="fab fa-linkedin-in"></i></a><a href="#"><i class="fab fa-youtube"></i></a><a href="#"><i class="fab fa-discord"></i></a></div></div><div class="footer-col"><h4>Categories</h4><ul><li><a href="#">Artificial Intelligence</a></li><li><a href="#">Hardware</a></li><li><a href="#">Software</a></li><li><a href="#">Cybersecurity</a></li><li><a href="#">Startups</a></li></ul></div><div class="footer-col"><h4>Company</h4><ul><li><a href="#">About Us</a></li><li><a href="#">Write for Us</a></li><li><a href="#">Advertise</a></li><li><a href="#">Contact</a></li></ul></div><div class="footer-col"><h4>Popular</h4><ul><li><a href="single.html">GPT-5 Review</a></li><li><a href="single.html">Apple M4 Chip Analysis</a></li><li><a href="single.html">NVIDIA H200 Deep Dive</a></li><li><a href="single.html">Best AI Tools 2026</a></li></ul></div></div></div></footer>
-<div class="footer-bottom"><div class="wrap"><span>© 2026 TechAI News. All rights reserved.</span><div class="footer-bottom-links"><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Sitemap</a></div></div></div>
-
+<div id="siteFooter"></div>
 <button class="back-top" id="backTop"><i class="fas fa-chevron-up"></i></button>
+
+<div class="search-overlay" id="searchOverlay">
+  <div class="search-box">
+    <button class="search-close" aria-label="إغلاق"><i class="fas fa-times"></i></button>
+    <h3>ابحث في الأخبار</h3>
+    <div class="search-input-wrap"><input type="search" placeholder="اكتب للبحث…" autofocus></div>
+  </div>
+</div>
+
+<script src="data/articles.js"></script>
+<script src="js/shared.js"></script>
+<script src="js/single.js"></script>
 <script src="../assets/js/pds-main.js"></script>
 </body>
 </html>

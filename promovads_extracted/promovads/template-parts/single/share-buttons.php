@@ -11,7 +11,7 @@ $post_title = esc_attr( get_the_title() );
 ?>
 
 <div class="pds-share-box">
-	<span class="pds-share-box__label"><?php esc_html_e( 'Share:', 'promovads' ); ?></span>
+	<span class="pds-share-box__label"><?php esc_html_e( 'مشاركة:', 'promovads' ); ?></span>
 
 	<div class="pds-article-meta__share">
 		<a href="<?php echo esc_url( $share_urls['facebook'] ); ?>" class="pds-share-fb"
@@ -34,8 +34,9 @@ $post_title = esc_attr( get_the_title() );
 			<i class="fab fa-linkedin-in" aria-hidden="true"></i>
 		</a>
 
-		<button class="pds-share-copy pds-copy-url" data-url="<?php echo esc_url( get_permalink() ); ?>"
-		        aria-label="<?php esc_attr_e( 'Copy link', 'promovads' ); ?>">
+		<button type="button" class="pds-share-copy pds-copy-url" data-url="<?php echo esc_url( get_permalink() ); ?>"
+		        title="<?php esc_attr_e( 'نسخ الرابط', 'promovads' ); ?>"
+		        aria-label="<?php esc_attr_e( 'نسخ الرابط', 'promovads' ); ?>">
 			<i class="fas fa-link" aria-hidden="true"></i>
 		</button>
 	</div>

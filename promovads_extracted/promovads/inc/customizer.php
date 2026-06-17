@@ -168,21 +168,10 @@ add_action( 'customize_register', 'promovads_customize_register' );
 
 /**
  * Output dynamic CSS variables from customizer settings.
+ * (Handled by admin-panel promovads_theme_colors_css for unified output.)
  */
 function promovads_customizer_css(): void {
-	$primary   = get_theme_mod( 'promovads_color_primary',   '#e63329' );
-	$secondary = get_theme_mod( 'promovads_color_secondary', '#1a1a2e' );
-	$accent    = get_theme_mod( 'promovads_color_accent',    '#f5a623' );
-
-	$css = sprintf(
-		':root { --color-primary: %s; --color-primary-dark: %s; --color-secondary: %s; --color-accent: %s; }',
-		sanitize_hex_color( $primary ),
-		sanitize_hex_color( $primary ),
-		sanitize_hex_color( $secondary ),
-		sanitize_hex_color( $accent )
-	);
-
-	wp_add_inline_style( 'promovads-style', $css );
+	// See inc/admin-panel.php — promovads_theme_colors_css().
 }
 add_action( 'wp_enqueue_scripts', 'promovads_customizer_css', 20 );
 

@@ -47,20 +47,15 @@ $socials = array(
 
 			<!-- Brand Column -->
 			<div class="pds-footer-brand">
-				<?php if ( has_custom_logo() ) : ?>
-					<?php the_custom_logo(); ?>
-				<?php else : ?>
-					<a class="pds-footer-brand__logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-						<?php
-						$name  = get_bloginfo( 'name' );
-						$parts = explode( ' ', $name, 2 );
-						echo esc_html( $parts[0] );
-						if ( isset( $parts[1] ) ) {
-							echo '<span> ' . esc_html( $parts[1] ) . '</span>';
-						}
-						?>
-					</a>
-				<?php endif; ?>
+				<?php
+				promovads_render_site_logo(
+					'footer',
+					array(
+						'wrapper_class'      => 'pds-footer-brand__logo pds-site-logo pds-site-logo--footer',
+						'show_fallback_text' => true,
+					)
+				);
+				?>
 
 				<p>
 					<?php

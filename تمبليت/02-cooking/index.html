@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="demo-cook">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>سُفرة — أخبار الطبخ والوصفات العربية</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="../assets/css/pds-core.css">
+<link rel="stylesheet" href="css/cook-ar.css">
+</head>
+<body>
+
+<div class="progress-bar" id="progress" style="background:linear-gradient(-90deg,#e85d04,#f59e0b)"></div>
+
+<div class="cook-topbar">
+  <div class="wrap">
+    <div class="cook-topbar__left">
+      <span class="cook-topbar__badge"><i class="fas fa-fire"></i> خبر طبخ عاجل</span>
+      <span><i class="fas fa-calendar-alt" style="color:#fdba74;margin-left:5px"></i> الاثنين، 15 يونيو 2026</span>
+    </div>
+    <div class="cook-topbar__social">
+      <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+      <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+    </div>
+  </div>
+</div>
+
+<header class="cook-header">
+  <div class="wrap">
+    <div class="cook-header__bar">
+      <a href="index.html" class="cook-logo">
+        <div class="cook-logo__icon"><i class="fas fa-utensils"></i></div>
+        <div>
+          سُ<span>فرة</span>
+          <span class="cook-logo__sub">أخبار الطبخ العربي</span>
+        </div>
+      </a>
+      <div class="cook-search search-trigger" role="button" tabindex="0" title="بحث في أخبار الطبخ">
+        <i class="fas fa-search"></i>
+        <input type="search" placeholder="ابحث عن خبر طبخ، وصفة، شيف…" readonly>
+      </div>
+      <div class="cook-header__actions">
+        <button class="cook-btn-icon search-trigger" title="بحث"><i class="fas fa-search"></i></button>
+        <a href="archive.html" class="cook-btn-primary"><i class="fas fa-utensils"></i><span>وصفات اليوم</span></a>
+      </div>
+    </div>
+    <nav class="cook-nav site-nav site-nav--pills-solid" aria-label="أقسام الطبخ">
+      <ul class="cook-nav__list site-nav__list">
+      <li class="cook-nav__item site-nav__item active"><a href="index.html">الرئيسية</a></li>
+      <li class="cook-nav__item site-nav__item" data-cat="main"><a href="archive.html?cat=main">أطباق رئيسية</a></li>
+      <li class="cook-nav__item site-nav__item" data-cat="dessert"><a href="archive.html?cat=dessert">حلويات</a></li>
+      <li class="cook-nav__item site-nav__item" data-cat="soup"><a href="archive.html?cat=soup">شوربات</a></li>
+      <li class="cook-nav__item site-nav__item" data-cat="salad"><a href="archive.html?cat=salad">سلطات</a></li>
+      <li class="cook-nav__item site-nav__item" data-cat="fast"><a href="archive.html?cat=fast">وجبات سريعة</a></li>
+      <li class="cook-nav__item site-nav__item" data-cat="tips"><a href="archive.html?cat=tips">أخبار المطبخ</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="cook-hero-zone">
+  <div class="wrap">
+    <div class="cook-hero-zone__head">
+      <div class="cook-hero-zone__title"><i class="fas fa-star"></i> أبرز أخبار الطبخ</div>
+      <a href="archive.html" style="font-size:.82rem;font-weight:700;color:var(--c-primary)">عرض الكل <i class="fas fa-arrow-left"></i></a>
+    </div>
+    <div class="cook-hero" id="headerHero"></div>
+  </div>
+</section>
+
+<div class="cook-ticker">
+  <div class="cook-ticker__label"><i class="fas fa-fire"></i> أخبار ساخنة</div>
+  <div class="cook-ticker__track">
+    <div class="cook-ticker__inner ticker__inner" id="tickerInner"></div>
+  </div>
+  <button class="ticker__pause" style="padding:0 14px;color:#fdba74;font-size:12px;background:none;border:none;cursor:pointer" title="إيقاف"><i class="fas fa-pause"></i></button>
+</div>
+
+<main style="padding:40px 0 64px">
+<div class="wrap">
+<div class="grid g-main" style="gap:36px">
+
+  <div>
+    <div id="categorySections"></div>
+
+    <section class="latest-recipes" id="latestSection">
+      <div class="latest-recipes__head">
+        <h2 class="latest-recipes__title">آخر <span>أخبار الطبخ</span></h2>
+        <a href="archive.html" class="recipe-section__btn recipe-section--main" style="color:#ea580c;border-color:#ea580c"><i class="fas fa-utensils"></i> عرض الكل</a>
+      </div>
+      <div class="latest-list" id="latestList"></div>
+    </section>
+  </div>
+
+  <aside class="sidebar">
+    <div class="widget">
+      <div class="widget__title">🔍 بحث سريع</div>
+      <div class="widget__body" style="padding:14px">
+        <div class="cook-search" style="max-width:100%">
+          <i class="fas fa-search"></i>
+          <input type="search" placeholder="ابحث في أخبار الطبخ…">
+        </div>
+      </div>
+    </div>
+    <div class="widget">
+      <div class="widget__title">🔥 الأكثر قراءة</div>
+      <div class="widget__body" style="padding:8px 16px">
+        <div class="trending-list" id="trendingList"></div>
+      </div>
+    </div>
+    <div class="widget">
+      <div class="widget__title">🏷️ وسوم شائعة</div>
+      <div class="widget__body" style="padding:12px 16px">
+        <div class="tags" id="sidebarTags"></div>
+      </div>
+    </div>
+  </aside>
+
+</div>
+</div>
+</main>
+
+<footer class="footer-main">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo"><i class="fas fa-utensils" style="color:#fdba74"></i> سُ<span style="color:#fff">فرة</span></a>
+        <p style="color:rgba(255,255,255,.65)">أخبار الطبخ العربي — وصفات، مراجعات ونصائح من كل العالم.</p>
+        <div class="footer-social">
+          <a href="#" style="color:#fdba74"><i class="fab fa-instagram"></i></a>
+          <a href="#" style="color:#fdba74"><i class="fab fa-youtube"></i></a>
+          <a href="#" style="color:#fdba74"><i class="fab fa-pinterest-p"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>الأقسام</h4>
+        <ul>
+          <li><a href="archive.html?cat=main">أطباق رئيسية</a></li>
+          <li><a href="archive.html?cat=dessert">حلويات</a></li>
+          <li><a href="archive.html?cat=soup">شوربات</a></li>
+          <li><a href="archive.html?cat=salad">سلطات</a></li>
+          <li><a href="archive.html?cat=fast">وجبات سريعة</a></li>
+          <li><a href="archive.html?cat=tips">أخبار المطبخ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>الموقع</h4>
+        <ul>
+          <li><a href="#">من نحن</a></li>
+          <li><a href="#">اكتب لنا</a></li>
+          <li><a href="#">تواصل</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+<div class="footer-bottom" style="background:#1a0f06">
+  <div class="wrap">
+    <span style="color:rgba(255,255,255,.5)">© 2026 سُفرة. جميع الحقوق محفوظة.</span>
+  </div>
+</div>
+
+<div class="search-overlay" id="searchOverlay">
+  <button class="search-close" style="position:absolute;top:20px;left:20px;color:#fff;font-size:1.5rem;background:none;border:none;cursor:pointer"><i class="fas fa-times"></i></button>
+  <div class="search-box">
+    <div class="search-input-wrap" style="background:#fff;border:1px solid rgba(61,44,30,.15);border-radius:12px;padding:4px 12px">
+      <i class="fas fa-search" style="color:#e85d04"></i>
+      <input type="search" placeholder="ابحث عن أخبار طبخ، وصفات، حلويات…" style="font-size:1.05rem;background:transparent;color:#3d2c1e">
+    </div>
+    <div class="search-results" id="searchPreview" style="background:#fff;border:1px solid rgba(61,44,30,.1);border-radius:12px;margin-top:12px"></div>
+  </div>
+</div>
+
+<button class="back-top" id="backTop" style="background:#e85d04"><i class="fas fa-chevron-up"></i></button>
+
+<script src="data/articles.js"></script>
+<script src="js/shared.js"></script>
+<script src="js/app.js"></script>
+<script src="../assets/js/pds-main.js"></script>
+</body>
+</html>

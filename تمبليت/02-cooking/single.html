@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="demo-cook">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>خبر طبخ — سُفرة</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="../assets/css/pds-core.css">
+<link rel="stylesheet" href="css/cook-ar.css">
+</head>
+<body class="page-inner">
+
+<div class="progress-bar" id="progress" style="background:linear-gradient(-90deg,#e85d04,#f59e0b)"></div>
+
+<div class="cook-topbar">
+  <div class="wrap">
+    <div class="cook-topbar__left">
+      <span class="cook-topbar__badge"><i class="fas fa-fire"></i> خبر طبخ عاجل</span>
+      <span><i class="fas fa-calendar-alt" style="color:#fdba74;margin-left:5px"></i> الاثنين، 15 يونيو 2026</span>
+    </div>
+    <div class="cook-topbar__social">
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-youtube"></i></a>
+      <a href="#"><i class="fab fa-pinterest-p"></i></a>
+    </div>
+  </div>
+</div>
+
+<header class="cook-header cook-header--compact">
+  <div class="wrap">
+    <div class="cook-header__bar">
+      <a href="index.html" class="cook-logo">
+        <div class="cook-logo__icon"><i class="fas fa-utensils"></i></div>
+        <div>سُ<span>فرة</span><span class="cook-logo__sub">أخبار الطبخ</span></div>
+      </a>
+      <div class="cook-header__actions">
+        <button class="cook-btn-icon search-trigger" title="بحث"><i class="fas fa-search"></i></button>
+        <a href="archive.html" class="cook-btn-primary"><i class="fas fa-utensils"></i><span>وصفات اليوم</span></a>
+      </div>
+    </div>
+    <nav class="cook-nav site-nav site-nav--pills-solid" aria-label="أقسام الطبخ">
+      <ul class="cook-nav__list site-nav__list">
+      <li class="cook-nav__item site-nav__item active"><a href="index.html">الرئيسية</a></li>
+      <li class="cook-nav__item site-nav__item" data-cat="main"><a href="archive.html?cat=main">أطباق رئيسية</a></li>
+      <li class="cook-nav__item site-nav__item" data-cat="dessert"><a href="archive.html?cat=dessert">حلويات</a></li>
+      <li class="cook-nav__item site-nav__item" data-cat="soup"><a href="archive.html?cat=soup">شوربات</a></li>
+      <li class="cook-nav__item site-nav__item" data-cat="salad"><a href="archive.html?cat=salad">سلطات</a></li>
+      <li class="cook-nav__item site-nav__item" data-cat="fast"><a href="archive.html?cat=fast">وجبات سريعة</a></li>
+      <li class="cook-nav__item site-nav__item" data-cat="tips"><a href="archive.html?cat=tips">أخبار المطبخ</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="cook-ticker">
+  <div class="cook-ticker__label"><i class="fas fa-fire"></i> أخبار ساخنة</div>
+  <div class="cook-ticker__track">
+    <div class="cook-ticker__inner ticker__inner" id="tickerInner"></div>
+  </div>
+</div>
+
+<main style="padding:36px 0 60px">
+<div class="wrap">
+  <div class="grid g-main" style="gap:36px">
+    <article id="cookNewsContent"></article>
+    <aside class="sidebar" id="singleSidebar"></aside>
+  </div>
+</div>
+</main>
+
+<div id="siteFooter"></div>
+<button class="back-top" id="backTop" style="background:#e85d04"><i class="fas fa-chevron-up"></i></button>
+
+<div class="search-overlay" id="searchOverlay">
+  <div class="search-box">
+    <button class="search-close" aria-label="إغلاق"><i class="fas fa-times"></i></button>
+    <h3>ابحث في أخبار الطبخ</h3>
+    <div class="search-input-wrap"><input type="search" placeholder="اكتب للبحث…" autofocus></div>
+  </div>
+</div>
+
+<script src="data/articles.js"></script>
+<script src="js/shared.js"></script>
+<script src="js/single.js"></script>
+<script src="../assets/js/pds-main.js"></script>
+</body>
+</html>

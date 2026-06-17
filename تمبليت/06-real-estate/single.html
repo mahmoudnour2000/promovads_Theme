@@ -1,103 +1,89 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl" class="demo-re">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dubai Real Estate Breaks Record — PropertyHub</title>
+<title>عقار — عقار+</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <link rel="stylesheet" href="../assets/css/pds-core.css">
-<style>
-  :root { --c-primary:#8b5cf6;--c-primary-dk:#7c3aed;--c-secondary:#2e1065;--c-accent:#a78bfa; }
-  .site-header { border-bottom:3px solid #8b5cf6; }
-  .site-nav { background:#2e1065; }
-  .widget__title { background:#2e1065; }
-  .data-grid { display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:14px;margin-top:16px; }
-  .data-item { background:#faf5ff;border:1px solid #e9d5ff;border-radius:8px;padding:14px;text-align:center; }
-  .data-item .val { font-size:1.4rem;font-weight:900;font-family:'Playfair Display',serif;color:#8b5cf6; }
-  .data-item .lbl { font-size:.7rem;color:#888;text-transform:uppercase;letter-spacing:.06em; }
-</style>
+<link rel="stylesheet" href="css/re-ar.css">
 </head>
-<body>
-<div class="topbar"><div class="wrap"><span class="topbar__date"><i class="fas fa-building" style="color:#8b5cf6;margin-right:5px"></i>Mon Jun 15, 2026 · 2,847 new listings today</span></div></div>
-<header class="site-header"><div class="wrap"><a href="index.html" class="logo"><i class="fas fa-home" style="color:#8b5cf6"></i> Property<span>Hub</span></a><div class="header-actions"><button class="btn-icon dark-toggle"><i class="fas fa-moon"></i></button><a href="#" class="btn btn-primary" style="background:#8b5cf6">List Property</a></div></div></header>
-<nav class="site-nav"><div class="wrap"><ul class="nav-menu"><li class="nav-item"><a href="index.html" class="nav-link">Home</a></li><li class="nav-item"><a href="#">Buy</a></li><li class="nav-item active"><a href="#" class="nav-link">Market News</a></li></ul></div></nav>
+<body class="page-inner">
 
-<!-- Header News Strip -->
-<div class="header-news" style="border-color:#e9d5ff">
+<div class="progress-bar" id="progress"></div>
+
+<div class="re-topbar">
   <div class="wrap">
-    <div class="header-news__label" style="background:#8b5cf6">Latest</div>
-    <div class="hn-grid">
-      <a href="single.html" class="hn-card"><div class="hn-card__img"><img src="https://picsum.photos/seed/hn-r1/120/120" alt="" loading="lazy"></div><div class="hn-card__body"><span class="hn-card__cat" style="color:#8b5cf6">Dubai</span><h3 class="hn-card__title">Dubai Q2 Breaks Record: $8.2 Billion in Transactions</h3><div class="hn-card__meta"><i class="fas fa-clock"></i> 1h ago</div></div></a>
-      <a href="single.html" class="hn-card"><div class="hn-card__img"><img src="https://picsum.photos/seed/hn-r2/120/120" alt="" loading="lazy"></div><div class="hn-card__body"><span class="hn-card__cat" style="color:#8b5cf6">Riyadh</span><h3 class="hn-card__title">Riyadh Luxury Prices Up 34% as Vision 2030 Attracts Buyers</h3><div class="hn-card__meta"><i class="fas fa-clock"></i> 3h ago</div></div></a>
-      <a href="single.html" class="hn-card"><div class="hn-card__img"><img src="https://picsum.photos/seed/hn-r3/120/120" alt="" loading="lazy"></div><div class="hn-card__body"><span class="hn-card__cat" style="color:#8b5cf6">Mortgage</span><h3 class="hn-card__title">September Rate Cut — Mortgage Applications Surge 22%</h3><div class="hn-card__meta"><i class="fas fa-clock"></i> 5h ago</div></div></a>
-      <a href="single.html" class="hn-card"><div class="hn-card__img"><img src="https://picsum.photos/seed/hn-r4/120/120" alt="" loading="lazy"></div><div class="hn-card__body"><span class="hn-card__cat" style="color:#8b5cf6">NYC</span><h3 class="hn-card__title">Manhattan Apartment Prices Fall 8% — Buyer's Market Forming</h3><div class="hn-card__meta"><i class="fas fa-clock"></i> Yesterday</div></div></a>
+    <div class="re-topbar__left">
+      <span class="re-topbar__stats"><i class="fas fa-building"></i> عقار+</span>
+      <span><i class="fas fa-calendar-alt" style="color:#c4b5fd;margin-left:5px"></i> الاثنين، 15 يونيو 2026</span>
     </div>
+    <div class="re-topbar__social">
+      <a href="#"><i class="fab fa-x-twitter"></i></a>
+      <a href="#"><i class="fab fa-youtube"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+    </div>
+  </div>
+</div>
+
+<header class="re-header re-header--compact">
+  <div class="wrap">
+    <div class="re-header__bar">
+      <a href="index.html" class="re-logo">
+        <div class="re-logo__icon"><i class="fas fa-building"></i></div>
+        <div>عقار<span>+</span><span class="re-logo__sub">عقارات</span></div>
+      </a>
+      <div class="re-header__actions">
+        <button class="re-btn-icon search-trigger" title="بحث"><i class="fas fa-search"></i></button>
+        <a href="index.html" class="re-btn-live"><i class="fas fa-home"></i> الرئيسية</a>
+      </div>
+    </div>
+    <nav class="re-nav site-nav site-nav--bar" aria-label="أقسام العقار">
+      <ul class="re-nav__list site-nav__list">
+      <li class="re-nav__item site-nav__item active"><a href="index.html"><i class="fas fa-home" aria-hidden="true"></i><span>الرئيسية</span></a></li>
+      <li class="re-nav__item site-nav__item" data-cat="sale"><a href="archive.html?cat=sale"><i class="fas fa-tag" aria-hidden="true"></i><span>بيع</span></a></li>
+      <li class="re-nav__item site-nav__item" data-cat="rent"><a href="archive.html?cat=rent"><i class="fas fa-key" aria-hidden="true"></i><span>إيجار</span></a></li>
+      <li class="re-nav__item site-nav__item" data-cat="investment"><a href="archive.html?cat=investment"><i class="fas fa-chart-line" aria-hidden="true"></i><span>استثمار</span></a></li>
+      <li class="re-nav__item site-nav__item" data-cat="luxury"><a href="archive.html?cat=luxury"><i class="fas fa-gem" aria-hidden="true"></i><span>فاخر</span></a></li>
+      <li class="re-nav__item site-nav__item" data-cat="commercial"><a href="archive.html?cat=commercial"><i class="fas fa-store" aria-hidden="true"></i><span>تجاري</span></a></li>
+      <li class="re-nav__item site-nav__item" data-cat="tips"><a href="archive.html?cat=tips"><i class="fas fa-lightbulb" aria-hidden="true"></i><span>نصائح</span></a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="re-ticker">
+  <div class="re-ticker__label"><span class="re-ticker__dot"></span>عاجل</div>
+  <div class="re-ticker__track">
+    <div class="re-ticker__inner ticker__inner" id="tickerInner"></div>
   </div>
 </div>
 
 <main style="padding:36px 0 60px">
 <div class="wrap">
   <div class="grid g-main" style="gap:36px">
-    <article>
-      <nav class="breadcrumb"><a href="index.html">Home</a><span class="sep">›</span><a href="archive.html">Market News</a><span class="sep">›</span><span class="current">Dubai Q2 Record</span></nav>
-      <div class="article-cats"><a href="#" style="background:#8b5cf6">Dubai</a><a href="#" style="background:#f59e0b;color:#000">Market Report</a></div>
-      <h1 class="article-title">Dubai Real Estate Breaks All-Time Record: $8.2 Billion in Q2 2026 Transactions</h1>
-      <p class="article-subtitle">The emirate's property market continues its historic boom as international buyers flood the market, off-plan sales surge, and luxury segment defies global headwinds.</p>
-      <div class="article-meta">
-        <div class="author"><img src="https://i.pravatar.cc/80?img=47" alt="Fatima Al-Hassan"><div><strong>Fatima Al-Hassan</strong><div style="font-size:.72rem;color:#8b5cf6">MENA Real Estate Editor</div></div></div>
-        <span><i class="fas fa-calendar-alt"></i> June 15, 2026</span>
-        <span><i class="far fa-clock"></i> 6 min read</span>
-        <span><i class="far fa-eye"></i> 44,100 views</span>
-        <div class="share"><a href="#" class="share-btn share-li"><i class="fab fa-linkedin-in"></i></a><a href="#" class="share-btn share-wa"><i class="fab fa-whatsapp"></i></a></div>
-      </div>
-      <figure class="article-feat"><img src="https://picsum.photos/seed/dubai-re/1200/640" alt="Dubai Skyline"><figcaption>Dubai Marina skyline continues to evolve with record-breaking new developments. © PropertyHub</figcaption></figure>
-      <div style="margin:24px 0">
-        <h3 style="margin-bottom:12px;font-size:1rem;color:#555;font-weight:600">Q2 2026 Key Metrics</h3>
-        <div class="data-grid">
-          <div class="data-item"><div class="val">$8.2B</div><div class="lbl">Total Q2 Volume</div></div>
-          <div class="data-item"><div class="val">+24%</div><div class="lbl">YoY Growth</div></div>
-          <div class="data-item"><div class="val">34,280</div><div class="lbl">Transactions</div></div>
-          <div class="data-item"><div class="val">$485</div><div class="lbl">Avg Price/sqft</div></div>
-          <div class="data-item"><div class="val">42%</div><div class="lbl">Off-Plan Share</div></div>
-          <div class="data-item"><div class="val">68%</div><div class="lbl">Intl. Buyers</div></div>
-        </div>
-      </div>
-      <div class="entry-content">
-        <h2>Record-Breaking Performance</h2>
-        <p>Dubai's real estate market reached an unprecedented milestone in Q2 2026, recording AED 30 billion ($8.2 billion) in transactions — a 24% increase over Q2 2025 and a new all-time high for a single quarter. The number of individual transactions, at 34,280, also set a new record.</p>
-        <h2>What's Driving the Boom?</h2>
-        <p>Three factors are accelerating Dubai's property market: continued influx of high-net-worth individuals from Russia, Europe, and Asia; the strength of UAE's economy relative to global uncertainty; and the massive off-plan development pipeline offering attractive payment plans.</p>
-        <blockquote>"Dubai has permanently shifted from a cyclical market to a structural growth story. The fundamentals have never been stronger." — James Allsopp, CBRE MENA</blockquote>
-        <h2>Hot Neighborhoods</h2>
-        <p>Palm Jumeirah (+41% YoY), Business Bay (+28%), and the new Emaar Beachfront development (+58%) led price growth. Off-plan launches in Sobha Hartland 2 and Damac Hills 3 sold out within 48 hours of launch.</p>
-      </div>
-      <div class="article-tags"><h4>Tags</h4><div class="tags"><a href="#" class="tag">#Dubai</a><a href="#" class="tag">#RealEstate</a><a href="#" class="tag">#Property</a><a href="#" class="tag">#MENA</a><a href="#" class="tag">#Investment</a></div></div>
-      <div class="author-box">
-        <img src="https://i.pravatar.cc/120?img=47" alt="Fatima Al-Hassan" class="author-box__avatar">
-        <div><h3 class="author-box__name">Fatima Al-Hassan</h3><div class="author-box__role">MENA Real Estate Editor · PropertyHub</div><p class="author-box__bio">Fatima covers real estate markets across MENA with 14 years of experience. Former JLL and Knight Frank analyst.</p><div class="author-social"><a href="#"><i class="fab fa-linkedin-in"></i></a></div></div>
-      </div>
-      <section class="related"><h3 class="section-title">Related <span>Articles</span></h3><div class="grid g3" style="margin-top:20px">
-        <article class="card"><a href="single.html" class="card__thumb"><img src="https://picsum.photos/seed/re-r1/500/280" alt="" loading="lazy"><span class="card__cat" style="background:#8b5cf6">Guide</span></a><div class="card__body"><h3 class="card__title"><a href="single.html">Investing in Dubai Property: 2026 Complete Guide</a></h3></div></article>
-        <article class="card"><a href="single.html" class="card__thumb"><img src="https://picsum.photos/seed/re-r2/500/280" alt="" loading="lazy"><span class="card__cat" style="background:#f59e0b;color:#000">Riyadh</span></a><div class="card__body"><h3 class="card__title"><a href="single.html">Riyadh vs Dubai: Where to Invest in 2026?</a></h3></div></article>
-        <article class="card"><a href="single.html" class="card__thumb"><img src="https://picsum.photos/seed/re-r3/500/280" alt="" loading="lazy"><span class="card__cat" style="background:#22c55e">Mortgage</span></a><div class="card__body"><h3 class="card__title"><a href="single.html">September Rate Cut: How Much Will Mortgage Rates Drop?</a></h3></div></article>
-      </div></section>
-    </article>
-    <aside class="sidebar">
-      <div class="newsletter-widget" style="background:linear-gradient(135deg,#2e1065,#4c1d95)"><div class="nl-icon" style="background:#8b5cf6"><i class="fas fa-home"></i></div><h4>Property Alerts</h4><p>New listings matching your criteria</p><form class="nl-form"><input type="email" placeholder="your@email.com"><button style="background:#8b5cf6">Get Alerts</button></form></div>
-      <div class="widget"><div class="widget__title" style="background:#2e1065">Market Now</div><div class="widget__body">
-        <div style="font-size:.82rem"><div style="display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid #f0f0f0"><span>Dubai Avg/sqft</span><strong style="color:#8b5cf6">$485</strong></div><div style="display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid #f0f0f0"><span>YoY Growth</span><strong style="color:#22c55e">+12.4%</strong></div><div style="display:flex;justify-content:space-between;padding:7px 0"><span>Mortgage Rate</span><strong style="color:#f59e0b">5.85%</strong></div></div>
-      </div></div>
-      <div class="ad-wrap"><p class="ad-label">Advertisement</p><div class="ad-box" style="height:600px;border-radius:8px;background:linear-gradient(180deg,#2e1065,#4c1d95);color:rgba(255,255,255,.2);font-size:.75rem">160 × 600</div></div>
-    </aside>
+    <article id="articleContent"></article>
+    <aside class="sidebar" id="singleSidebar"></aside>
   </div>
 </div>
 </main>
 
-<footer class="footer-main" style="background:#1e0d3f"><div class="wrap"><div class="footer-grid"><div class="footer-brand"><a href="index.html" class="logo"><i class="fas fa-home" style="color:#a78bfa"></i> Property<span style="color:#a78bfa">Hub</span></a><p>Trusted real estate platform across MENA.</p></div><div class="footer-col"><h4>Browse</h4><ul><li><a href="#">Buy</a></li><li><a href="#">Rent</a></li><li><a href="#">Off-Plan</a></li></ul></div><div class="footer-col"><h4>Cities</h4><ul><li><a href="#">Dubai</a></li><li><a href="#">Riyadh</a></li><li><a href="#">Cairo</a></li></ul></div><div class="footer-col"><h4>Legal</h4><ul><li><a href="#">Privacy</a></li><li><a href="#">Terms</a></li></ul></div></div></div></footer>
-<div class="footer-bottom" style="background:rgba(0,0,0,.4)"><div class="wrap"><span>© 2026 PropertyHub.</span></div></div>
-<button class="back-top" id="backTop" style="background:#8b5cf6"><i class="fas fa-chevron-up"></i></button>
+<div id="siteFooter"></div>
+<button class="back-top" id="backTop"><i class="fas fa-chevron-up"></i></button>
+
+<div class="search-overlay" id="searchOverlay">
+  <div class="search-box">
+    <button class="search-close" aria-label="إغلاق"><i class="fas fa-times"></i></button>
+    <h3>ابحث في عقار+</h3>
+    <div class="search-input-wrap"><input type="search" placeholder="اكتب للبحث…" autofocus></div>
+  </div>
+</div>
+
+<script src="data/articles.js"></script>
+<script src="js/shared.js"></script>
+<script src="js/single.js"></script>
 <script src="../assets/js/pds-main.js"></script>
 </body>
 </html>

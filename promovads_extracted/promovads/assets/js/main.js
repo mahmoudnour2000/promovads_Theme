@@ -162,13 +162,11 @@
 
     open() {
       this.overlay.classList.add('is-open');
-      document.body.style.overflow = 'hidden';
       setTimeout(() => this.input?.focus(), 100);
     },
 
     close() {
       this.overlay.classList.remove('is-open');
-      document.body.style.overflow = '';
       if (this.input) this.input.value = '';
       if (this.results) this.results.innerHTML = '';
     },
@@ -346,6 +344,7 @@
   // ── Copy URL ────────────────────────────────────────────────────────────────
   const CopyUrl = {
     init() {
+      if (document.body.classList.contains('pds-demo-active')) return;
       on(document, 'click', async e => {
         const btn = e.target.closest('.pds-copy-url');
         if (!btn) return;
@@ -453,19 +452,21 @@
   document.addEventListener('DOMContentLoaded', () => {
     document.body.classList.remove('pds-preload');
 
+    const isDemo = document.body.classList.contains('pds-demo-active') || /demo-/.test(document.body.className);
+
     DarkMode.init();
-    StickyHeader.init();
+    if (!isDemo) StickyHeader.init();
     MobileMenu.init();
-    Ticker.init();
-    Search.init();
+    if (!isDemo) Ticker.init();
+    if (!isDemo) Search.init();
     CategoryTabs.init();
     LoadMore.init();
     Newsletter.init();
     CopyUrl.init();
     LazyLoad.init();
-    BackToTop.init();
+    if (!isDemo) BackToTop.init();
     ViewTracker.init();
-    ProgressBar.init();
+    if (!isDemo) ProgressBar.init();
   });
 
 })();

@@ -8,7 +8,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'PROMOVADS_VERSION', '1.0.0' );
+define( 'PROMOVADS_VERSION', '1.1.4' );
 define( 'PROMOVADS_DIR',     get_template_directory() );
 define( 'PROMOVADS_URI',     get_template_directory_uri() );
 define( 'PROMOVADS_INC',     PROMOVADS_DIR . '/inc' );
@@ -18,11 +18,20 @@ require PROMOVADS_INC . '/setup.php';
 require PROMOVADS_INC . '/enqueue.php';
 require PROMOVADS_INC . '/custom-post-types.php';
 require PROMOVADS_INC . '/widgets.php';
+require PROMOVADS_INC . '/demo-registry.php';
+require PROMOVADS_INC . '/data-layer.php';
 require PROMOVADS_INC . '/helpers.php';
 require PROMOVADS_INC . '/seo.php';
 require PROMOVADS_INC . '/ads.php';
 require PROMOVADS_INC . '/customizer.php';
 require PROMOVADS_INC . '/demo-import.php';
+require PROMOVADS_INC . '/demo-switch.php';
+require PROMOVADS_INC . '/color-system.php';
+require PROMOVADS_INC . '/logo-system.php';
+require PROMOVADS_INC . '/skin-registry.php';
+require PROMOVADS_INC . '/skin-admin-ui.php';
+require PROMOVADS_INC . '/skin-renderers.php';
+require PROMOVADS_INC . '/admin-panel.php';
 require PROMOVADS_INC . '/template-tags.php';
 require PROMOVADS_INC . '/template-functions.php';
 require PROMOVADS_INC . '/ajax.php';
